@@ -1,0 +1,1793 @@
+variable;modalite;libelle
+ident;;IDENT. Identifiant unique
+annee;;ANNEE. Année
+poids;;POIDS. Poids de redressement
+sdsexe;;SDSEXE. Sexe de l'enquêté.e
+sdsexe;1;Homme
+sdsexe;2;Femme
+habitat;;HABITAT. Catégorie d'agglomération
+habitat;1;Rural
+habitat;2;Moins de 20 000 habitants
+habitat;3;De 20 000 à 99 999 habitants
+habitat;4;100 000 habitants et plus
+habitat;5;Agglomération parisienne
+region;;REGION. ZEAT
+region;1;Région parisienne
+region;2;Bassin Parisien Est
+region;3;Bassin Parisien Ouest
+region;4;Nord
+region;5;Est
+region;6;Ouest
+region;7;Sud Ouest
+region;8;Sud Est
+region;9;Méditerranée
+sdannais;;SDANNAIS. Année de naissance
+sdage;;SDAGE. Âge
+sdagetr;;SDAGETR. Âge (en tranches)
+sdagetr;1;18 à 24 ans
+sdagetr;2;25 à 34 ans
+sdagetr;3;35 à 49 ans
+sdagetr;4;50 à 64 ans
+sdagetr;5;65 ans et +
+sdsitua;;SDSITUA. Quelle est votre situation actuellement ?
+sdsitua;1;Vous travaillez à temps plein
+sdsitua;2;Vous travaillez à temps partiel
+sdsitua;3;Vous travaillez de façon intermittente
+sdsitua;4;Vous êtes à la recherche d'un emploi
+sdsitua;5;Vous êtes étudiant.e
+sdsitua;6;Vous êtes retraité.e ou préretraité.e
+sdsitua;7;Vous n'exercez aucune activité professionnelle
+sdsitua;8;Vous n'exercez aucune activité professionnelle ou êtes retraité.e (avant 2014)
+sdact;;SDACT. Activité principale de l'interviewé.e (ou ancienne activité)
+sdact;1;Salarié.e du secteur privé
+sdact;2;Salarié.e du secteur public
+sdact;3;Indépendant.e sans salarié.e
+sdact;4;Indépendant.e employeur.euse
+sdact;5;À la recherche d'un premier emploi
+sdact;6;Élève, étudiant.e, en formation, ou en stage non rémunéré
+sdact;7;Apprenti.e sous contrat ou stagiaire rémunéré.e
+sdact;8;Au foyer
+sdact;9;Autre inactif.ive
+sdstat;;SDSTAT. Statut d'activité de l'interviewé.e
+sdstat;1;      Salarié.e du secteur public
+sdstat;2;      Salarié.e du secteur privé
+sdstat;3;Indépendant.e sans salarié.e
+sdstat;4;Employeur.euse
+sdstat;5;Chômeur.euse
+sdstat;6;Inactif.ive
+sdstat;7;Autre
+sdpcs7;;SDPCS7. Profession de l'interviewé.e (ou ancienne profession) en 7 catégories
+sdpcs7;1;Agriculteur.trice
+sdpcs7;2;Artisan.e ou commerçant.e
+sdpcs7;3;Profession libérale, cadre supérieur.e
+sdpcs7;4;Profession intermédiaire
+sdpcs7;5;Employé.e
+sdpcs7;6;Ouvrier.ère
+sdpcs7;7;Autre inactif.ive
+sdpcs7;8;(Sans réponse)
+sdpcs10;;SDPCS10. Profession actuelle de l'interviewé.e en 10 catégories
+sdpcs10;1;Agriculteur.trice
+sdpcs10;2;Artisan.e ou commerçant.e
+sdpcs10;3;Profession libérale, cadre supérieur.e
+sdpcs10;4;Profession intermédiaire
+sdpcs10;5;Employé.e
+sdpcs10;6;Ouvrier.ère
+sdpcs10;7;Chômeur.euse
+sdpcs10;8;Retraité.e
+sdpcs10;9;Au foyer
+sdpcs10;10;Autre inactif.ive
+sdpcs10;11;(Sans réponse)
+sdstatemp;;SDSTATEMP. Type de contrat (ou ancien type de contrat)
+sdstatemp;1;CDI (ou fonctionnaire titulaire, y compris fonctionnaire stagiaire)
+sdstatemp;2;CDD
+sdstatemp;3;Intérim
+sdstatemp;4;Sans contrat
+sdstatemp;5;(NSP)
+sdsitfam;;SDSITFAM. Quelle est votre situation familiale dans le foyer ?
+sdsitfam;1;Vous vivez seul.e
+sdsitfam;2;Vous êtes un membre du couple
+sdsitfam;3;Vous êtes l'unique parent du foyer
+sdsitfam;4;Vous êtes un enfant de la famille
+sdsitfam;5;Vous êtes un.e ami.e ou un.e parent.e hébergé.e par la famille
+sdsitfam;6;Vous êtes un.e colocataire
+sdsitfam;7;Autres (personnel de maison, ...)
+sdpr;;SDPR. Désignation de la personne de référence
+sdpr;1;Votre conjoint.e
+sdpr;2;Votre père (ou de votre mère si votre père ne vit pas au foyer)
+sdpr;3;La personne de référence du ménage
+sdpr;4;(Vous-même)
+sdprsitua;;SDPRSITUA. Situation de la personne de référence
+sdprsitua;1;Il.elle travaille à temps plein
+sdprsitua;2;Il.elle travaille à temps partiel
+sdprsitua;3;Il.elle travaille de façon intermittente
+sdprsitua;4;Il.elle est à la recherche d'un emploi, au chômage
+sdprsitua;5;Il.elle est étudiant.e
+sdprsitua;6;Il.elle est retraité.e ou préretraité.e
+sdprsitua;7;Il.elle n'exerce aucune activité professionnelle
+sdpract;;SDPRACT. Activité principale de la personne de référence (ou ancienne activité principale)
+sdpract;1;Salarié.e du secteur privé
+sdpract;2;Salarié.e du secteur public
+sdpract;3;Indépendant.e sans salarié.e
+sdpract;4;Indépendant.e employeur.euse
+sdpract;5;À la recherche d'un premier emploi
+sdpract;6;Élève, étudiant.e, en formation, ou en stage non rémunéré
+sdpract;7;Apprenti.e sous contrat ou stagiaire rémunéré.e
+sdpract;8;Au foyer
+sdpract;9;Autre inactif.ive
+sdprstat;;SDPRSTAT. Statut d'activité de la personne de référence
+sdprstat;1;Salarié.e du secteur public
+sdprstat;2;Salarié.e du secteur privé
+sdprstat;3;Indépendant.e sans salarié.e
+sdprstat;4;Employeur.euse
+sdprstat;5;Chômeur.euse
+sdprstat;6;Inactif.ive
+sdprstat;7;Autre
+sdprpcs7;;SDPRPCS7. Catégorie socio-professionnelle de la personne de référence (ou Catégorie socio-professionnelle pour les retraité.es et les chômeur.euses)
+sdprpcs7;1;Agriculteur.trice
+sdprpcs7;2;Artisan.e ou commerçant.e
+sdprpcs7;3;Profession libérale, cadre supérieur.e
+sdprpcs7;4;Profession intermédiaire
+sdprpcs7;5;Employé.e
+sdprpcs7;6;Ouvrier.ère
+sdprpcs7;7;Autre inactif.ive
+sdprpcs7;8;(Sans réponse)
+sdprpcs10;;SDPRPCS10. Profession  actuelle de la personne de référence en 10 catégories
+sdprpcs10;1;Agriculteur.trice
+sdprpcs10;2;Artisan.e ou commerçant.e
+sdprpcs10;3;Profession libérale, cadre supérieur.e
+sdprpcs10;4;Profession intermédiaire
+sdprpcs10;5;Employé.e
+sdprpcs10;6;Ouvrier.ère
+sdprpcs10;7;Chômeur.euse
+sdprpcs10;8;Retraité.e
+sdprpcs10;9;Au foyer
+sdprpcs10;10;Autre inactif.ive
+sdnbpers;;SDNBPERS. Nombre de personnes dans le foyer
+sdnbpers;1;1 personne
+sdnbpers;2;2 personnes
+sdnbpers;3;3 personnes
+sdnbpers;4;4 personnes
+sdnbpers;5;5 personnes
+sdnbpers;6;6 personnes
+sdnbpers;7;7 personnes
+sdnbpers;8;8 personnes
+sdnbpers;9;9 personnes et plus
+sdnbpers;10;10 personnes et plus (depuis 2013)
+sdcouple;;SDCOUPLE. Vivez-vous en couple ?
+sdcouple;1;Oui
+sdcouple;2;Non
+sdmatri;;SDMATRI. Statut marital
+sdmatri;1;Marié.e, pacsé.e ou en concubinage
+sdmatri;2;Veuf ou veuve
+sdmatri;3;Célibataire
+sdnbenf;;SDNBENF. Combien y-a-t-il d'enfants à charge dans votre foyer ?
+sdnbenf;1;Aucun enfant
+sdnbenf;2;1 enfant
+sdnbenf;3;2 enfants
+sdnbenf;4;3 enfants
+sdnbenf;5;4 enfants
+sdnbenf;6;5 enfants
+sdnbenf;7;6 enfants
+sdnbenf;8;7 enfants
+sdnbenf;9;8 enfants
+sdnbenf;10;9 enfants
+sdnbenf;11;10 enfants et plus
+sdnbenf;12;(NSP)
+sdnbadu;;SDNBADU. Nombre d'adultes vivant au foyer
+sdnbadu;1;1 adulte
+sdnbadu;2;2 adultes
+sdnbadu;3;3 adultes
+sdnbadu;4;4 adultes
+sdnbadu;5;5 adultes
+sdnbadu;6;6 adultes
+sdnbadu;7;7 adultes
+sdnbadu;8;8 adultes
+sdnbadu;9;9 adultes
+sdnbadu;10;10 adultes et +
+sduc;;SDUC. Nombre d'unités de consommation du ménage
+sdsplit;;SDSPLIT. Version du questionnaire
+sdsplit;1;Questionnaire A
+sdsplit;2;Questionnaire B
+sdsplit;3;Questionnaire C
+sdsplit;4;Questionnaire D
+sdmut;;SDMUT. Êtes-vous couvert.e par une mutuelle ou une assurance complémentaire maladie ?
+sdmut;1;Oui
+sdmut;2;Non
+sdmut;3;(NSP)
+og1;;OG1. Vous personnellement, comment qualifieriez-vous votre situation actuelle ?
+og1;1;Très bonne
+og1;2;Assez bonne
+og1;3;Assez mauvaise
+og1;4;Très mauvaise
+og1;5;(NSP)
+og2;;OG2. Par rapport à la situation de vos parents au même âge, diriez-vous que votre situation actuelle est.
+og2;1;Bien meilleure
+og2;2;Plutôt meilleure
+og2;3;A peu près identique
+og2;4;Plutôt moins bonne
+og2;5;Bien moins bonne
+og2;6;(NSP)
+og3_1;;OG3_1. Quand vous pensez à l'avenir, êtes-vous plutôt optimiste ou plutôt pessimiste... pour vous-même ?
+og3_1;1;Très optimiste
+og3_1;2;Plutôt optimiste
+og3_1;3;Plutôt pessimiste
+og3_1;4;Très pessimiste
+og3_1;5;(NSP)
+og3_2;;OG3_2. Quand vous pensez à l'avenir, êtes-vous plutôt optimiste ou plutôt pessimiste... pour vos enfants ou les générations futures ?
+og3_2;1;Très optimiste
+og3_2;2;Plutôt optimiste
+og3_2;3;Plutôt pessimiste
+og3_2;4;Très pessimiste
+og3_2;5;(NSP)
+me1;;ME1. Pensez-vous pouvoir compter sur quelqu'un en cas de grave problème personnel ?
+me1;1;Oui, certainement
+me1;2;Oui, probablement
+me1;3;Non probablement pas
+me1;4;Non, certainement pas
+me1;5;(NSP)
+og4_1;;OG4_1. Êtes-vous personnellement préoccupé(e) par. le logement ?
+og4_1;1;Beaucoup
+og4_1;2;Assez
+og4_1;3;Peu
+og4_1;4;Pas du tout
+og4_1;5;(NSP)
+og4_2;;OG4_2. Êtes-vous personnellement préoccupé(e) par. les migrations des populations des pays pauvres vers les pays riches ?
+og4_2;1;Beaucoup
+og4_2;2;Assez
+og4_2;3;Peu
+og4_2;4;Pas du tout
+og4_2;5;(NSP)
+og4_3;;OG4_3. Êtes-vous personnellement préoccupé(e) par. la pauvreté ?
+og4_3;1;Beaucoup
+og4_3;2;Assez
+og4_3;3;Peu
+og4_3;4;Pas du tout
+og4_3;5;(NSP)
+og4_4;;OG4_4. Êtes-vous personnellement  préoccupé(e) par. l'insécurité dans votre quartier ou votre village ?
+og4_4;1;Beaucoup
+og4_4;2;Assez
+og4_4;3;Peu
+og4_4;4;Pas du tout
+og4_4;5;(NSP)
+og4_5;;OG4_5. Êtes-vous personnellement préoccupé(e) par. la dette de la France ?
+og4_5;1;Beaucoup
+og4_5;2;Assez
+og4_5;3;Peu
+og4_5;4;Pas du tout
+og4_5;5;(NSP)
+og4_6;;OG4_6. Êtes-vous personnellement  préoccupé(e) par. le chômage ?
+og4_6;1;Beaucoup
+og4_6;2;Assez
+og4_6;3;Peu
+og4_6;4;Pas du tout
+og4_6;5;(NSP)
+og4_7;;OG4_7. Êtes-vous personnellement  préoccupé(e) par. les crises financières internationales ?
+og4_7;1;Beaucoup
+og4_7;2;Assez
+og4_7;3;Peu
+og4_7;4;Pas du tout
+og4_7;5;(NSP)
+og4_8;;OG4_8. Êtes-vous personnellement préoccupé(e) par. la santé des Français ?
+og4_8;1;Beaucoup
+og4_8;2;Assez
+og4_8;3;Peu
+og4_8;4;Pas du tout
+og4_8;5;(NSP)
+og4_9;;OG4_9. Êtes-vous personnellement  préoccupé(e) par. le niveau des salaires et du pouvoir d'achat ?
+og4_9;1;Beaucoup
+og4_9;2;Assez
+og4_9;3;Peu
+og4_9;4;Pas du tout
+og4_9;5;(NSP)
+og5_ab_1;;OG5_AB_1. Êtes-vous personnellement préoccupé(e) par. les problèmes liés à l'environnement ?
+og5_ab_1;1;Beaucoup
+og5_ab_1;2;Assez
+og5_ab_1;3;Peu
+og5_ab_1;4;Pas du tout
+og5_ab_1;5;(NSP)
+og5_ab_2;;OG5_AB_2. Êtes-vous personnellement préoccupé(e) par. les risques alimentaires ?
+og5_ab_2;1;Beaucoup
+og5_ab_2;2;Assez
+og5_ab_2;3;Peu
+og5_ab_2;4;Pas du tout
+og5_ab_2;5;(NSP)
+og5_ab_3;;OG5_AB_3. Êtes-vous personnellement préoccupé(e) par. le Sida ?
+og5_ab_3;1;Beaucoup
+og5_ab_3;2;Assez
+og5_ab_3;3;Peu
+og5_ab_3;4;Pas du tout
+og5_ab_3;5;(NSP)
+og5_ab_4;;OG5_AB_4.Êtes-vous personnellement préoccupé(e) par. l'avenir du système de retraite ?
+og5_ab_4;1;Beaucoup
+og5_ab_4;2;Assez
+og5_ab_4;3;Peu
+og5_ab_4;4;Pas du tout
+og5_ab_4;5;(NSP)
+og5_ab_5;;OG5_AB_5. Êtes-vous personnellement  préoccupé(e) par. le cancer ?
+og5_ab_5;1;Beaucoup
+og5_ab_5;2;Assez
+og5_ab_5;3;Peu
+og5_ab_5;4;Pas du tout
+og5_ab_5;5;(NSP)
+og5_ab_6;;OG5_AB_6. Êtes-vous personnellement préoccupé(e) par. les risques d'épidémie ?
+og5_ab_6;1;Beaucoup
+og5_ab_6;2;Assez
+og5_ab_6;3;Peu
+og5_ab_6;4;Pas du tout
+og5_ab_6;5;(NSP)
+og5_ab_7;;OG5_AB_7. Êtes-vous personnellement préoccupé(e) par. les inégalités entre les femmes et les hommes ?
+og5_ab_7;1;Beaucoup
+og5_ab_7;2;Assez
+og5_ab_7;3;Peu
+og5_ab_7;4;Pas du tout
+og5_ab_7;5;(NSP)
+og5_cd_1;;OG5_CD_1. Êtes-vous personnellement  préoccupé(e) par. les problèmes liés à l'environnement ?
+og5_cd_1;1;Beaucoup
+og5_cd_1;2;Assez
+og5_cd_1;3;Peu
+og5_cd_1;4;Pas du tout
+og5_cd_1;5;(NSP)
+og5_cd_4;;OG5_CD_4. Êtes-vous personnellement  préoccupé(e) par. l'avenir du système de retraite ?
+og5_cd_4;1;Beaucoup
+og5_cd_4;2;Assez
+og5_cd_4;3;Peu
+og5_cd_4;4;Pas du tout
+og5_cd_4;5;(NSP)
+og5_cd_7;;OG5_CD_7. Êtes-vous personnellement préoccupé(e) par. les inégalités entre les femmes et les hommes ?
+og5_cd_7;1;Beaucoup
+og5_cd_7;2;Assez
+og5_cd_7;3;Peu
+og5_cd_7;4;Pas du tout
+og5_cd_7;5;(NSP)
+og6;;OG6. Quand vous pensez à la société française telle qu'elle existe aujourd'hui, avec laquelle des opinions suivantes êtes-vous le plus d'accord ?
+og6;1;Il faut radicalement changer la société française
+og6;2;Il faut réformer la société française sur certains points tout en en conservant l'essentiel
+og6;3;Il faut conserver la société française en l'état
+og6;4;(NSP)
+og7;;OG7. Pensez-vous qu'il y a trop d'intervention de l'État en matière économique et sociale, juste ce qu'il faut ou pas assez ?
+og7;1;Trop
+og7;2;Ce qu'il faut
+og7;3;Pas assez
+og7;4;(NSP)
+og8_1;;OG8_1. « Il y a trop de travailleurs immigrés »
+og8_1;1;Tout à fait d'accord
+og8_1;2;Plutôt d'accord
+og8_1;3;Plutôt pas d'accord
+og8_1;4;Pas du tout d'accord
+og8_1;5;(NSP)
+og8_2;;OG8_2. «  Les filles ont autant l'esprit scientifique que les garçons »
+og8_2;1;Tout à fait d'accord
+og8_2;2;Plutôt d'accord
+og8_2;3;Plutôt pas d'accord
+og8_2;4;Pas du tout d'accord
+og8_2;5;(NSP)
+og8_3;;OG8_3. «  Les couples homosexuels peuvent assumer un rôle de parent comme les couples hétérosexuels »
+og8_3;1;Tout à fait d'accord
+og8_3;2;Plutôt d'accord
+og8_3;3;Plutôt pas d'accord
+og8_3;4;Pas du tout d'accord
+og8_3;5;(NSP)
+og8_4;;OG8_4. «  Les femmes font de meilleures infirmières que les hommes »
+og8_4;1;Tout à fait d'accord
+og8_4;2;Plutôt d'accord
+og8_4;3;Plutôt pas d'accord
+og8_4;4;Pas du tout d'accord
+og8_4;5;(NSP)
+og8_5;;OG8_5. «  Le mariage est le cadre idéal pour vivre une relation de couple »
+og8_5;1;Tout à fait d'accord
+og8_5;2;Plutôt d'accord
+og8_5;3;Plutôt pas d'accord
+og8_5;4;Pas du tout d'accord
+og8_5;5;(NSP)
+og8_6;;OG8_6. «  Aujourd'hui, on se marie, on se quitte, on forme un autre foyer et les enfants s'y adaptent très bien »
+og8_6;1;Tout à fait d'accord
+og8_6;2;Plutôt d'accord
+og8_6;3;Plutôt pas d'accord
+og8_6;4;Pas du tout d'accord
+og8_6;5;(NSP)
+og8_8;;OG8_8. «  Les mères savent mieux répondre aux besoins et attentes des enfants que les pères »
+og8_8;1;Tout à fait d'accord
+og8_8;2;Plutôt d'accord
+og8_8;3;Plutôt pas d'accord
+og8_8;4;Pas du tout d'accord
+og8_8;5;(NSP)
+og8_9;;OG8_9. «  Dans l'idéal, les femmes devraient rester à la maison pour élever leurs enfants »
+og8_9;1;Tout à fait d'accord
+og8_9;2;Plutôt d'accord
+og8_9;3;Plutôt pas d'accord
+og8_9;4;Pas du tout d'accord
+og8_9;5;(NSP)
+og8_11;;OG8_11. « Les hommes sont de meilleurs managers d'équipe au sein d'une entreprise que les femmes »
+og8_11;1;Tout à fait d'accord
+og8_11;2;Plutôt d'accord
+og8_11;3;Plutôt pas d'accord
+og8_11;4;Pas du tout d'accord
+og8_11;5;(NSP)
+og9;;OG9. Selon vous, qu'est-ce qui est le plus important pour réussir dans la vie à l'heure actuelle en France ?
+og9;1;Le mérite individuel
+og9;2;Le hasard des circonstances
+og9;3;Le milieu social de naissance
+og9;4;(Les trois à parts égales)
+og9;5;(NSP)
+og10;;OG10. Chez vous, les courses, le ménage et le linge sont-ils faits...
+og10;1;Majoritairement par vous-même
+og10;2;Majoritairement par votre conjoint.e
+og10;3;A part égale par vous et votre conjoint.e
+og10;4;(NSP)
+og11;;OG11. Concernant la répartition des tâches ménagères, pensez-vous, qu'en général aujourd'hui, dans les jeunes couples.
+og11;1;Les hommes en font moins que les femmes
+og11;2;Les hommes en font autant que les femmes
+og11;3;Les hommes en font plus que les femmes
+og11;4;(NSP)
+og12;;OG12. Toujours concernant la répartition des tâches ménagères, pensez-vous qu'aujourd'hui, par rapport à il y a 20 ans.
+og12;1;Les hommes en font moins qu'avant
+og12;2;Les hommes en font autant qu'avant
+og12;3;Les hommes en font plus qu'avant
+og12;4;(NSP)
+og13_1;;OG13_1. Avez-vous entendu parler. du revenu de solidarité active ou RSA ?
+og13_1;1;Oui
+og13_1;2;Non
+og13_1;3;(NSP)
+og13_2;;OG13_2. Avez-vous entendu parler. des allocations familiales ?
+og13_2;1;Oui
+og13_2;2;Non
+og13_2;3;(NSP)
+og13_3;;OG13_3. Avez-vous entendu parler. de l'allocation personnalisée d'autonomie ou APA ?
+og13_3;1;Oui
+og13_3;2;Non
+og13_3;3;(NSP)
+og13_4;;OG13_4. Avez-vous entendu parler. de la couverture maladie universelle complémentaire ou CMU-C ?
+og13_4;1;Oui
+og13_4;2;Non
+og13_4;3;(NSP)
+og13_5;;OG13_5. Avez-vous entendu parler. de l'allocation pour les adultes handicapés ou AAH ?
+og13_5;1;Oui
+og13_5;2;Non
+og13_5;3;(NSP)
+og13_6;;OG13_6. Avez-vous entendu parler. du minimum vieillesse ou allocation de solidarité aux personnes âgées (ASPA) ?
+og13_6;1;Oui
+og13_6;2;Non
+og13_6;3;(NSP)
+og13_7;;OG13_7. Avez-vous entendu parler. des aides au logement ?
+og13_7;1;Oui
+og13_7;2;Non
+og13_7;3;(NSP)
+og13_8;;OG13_8. Avez-vous entendu parler. de la prime pour l'emploi ou PPE  ?
+og13_8;1;Oui
+og13_8;2;Non
+og13_8;3;(NSP)
+og13_9;;OG13_9. Avez-vous entendu parler. de l'aide à l'acquisition d'une complémentaire santé, ACS, ou « chèque-santé » ?
+og13_9;1;Oui
+og13_9;2;Non
+og13_9;3;(NSP)
+og13_10;;OG13_10. Avez-vous entendu parler. de l'allocation versée à des personnes victimes d'isolement social, ou ALIS ?
+og13_10;1;Oui
+og13_10;2;Non
+og13_10;3;(NSP)
+og13_11;;OG13_11. Avez-vous entendu parler. de l'aide médicale d'État ou AME ?
+og13_11;1;Oui
+og13_11;2;Non
+og13_11;3;(NSP)
+og13bis_1;;OG13BIS_1. Savez-vous qui peut bénéficier. du revenu de solidarité active ou RSA ?
+og13bis_1;1;Oui, assez précisément
+og13bis_1;2;Oui, mais approximativement
+og13bis_1;3;Non
+og13bis_1;4;(NSP)
+og13bis_2;;OG13BIS_2. Savez-vous qui peut bénéficier . des allocations familiales ?
+og13bis_2;1;Oui, assez précisément
+og13bis_2;2;Oui, mais approximativement
+og13bis_2;3;Non
+og13bis_2;4;(NSP)
+og13bis_3;;OG13BIS_3. Savez-vous qui peut bénéficier. de l'allocation personnalisée d'autonomie ou APA ?
+og13bis_3;1;Oui, assez précisément
+og13bis_3;2;Oui, mais approximativement
+og13bis_3;3;Non
+og13bis_3;4;(NSP)
+og13bis_4;;OG13BIS_4. Savez-vous qui peut bénéficier. de la couverture maladie universelle complémentaire ou CMU-C ?
+og13bis_4;1;Oui, assez précisément
+og13bis_4;2;Oui, mais approximativement
+og13bis_4;3;Non
+og13bis_4;4;(NSP)
+og13bis_5;;OG13BIS_5. Savez-vous qui peut bénéficier . de l'allocation pour les adultes handicapés ou AAH ?
+og13bis_5;1;Oui, assez précisément
+og13bis_5;2;Oui, mais approximativement
+og13bis_5;3;Non
+og13bis_5;4;(NSP)
+og13bis_6;;OG13BIS_6. Savez-vous qui peut bénéficier. du minimum vieillesse ou allocation de solidarité aux personnes âgées (ASPA) ?
+og13bis_6;1;Oui, assez précisément
+og13bis_6;2;Oui, mais approximativement
+og13bis_6;3;Non
+og13bis_6;4;(NSP)
+og13bis_7;;OG13BIS_7. Savez-vous qui peut bénéficier. des aides au logement ?
+og13bis_7;1;Oui, assez précisément
+og13bis_7;2;Oui, mais approximativement
+og13bis_7;3;Non
+og13bis_7;4;(NSP)
+og13bis_8;;OG13BIS_8. Savez-vous qui peut bénéficier . de la prime pour l'emploi ou PPE  ?
+og13bis_8;1;Oui, assez précisément
+og13bis_8;2;Oui, mais approximativement
+og13bis_8;3;Non
+og13bis_8;4;(NSP)
+og13bis_9;;OG13BIS_9. Savez-vous qui peut bénéficier. de l'aide au paiement d'une complémentaire santé, ACS, ou « chèque-santé » ?
+og13bis_9;1;Oui, assez précisément
+og13bis_9;2;Oui, mais approximativement
+og13bis_9;3;Non
+og13bis_9;4;(NSP)
+og13bis_10;;OG13BIS_10. Savez-vous qui peut bénéficier. de l'allocation versée à des personnes victimes d'isolement social, ou ALIS ?
+og13bis_10;1;Oui, assez précisément
+og13bis_10;2;Oui, mais approximativement
+og13bis_10;3;Non
+og13bis_10;4;(NSP)
+og13bis_11;;OG13BIS_11. Savez-vous qui peut bénéficier . de l'aide médicale d'État ou AME ?
+og13bis_11;1;Oui, assez précisément
+og13bis_11;2;Oui, mais approximativement
+og13bis_11;3;Non
+og13bis_11;4;(NSP)
+og13ter_1;;OG13TER_1. Avez-vous entendu parler et savez-vous qui peut bénéficier. du revenu de solidarité active ou RSA ?
+og13ter_1;1;Non, je n'en ai pas entendu parler
+og13ter_1;2;Oui, j'en ai entendu parler mais je ne sais pas qui peut en bénéficier
+og13ter_1;3;Oui, j'en ai entendu parler et je sais qui peut en bénéficier
+og13ter_1;4;(NSP)
+og13ter_2;;OG13TER_2. Avez-vous entendu parler et savez-vous qui peut bénéficier. des allocations familiales ?
+og13ter_2;1;Non, je n'en ai pas entendu parler
+og13ter_2;2;Oui, j'en ai entendu parler mais je ne sais pas qui peut en bénéficier
+og13ter_2;3;Oui, j'en ai entendu parler et je sais qui peut en bénéficier
+og13ter_2;4;(NSP)
+og13ter_3;;OG13TER_3. Avez-vous entendu parler et savez-vous qui peut bénéficier. de l'allocation personnalisée d'autonomie ou APA ?
+og13ter_3;1;Non, je n'en ai pas entendu parler
+og13ter_3;2;Oui, j'en ai entendu parler mais je ne sais pas qui peut en bénéficier
+og13ter_3;3;Oui, j'en ai entendu parler et je sais qui peut en bénéficier
+og13ter_3;4;(NSP)
+og13ter_4;;OG13TER_4. Avez-vous entendu parler et savez-vous qui peut bénéficier.  de la couverture maladie universelle complémentaire ou CMU-C ?
+og13ter_4;1;Non, je n'en ai pas entendu parler
+og13ter_4;2;Oui, j'en ai entendu parler mais je ne sais pas qui peut en bénéficier
+og13ter_4;3;Oui, j'en ai entendu parler et je sais qui peut en bénéficier
+og13ter_4;4;(NSP)
+og13ter_5;;OG13TER_5. Avez-vous entendu parler et savez-vous qui peut bénéficier. de l'allocation pour les adultes handicapés ou AAH ?
+og13ter_5;1;Non, je n'en ai pas entendu parler
+og13ter_5;2;Oui, j'en ai entendu parler mais je ne sais pas qui peut en bénéficier
+og13ter_5;3;Oui, j'en ai entendu parler et je sais qui peut en bénéficier
+og13ter_5;4;(NSP)
+og13ter_6;;OG13TER_6. Avez-vous entendu parler et savez-vous qui peut bénéficier. du minimum vieillesse ou allocation de solidarité aux personnes âgées (ASPA) ?
+og13ter_6;1;Non, je n'en ai pas entendu parler
+og13ter_6;2;Oui, j'en ai entendu parler mais je ne sais pas qui peut en bénéficier
+og13ter_6;3;Oui, j'en ai entendu parler et je sais qui peut en bénéficier
+og13ter_6;4;(NSP)
+og13ter_7;;OG13TER_7. Avez-vous entendu parler et savez-vous qui peut bénéficier. des aides au logement ?
+og13ter_7;1;Non, je n'en ai pas entendu parler
+og13ter_7;2;Oui, j'en ai entendu parler mais je ne sais pas qui peut en bénéficier
+og13ter_7;3;Oui, j'en ai entendu parler et je sais qui peut en bénéficier
+og13ter_7;4;(NSP)
+og13ter_8;;OG13TER_8. Avez-vous entendu parler et savez-vous qui peut bénéficier. de la prime pour l'emploi ou PPE  ?
+og13ter_8;1;Non, je n'en ai pas entendu parler
+og13ter_8;2;Oui, j'en ai entendu parler mais je ne sais pas qui peut en bénéficier
+og13ter_8;3;Oui, j'en ai entendu parler et je sais qui peut en bénéficier
+og13ter_8;4;(NSP)
+og13ter_9;;OG13TER_9. Avez-vous entendu parler et savez-vous qui peut bénéficier. de l'aide au paiement d'une complémentaire santé, ACS, ou « chèque-santé » ?
+og13ter_9;1;Non, je n'en ai pas entendu parler
+og13ter_9;2;Oui, j'en ai entendu parler mais je ne sais pas qui peut en bénéficier
+og13ter_9;3;Oui, j'en ai entendu parler et je sais qui peut en bénéficier
+og13ter_9;4;(NSP)
+og13ter_10;;OG13TER_10. Avez-vous entendu parler et savez-vous qui peut bénéficier. de l'allocation versée à des personnes victimes d'isolement social, ou ALIS ?
+og13ter_10;1;Non, je n'en ai pas entendu parler
+og13ter_10;2;Oui, j'en ai entendu parler mais je ne sais pas qui peut en bénéficier
+og13ter_10;3;Oui, j'en ai entendu parler et je sais qui peut en bénéficier
+og13ter_10;4;(NSP)
+og13ter_11;;OG13TER_11. Avez-vous entendu parler et savez-vous qui peut bénéficier. de l'aide médicale d'État ou AME ?
+og13ter_11;1;Non, je n'en ai pas entendu parler
+og13ter_11;2;Oui, j'en ai entendu parler mais je ne sais pas qui peut en bénéficier
+og13ter_11;3;Oui, j'en ai entendu parler et je sais qui peut en bénéficier
+og13ter_11;4;(NSP)
+in1;;IN1. La société française aujourd'hui, vous paraît-elle plutôt juste ou plutôt injuste ?
+in1;1;Plutôt juste
+in1;2;Plutôt injuste
+in1;3;(NSP)
+in2;;IN2. Globalement, depuis 5 ans, diriez-vous que les inégalités en France.
+in2;1;Ont plutôt augmenté
+in2;2;Ont plutôt diminué
+in2;3;(Sont restées stables)
+in2;4;(NSP)
+in3;;IN3. À l'avenir, pensez-vous que les inégalités en France.
+in3;1;Vont plutôt augmenter
+in3;2;Vont plutôt diminuer
+in3;3;(Resteront stables)
+in3;4;(NSP)
+in4_ab;;IN4_AB. Quel type d'inégalité vous semble la plus répandue aujourd'hui ?
+in4_ab;1;Les inégalités de revenus
+in4_ab;2;Les inégalités de logement
+in4_ab;3;Les inégalités liées à l'héritage familial
+in4_ab;4;Les inégalités par rapport au type d'emploi
+in4_ab;5;Les inégalités dans les études scolaires
+in4_ab;6;Les inégalités d'accès aux soins
+in4_ab;7;Les inégalités par rapport au fait d'avoir un emploi
+in4_ab;8;Les inégalités liées à l'origine ethnique
+in4_ab;9;Les inégalités entre les femmes et les hommes
+in4_ab;10;(NSP)
+in4_cd;;IN4_CD. Quel type d'inégalité vous semble la plus répandue aujourd'hui ?
+in4_cd;1;Les inégalités de revenus
+in4_cd;2;Les inégalités de logement
+in4_cd;3;Les inégalités liées à l'héritage familial
+in4_cd;4;Les inégalités par rapport au type d'emploi
+in4_cd;5;Les inégalités dans les études scolaires
+in4_cd;6;Les inégalités d'accès aux soins
+in4_cd;7;Les inégalités par rapport au fait d'avoir un emploi
+in4_cd;8;Les inégalités liées à l'origine ethnique
+in4_cd;9;Les inégalités entre les femmes et les hommes
+in4_cd;10;(NSP)
+in5_ab;;IN5_AB. Quel type d'inégalité vous semble la moins acceptable ?
+in5_ab;1;Les inégalités de revenus
+in5_ab;2;Les inégalités de logement
+in5_ab;3;Les inégalités liées à l'héritage familial
+in5_ab;4;Les inégalités par rapport au type d'emploi
+in5_ab;5;Les inégalités dans les études scolaires
+in5_ab;6;Les inégalités d'accès aux soins
+in5_ab;7;Les inégalités par rapport au fait d'avoir un emploi
+in5_ab;8;Les inégalités liées à l'origine ethnique
+in5_ab;9;Les inégalités entre les femmes et les hommes
+in5_ab;10;(NSP)
+in5_cd;;IN5_CD. Quel type d'inégalité vous semble la moins acceptable ?
+in5_cd;1;Les inégalités de revenus
+in5_cd;2;Les inégalités de logement
+in5_cd;3;Les inégalités liées à l'héritage familial
+in5_cd;4;Les inégalités par rapport au type d'emploi
+in5_cd;5;Les inégalités dans les études scolaires
+in5_cd;6;Les inégalités d'accès aux soins
+in5_cd;7;Les inégalités par rapport au fait d'avoir un emploi
+in5_cd;8;Les inégalités liées à l'origine ethnique
+in5_cd;9;Les inégalités entre les femmes et les hommes
+in5_cd;10;(NSP)
+in6;;IN6. Avez-vous le sentiment que les inégalités entre les hommes et les femmes en France sont aujourd'hui...
+in6;1;Très importantes
+in6;2;Assez importantes
+in6;3;Assez faibles
+in6;4;Très faibles
+in6;5;(NSP)
+in7;;IN7. Depuis 10 ans, diriez-vous que les inégalités entre les hommes et les femmes ont plutôt augmenté ou plutôt diminué en France ?
+in7;1;Plutôt augmenté
+in7;2;Plutôt diminué
+in7;3;N'ont pas évolué
+in7;4;(NSP)
+in8;;IN8. Où vous placeriez-vous aujourd'hui sur cette échelle de revenus, en comparant les revenus de votre foyer avec ceux de tous les autres foyers ?
+in8;1;10 Foyers aux revenus les plus élevés
+in8;2;9
+in8;3;8
+in8;4;7
+in8;5;6
+in8;6;5
+in8;7;4
+in8;8;3
+in8;9;2
+in8;10;1 Foyers aux revenus les plus bas
+in8;11;(NSP)
+in9;;IN9. Où placeriez-vous la famille dans laquelle vous avez grandi ?
+in9;1;10 Foyers aux revenus les plus élevés
+in9;2;9
+in9;3;8
+in9;4;7
+in9;5;6
+in9;6;5
+in9;7;4
+in9;8;3
+in9;9;2
+in9;10;1 Foyers aux revenus les plus bas
+in9;11;(NSP)
+me2;;ME2. Compte tenu de vos ressources, diriez-vous que votre ménage a des difficultés pour boucler ses fins de mois ?
+me2;1;Souvent
+me2;2;De temps en temps
+me2;3;Rarement
+me2;4;Jamais
+me2;5;(NSP)
+in10_1;;IN10_1. À votre avis, que gagne (rémunération nette mensuelle) en moyenne. un ouvrier non qualifié en usine ?
+in10_2;;IN10_2. À votre avis, que devrait gagner (rémunération nette mensuelle) en moyenne. un ouvrier non qualifié en usine ?
+in10_3;;IN10_3. À votre avis, que gagne (rémunération nette mensuelle) en moyenne. un médecin généraliste ?
+in10_4;;IN10_4. À votre avis, que devrait gagner (rémunération nette mensuelle) en moyenne. un médecin généraliste ?
+in10_5;;IN10_5. À votre avis, que gagne (rémunération nette mensuelle) en moyenne. le PDG d'une grande société française ?
+in10_6;;IN10_6. À votre avis, que devrait gagner (rémunération nette mensuelle) en moyenne. le PDG d'une grande société française ?
+in10_7;;IN10_7. À votre avis, que gagne (rémunération nette mensuelle) en moyenne. un enseignant en école primaire ?
+in10_8;;IN10_8. À votre avis, que devrait gagner (rémunération nette mensuelle) en moyenne. un enseignant en école primaire ?
+in11_1;;IN11_1. Que gagnent en moyenne les gens qui ont la même profession que vous ?
+in11_2;;IN11_2. Que devraient gagner en moyenne les gens qui ont la même profession que vous ?
+in12;;IN12. À partir de quel revenu mensuel diriez-vous d'une personne vivant seule qu'elle est riche ?
+in13;;IN13. À partir de quel montant de patrimoine (financier et immobilier) diriez-vous d'une personne vivant seule qu'elle est riche ?
+in14_1;;IN14_1. Pensez-vous qu'actuellement il faut... augmenter les impôts payés par les personnes dont le revenu est supérieur à 2500 euros par mois ?
+in14_1;1;Oui
+in14_1;2;Non
+in14_1;3;(NSP)
+in14_2;;IN14_2. Pensez-vous qu'actuellement il faut... interdire les rémunérations dépassant 10 000 euros par mois ?
+in14_2;1;Oui
+in14_2;2;Non
+in14_2;3;(NSP)
+in14_3;;IN14_3. Pensez-vous qu'actuellement il faut. réglementer les écarts de salaires dans les entreprises, pour que le salaire le plus haut ne dépasse pas dix fois le montant du salaire le plus bas ?
+in14_3;1;Oui
+in14_3;2;Non
+in14_3;3;(NSP)
+pe1;;PE1. Selon vous, depuis 5 ans, la pauvreté et l'exclusion en France...
+pe1;1;Ont diminué
+pe1;2;Ont augmenté
+pe1;3;(Sont restées stables)
+pe1;4;(NSP)
+pe2;;PE2. À l'avenir, pensez-vous que la pauvreté et l'exclusion en France.
+pe2;1;Vont plutôt diminuer
+pe2;2;Vont plutôt augmenter
+pe2;3;(Resteront stables)
+pe2;4;(NSP)
+pe3;;PE3. Vous personnellement, pensez-vous qu'il y a un risque que vous deveniez pauvre dans les cinq prochaines années ?
+pe3;1;Oui, plutôt
+pe3;2;Non, plutôt pas
+pe3;3;Je me considère déjà comme pauvre
+pe3;4;(NSP)
+pe5_1;;PE5_1. Selon vous, les personnes élevant seules leur(s) enfant(s) ont-elles un risque de pauvreté plus ou moins important que la moyenne des Français ?
+pe5_1;1;Plus
+pe5_1;2;Autant
+pe5_1;3;Moins
+pe5_1;4;(NSP)
+pe5_2;;PE5_2. Selon vous, les familles nombreuses (trois enfants et plus) ont-elles un risque de pauvreté plus ou moins important que la moyenne des Français ?
+pe5_2;1;Plus
+pe5_2;2;Autant
+pe5_2;3;Moins
+pe5_2;4;(NSP)
+pe5_3;;PE5_3. Selon vous, les familles avec un ou deux enfants ont-elles un risque de pauvreté plus ou moins important que la moyenne des Français ?
+pe5_3;1;Plus
+pe5_3;2;Autant
+pe5_3;3;Moins
+pe5_3;4;(NSP)
+pe5_4;;PE5_4. Selon vous, les couples sans enfant ont-ils un risque de pauvreté plus ou moins important que la moyenne des Français ?
+pe5_4;1;Plus
+pe5_4;2;Autant
+pe5_4;3;Moins
+pe5_4;4;(NSP)
+pe5_5;;PE5_5. Selon vous, les célibataires (sans enfant) ont-ils un risque de pauvreté plus ou moins important que la moyenne des Français ?
+pe5_5;1;Plus
+pe5_5;2;Autant
+pe5_5;3;Moins
+pe5_5;4;(NSP)
+pe5_6;;PE5_6. Selon vous, les familles immigrées ont-elles un risque de pauvreté plus ou moins important que la moyenne des Français ?
+pe5_6;1;Plus
+pe5_6;2;Autant
+pe5_6;3;Moins
+pe5_6;4;(NSP)
+pe4_1;;PE4_1. Selon vous, les 18-29 ans ont-ils un risque de pauvreté plus ou moins important que la moyenne des Français ?
+pe4_1;1;Plus
+pe4_1;2;Autant
+pe4_1;3;Moins
+pe4_1;4;(NSP)
+pe4_2;;PE4_2. Selon vous, les 30-59 ans ont-ils un risque de pauvreté plus ou moins important que la moyenne des Français ?
+pe4_2;1;Plus
+pe4_2;2;Autant
+pe4_2;3;Moins
+pe4_2;4;(NSP)
+pe4_3;;PE4_3. Selon vous, les 60-74 ans ont-ils un risque de pauvreté plus ou moins important que la moyenne des Français ?
+pe4_3;1;Plus
+pe4_3;2;Autant
+pe4_3;3;Moins
+pe4_3;4;(NSP)
+pe4_4;;PE4_4. Selon vous, les 75 ans et plus ont-ils un risque de pauvreté plus ou moins important que la moyenne des Français ?
+pe4_4;1;Plus
+pe4_4;2;Autant
+pe4_4;3;Moins
+pe4_4;4;(NSP)
+pe6_1;;PE6_1. Si des personnes se trouvent en situation d'exclusion ou de pauvreté, c'est parce qu'. elles ne veulent pas travailler ?
+pe6_1;1;Tout à fait d'accord
+pe6_1;2;Plutôt d'accord
+pe6_1;3;Plutôt pas d'accord
+pe6_1;4;Pas du tout d'accord
+pe6_1;5;(NSP)
+pe6_2;;PE6_2. Si des personnes se trouvent en situation d'exclusion ou de pauvreté, c'est parce qu'. elles manquent de qualifications, de diplômes, pour trouver ou retrouver un emploi ?
+pe6_2;1;Tout à fait d'accord
+pe6_2;2;Plutôt d'accord
+pe6_2;3;Plutôt pas d'accord
+pe6_2;4;Pas du tout d'accord
+pe6_2;5;(NSP)
+pe6_3;;PE6_3. Si des personnes se trouvent en situation d'exclusion ou de pauvreté, c'est parce qu'. elles n'ont pas eu de chance ?
+pe6_3;1;Tout à fait d'accord
+pe6_3;2;Plutôt d'accord
+pe6_3;3;Plutôt pas d'accord
+pe6_3;4;Pas du tout d'accord
+pe6_3;5;(NSP)
+pe6_4;;PE6_4. Si des personnes se trouvent en situation d'exclusion ou de pauvreté, c'est parce qu'. il n'y a plus assez de travail pour tout le monde ?
+pe6_4;1;Tout à fait d'accord
+pe6_4;2;Plutôt d'accord
+pe6_4;3;Plutôt pas d'accord
+pe6_4;4;Pas du tout d'accord
+pe6_4;5;(NSP)
+pe7;;PE7. Selon vous pour vivre, quel est le montant dont doit disposer au minimum un individu par mois (en euros) ?
+pe16;;PE16. Selon vous, pour vivre, quel est le montant dont doit disposer au minimum un foyer comme le vôtre, par mois (en euros) ?
+pe8;;PE8. D'après ce que vous en savez, quel est le montant du RSA pour une personne seule qui ne travaille pas (par mois en euros) ?
+pe9;;PE9. Avec laquelle de ces opinions sur le RSA êtes-vous le plus d'accord ?
+pe9;1;Il faut augmenter le RSA
+pe9;2;Il faut diminuer le RSA
+pe9;3;(Il faut laisser le RSA à ce niveau)
+pe9;4;(NSP)
+pe10;;PE10. Dans ce cas, seriez-vous prêt à accepter une hausse de vos impôts ou de vos cotisations pour financer une augmentation du RSA ?
+pe10;1;Oui
+pe10;2;Non
+pe10;3;(NSP)
+pe17;;PE17. Sauf exception, on ne peut avoir le RSA qu'à partir de 25 ans. Êtes-vous favorable à son ouverture dès 18 ans ?
+pe17;1;Oui
+pe17;2;Non
+pe17;3;(NSP)
+pe11;;PE11. D'après ce que vous en savez, quel est le montant du SMIC net (par mois en euros) ?
+pe12;;PE12. Avec laquelle de ces opinions sur le SMIC êtes-vous le plus d'accord ?
+pe12;1;Il faut augmenter le SMIC
+pe12;2;Il faut diminuer le SMIC
+pe12;3;Il faut laisser le SMIC à ce niveau
+pe12;4;(NSP)
+pe13_ab;;PE13_AB. Selon vous, les allocations chômage doivent-elles être un droit limité dans le temps, que l'on trouve ou non un emploi ?
+pe13_ab;1;Oui
+pe13_ab;2;Non
+pe13_ab;3;(NSP)
+pe13_cd;;PE13_CD. Selon vous, les allocations chômage doivent-elles être un droit limité dans le temps ?
+pe13_cd;1;Oui
+pe13_cd;2;Non
+pe13_cd;3;(NSP)
+pe14_1;;PE14_1. Trouveriez-vous normal qu'on demande aux personnes qui touchent des allocations chômage. d'accepter les emplois correspondant à leurs qualifications et pas trop éloignés de leur domicile ?
+pe14_1;1;Oui
+pe14_1;2;Non
+pe14_1;3;(NSP)
+pe14_2;;PE14_2. Trouveriez-vous normal qu'on demande aux personnes qui touchent des allocations chômage. d'accepter les emplois quels que soient la qualification et le lieu ?
+pe14_2;1;Oui
+pe14_2;2;Non
+pe14_2;3;(NSP)
+pe14_3;;PE14_3. Trouveriez-vous normal qu'on demande aux personnes qui touchent des allocations chômage. d'accepter d'effectuer un stage de formation ?
+pe14_3;1;Oui
+pe14_3;2;Non
+pe14_3;3;(NSP)
+pe14_4;;PE14_4. Trouveriez-vous normal qu'on demande aux personnes qui touchent des allocations chômage. de participer à une tâche d'intérêt général ?
+pe14_4;1;Oui
+pe14_4;2;Non
+pe14_4;3;(NSP)
+pe15;;PE15. Actuellement, compte tenu de votre situation globale, du montant des aides publiques et de vos impôts, vous considérez que.
+pe15;1;Vous êtes suffisamment aidé.e par les pouvoirs publics, ou n'avez pas besoin d'être aidé.e
+pe15;2;Vous auriez besoin d'être aidé.e davantage par les pouvoir publics
+pe15;3;(Non concerné.e)
+pe15;4;(NSP)
+me3;;
+me3;1;Que vous y feriez face sans trop de problème
+me3;2;Qu'il vous serait assez difficile d'y faire face
+me3;3;Qu'il vous serait très difficile d'y faire face
+me3;4;(NSP)
+lo1;;LO1. Concernant votre résidence principale, êtes-vous...
+lo1;1;Propriétaire
+lo1;2;Locataire d'un logement social (y compris HLM)
+lo1;3;Locataire hors logement social, c'est-à-dire dans le parc privé
+lo1;4;Logé gratuitement
+lo1;5;(NSP)
+lo1;6;Locataire (item pour historique)
+lo2;;LO2. Avez-vous un remboursement de prêt en cours pour votre résidence principale ?
+lo2;1;Oui
+lo2;2;Non
+lo2;3;(NSP)
+re1;;RE1. À l'heure actuelle, comment évaluez-vous le niveau de vie moyen des retraités par rapport à celui de l'ensemble de la population ?
+re1;1;Bien meilleur
+re1;2;Plutôt meilleur
+re1;3;A peu près identique
+re1;4;Plutôt moins bon
+re1;5;Bien moins bon
+re1;6;(NSP)
+re2;;RE2. Lorsque vous serez à la retraite, comment pensez-vous que votre niveau de vie sera par rapport à celui de l'ensemble de la population ?
+re2;1;Bien meilleur
+re2;2;Plutôt meilleur
+re2;3;A peu près identique
+re2;4;Plutôt moins bon
+re2;5;Bien moins bon
+re2;6;(NSP)
+re3;;RE3. Compte tenu des problèmes de financement des systèmes de retraite, quelle baisse de revenu vous semble acceptable au moment du départ en retraite ?
+re3;1;Aucune baisse de revenu
+re3;2;-10%
+re3;3;-20%
+re3;4;-30%
+re3;5;- 40 % ou plus
+re3;6;(NSP)
+re4;;RE4. Dans l'idéal, à quel âge souhaiteriez-vous ou auriez-vous aimé prendre votre retraite ?
+re5;;RE5. À quel âge, d'après vous, pourrez-vous prendre votre retraite ?
+re16;;RE16. À quel âge avez-vous pris votre retraite ?
+re6;;RE6. À partir de quel âge estimez-vous qu'il n'est plus acceptable de faire travailler les gens ?
+re9bis;;RE9BIS. Pensez-vous que pour préserver le système de retraite par répartition tel qu'il existe.
+re9bis;1;Les réformes déjà effectuées sont suffisantes
+re9bis;2;Des réformes supplémentaires sont nécessaires
+re9bis;3;(NSP)
+re9;;RE9. Parmi les solutions suivantes pour préserver le système de retraite par répartition tel qu'il existe, laquelle a votre préférence ?
+re9;1;Il faudrait allonger la durée de cotisation
+re9;2;Il faudrait reculer l'âge de la retraite
+re9;3;Il faudrait augmenter les cotisations pesant sur les salariés
+re9;4;Il faudrait diminuer les pensions versées aux retraités
+re9;5;(Il faudrait un autre type de réforme)
+re9;6;(NSP)
+re10;;RE10. À l'avenir, que faudrait-il faire en priorité en matière de retraite ?
+re10;1;Il faut garder le système actuel fondé sur la répartition, en le réformant
+re10;2;Il faut ajouter au système actuel un complément d'assurance ou d'épargne individuelle
+re10;3;(Aucune de ces 2 propositions)
+re10;4;(NSP)
+re10;5;(NSP / Aucune de ces 2 propositions (avant 2014))
+fa1;;FA1. Selon vous, quel devrait être l'objectif prioritaire de la politique familiale ?
+fa1;1;Soutenir la natalité
+fa1;2;Rapprocher les niveaux de vie des familles avec enfants et des personnes sans enfant
+fa1;3;Permettre aux familles de mieux se loger
+fa1;4;Permettre une meilleure conciliation entre vie familiale et vie professionnelle
+fa1;5;Rendre les jeunes de plus de 20 ans plus autonomes à l'égard de leur famille
+fa1;6;(NSP)
+fa2;;FA2. Selon vous, quelles sont les familles qu'il faut aider en priorité ?
+fa2;1;Les familles nombreuses (c'est-à-dire celles qui sont composées de trois enfants et plus)
+fa2;2;Les familles dont les deux parents travaillent et qui ont de jeunes enfants
+fa2;3;Les familles qui ont des enfants de plus de 20 ans encore à charge
+fa2;4;Les familles monoparentales, c'est-à-dire les pères ou les mères élevant seuls leurs enfants
+fa2;5;Les familles aux revenus les plus modestes
+fa2;6;Les jeunes parents dès le premier enfant
+fa2;7;(Il faut aider toutes les familles indifféremment)
+fa2;8;(NSP)
+fa3_ab;;FA3. En dehors des parents, quel vous semble être le mode de garde ou d'accueil le plus bénéfique pour un enfant en bas âge ?
+fa3_ab;1;La crèche et autres accueils collectifs
+fa3_ab;2;Les grands-parents
+fa3_ab;3;Une personne rémunérée à son domicile (assistant(e) maternel(le))
+fa3_ab;4;Une personne rémunérée au domicile de l'enfant
+fa3_ab;5;(NSP)
+fa3_cd;;FA3_CD. En dehors des parents, quel mode de garde ou d'accueil vous semble le plus bénéfique pour un enfant en bas âge ?
+fa3_cd;1;La crèche et autres accueils collectifs
+fa3_cd;2;Les grands-parents
+fa3_cd;3;Une personne rémunérée à son domicile (assistant(e) maternel(le))
+fa3_cd;4;Une personne rémunérée au domicile de l'enfant
+fa3_cd;5;(NSP)
+fa4;;FA4. Quel est le mode de garde ou d'accueil que vous avez principalement utilisé pour vos enfants ?
+fa4;1;Vous-même ou votre conjoint(e)
+fa4;2;La crèche et autres accueils collectifs
+fa4;3;Les grands-parents
+fa4;4;Une personne rémunérée à son domicile (assistant(e) maternel(le))
+fa4;5;Une personne rémunérée au domicile de l'enfant
+fa4;6;Autre
+fa4;7;(NSP / Sans objet)
+fa5;;FA5. En ce qui concerne la garde des enfants, avec laquelle de ces deux propositions suivantes êtes-vous le plus d'accord ?
+fa5;1;Les femmes doivent pouvoir bénéficier d'aménagement du temps de travail plus que les hommes
+fa5;2;Les hommes doivent bénéficier d'aménagement du temps de travail au même titre que les femmes
+fa5;3;(Les hommes doivent pouvoir bénéficier d'aménagement du temps de travail plus que les femmes)
+fa5;4;(NSP)
+fa17;;FA17. Lorsqu'un des parents s'arrête de travailler ou réduit son temps de travail pour s'occuper de ses enfants, pensez-vous.
+fa17;1;Qu'il ne doit pas percevoir de prestation
+fa17;2;Qu'il doit percevoir une allocation fixe
+fa17;3;Qu'il doit percevoir une allocation qui dépende de son salaire antérieur
+fa17;4;(NSP)
+fa6;;FA6. Aujourd'hui le congé de maternité est de 16 semaines au premier et deuxième enfant et de 26 semaines à partir du troisième, pensez-vous que ces durées sont .
+fa6;1;Trop courtes
+fa6;2;Suffisantes
+fa6;3;Trop longues
+fa6;4;(NSP)
+fa7;;FA7. En complément du congé de 3 jours au moment de la naissance, le congé paternité permet au père d'un enfant de bénéficier de 11 jours de congé. Selon vous, faut-il...
+fa7;1;Allonger sa durée
+fa7;2;Maintenir sa durée actuelle
+fa7;3;Réduire sa durée
+fa7;4;(NSP)
+fa8;;FA8. Faut-il rendre le congé paternité obligatoire ?
+fa8;1;Oui, car ce congé est nécessaire pour tous les pères
+fa8;2;Non car il faut laisser la liberté aux pères de choisir s'ils veulent le prendre
+fa8;3;(NSP)
+fa9_1;;FA9_1. Souhaiteriez-vous ou auriez-vous souhaité recevoir de l'aide dans l'accompagnement de votre rôle de parent... dans vos relations avec l'école ?
+fa9_1;1;Non
+fa9_1;2;Oui, principalement sous forme de groupes de parole permettant aux parents d'échanger entre eux
+fa9_1;3;Oui, principalement sous forme d'entretiens individuels avec des professionnels
+fa9_1;4;Oui, principalement sous forme d'une mise à disposition d'informations (site internet, brochure...)
+fa9_1;5;(NSP)
+fa9_2;;FA9_2. Souhaiteriez-vous ou auriez-vous souhaité recevoir de l'aide dans l'accompagnement de votre rôle de parent. pour gérer l'autorité, ce qu'il faut permettre ou interdire ?
+fa9_2;1;Non
+fa9_2;2;Oui, principalement sous forme de groupes de parole permettant aux parents d'échanger entre eux
+fa9_2;3;Oui, principalement sous forme d'entretiens individuels avec des professionnels
+fa9_2;4;Oui, principalement sous forme d'une mise à disposition d'informations (site internet, brochure...)
+fa9_2;5;(NSP)
+fa9_3;;FA9_3. Souhaiteriez-vous ou auriez-vous souhaité recevoir de l'aide dans l'accompagnement de votre rôle de parent. sur les questions de santé ?
+fa9_3;1;Non
+fa9_3;2;Oui, principalement sous forme de groupes de parole permettant aux parents d'échanger entre eux
+fa9_3;3;Oui, principalement sous forme d'entretiens individuels avec des professionnels
+fa9_3;4;Oui, principalement sous forme d'une mise à disposition d'informations (site internet, brochure...)
+fa9_3;5;(NSP)
+fa9_4;;FA9_4. Souhaiteriez-vous ou auriez-vous souhaité recevoir de l'aide dans l'accompagnement de votre rôle de parent... en cas de conflits familiaux et/ou de rupture ?
+fa9_4;1;Non
+fa9_4;2;Oui, principalement sous forme de groupes de parole permettant aux parents d'échanger entre eux
+fa9_4;3;Oui, principalement sous forme d'entretiens individuels avec des professionnels
+fa9_4;4;Oui, principalement sous forme d'une mise à disposition d'informations (site internet, brochure...)
+fa9_4;5;(NSP)
+fa9_5;;FA9_5. Souhaiteriez-vous ou auriez-vous souhaité recevoir de l'aide dans l'accompagnement de votre rôle de parent... sur l'éveil et le développement du jeune enfant ?
+fa9_5;1;Non
+fa9_5;2;Oui, principalement sous forme de groupes de parole permettant aux parents d'échanger entre eux
+fa9_5;3;Oui, principalement sous forme d'entretiens individuels avec des professionnels
+fa9_5;4;Oui, principalement sous forme d'une mise à disposition d'informations (site internet, brochure...)
+fa9_5;5;(NSP)
+fa10;;FA10. En cas de séparation des parents, quelle solution vous semble la plus satisfaisante pour la garde des enfants ?
+fa10;1;Qu'ils soient gardés par la mère
+fa10;2;Qu'ils soient gardés par le père
+fa10;3;Qu'ils soient gardés par l'un des deux parents, peu importe lequel
+fa10;4;Que la garde soit partagée entre les deux parents
+fa10;5;(NSP)
+fa18;;FA18. Après un divorce ou une séparation, lorsqu'il a été décidé qu'un des parents doit verser une pension alimentaire pour les enfants à l'autre parent. Pensez-vous.
+fa18;1;Que l'État doit intervenir pour assurer que la pension alimentaire est correctement payée
+fa18;2;Que c'est une affaire privée entre ex-conjoints, dans laquelle l'État ne doit pas intervenir
+fa18;3;(NSP)
+fa11;;FA11. Actuellement, les allocations familiales sont versées aux familles d'au moins deux enfants. Avec laquelle de ces propositions êtes-vous le plus d'accord ?
+fa11;1;Il faudrait accorder des allocations familiales dès le premier enfant, quitte à les diminuer à partir de 2 enfants
+fa11;2;Il faut maintenir le système actuel qui accorde des allocations familiales à partir du deuxième enfant
+fa11;3;Il ne faut plus donner d'allocations familiales
+fa11;4;(NSP)
+fa12;;FA12. Actuellement, le montant des allocations familiales augmente avec le rang de l'enfant. Avec laquelle de ces propositions êtes-vous le plus d'accord ?
+fa12;1;Il faudrait que l'on touche la même somme d'argent par enfant, qu'il s'agisse du deuxième ou du troisième enfant
+fa12;2;Il faut maintenir le système actuel qui apporte une aide plus importante aux familles nombreuses
+fa12;3;Il ne faut plus donner d'allocations familiales
+fa12;4;(NSP)
+fa13;;FA13. Actuellement, le montant des allocations familiales dépend des ressources des familles. Selon-vous, il faut.
+fa13;1;
+fa13;2;
+fa13;3;Donner autant d'allocations familiales à toutes les familles
+fa13;4;Il ne faut plus donner d'allocations familiales
+fa13;5;(NSP)
+fa14;;FA14. Êtes-vous favorables à ce que les couples homosexuels puissent adopter un enfant ?
+fa14;1;Oui
+fa14;2;Non
+fa14;3;(NSP)
+fa15;;FA15. Êtes-vous favorables à ce que les couples de femmes puissent recourir à la procréation médicalement assistée pour avoir un enfant ?
+fa15;1;Oui
+fa15;2;Non
+fa15;3;(NSP)
+fa16;;FA16. Êtes-vous favorable à ce que les couples hétérosexuels et/ou les couples homosexuels puissent recourir à la gestation pour autrui pour avoir un enfant ?
+fa16;1;Oui, les couples hétérosexuels et les couples homosexuels
+fa16;2;Oui, mais seulement les couples hétérosexuels
+fa16;3;Oui, mais seulement les couples homosexuels
+fa16;4;Non
+fa16;5;(NSP)
+ha1;;HA1. À votre avis, la société actuelle se donne-t-elle les moyens d'intégrer les personnes handicapées ?
+ha1;1;Oui, tout à fait
+ha1;2;Oui, plutôt
+ha1;3;Non, plutôt pas
+ha1;4;Non, pas du tout
+ha1;5;(NSP)
+de1;;DE1. Selon vous, qui doit principalement prendre en charge financièrement les personnes âgées dépendantes ?
+de1;1;L'État et les pouvoirs publics
+de1;2;Les enfants ou les familles des personnes âgées dépendantes
+de1;3;Les personnes âgées dépendantes elles-mêmes, en épargnant ou souscrivant une assurance privée
+de1;4;(NSP)
+de4;;DE4. Seriez-vous prêt.e à épargner davantage en prévision d'une éventuelle situation de dépendance vous concernant ?
+de4;1;Tout à fait prêt.e
+de4;2;Plutôt prêt.e
+de4;3;Plutôt pas prêt.e
+de4;4;Pas du tout prêt.e
+de4;5;(NSP)
+de5;;DE5. Si l'un de vos parents proches devenait dépendant, que feriez-vous ?
+de5;1;Vous le placeriez dans une institution spécialisée
+de5;2;Vous l'accueilleriez chez vous
+de5;3;Vous consacreriez une partie de votre revenu à lui payer des aides de manière à ce qu'il reste à son domicile
+de5;4;Vous feriez en sorte de pouvoir vous en occuper à son domicile
+de5;5;(NSP)
+de7;;DE7. Vous personnellement, apportez-vous une aide régulière et bénévole à une personne âgée dépendante vivant chez vous, chez elle ou ailleurs (institution.) ?
+de7;1;Oui
+de7;2;Non
+de7;3;Non car j'ai moi-même besoin d'aide pour ces activités
+de7;4;(NSP)
+ps1_1;;PS1_1. À votre avis, l'assurance maladie devrait-elle bénéficier...
+ps1_1;1;Uniquement à ceux qui cotisent
+ps1_1;2;Uniquement à ceux qui ne peuvent pas ou n'ont pas les moyens de s'en sortir seuls
+ps1_1;3;À tous sans distinction de catégories sociales et de statut professionnel
+ps1_1;4;Davantage à ceux qui cotisent, avec un niveau minimal de protection pour les autres
+ps1_1;5;(NSP)
+ps1_2;;PS1_2. À votre avis, les retraites devraient-elles bénéficier.
+ps1_2;1;Uniquement à ceux qui cotisent
+ps1_2;2;Uniquement à ceux qui ne peuvent pas ou n'ont pas les moyens de s'en sortir seuls
+ps1_2;3;À tous sans distinction de catégories sociales et de statut professionnel
+ps1_2;4;Davantage à ceux qui cotisent, avec un niveau minimal de protection pour les autres
+ps1_2;5;(NSP)
+ps1_3;;PS1_3. À votre avis, les allocations familiales devraient-elles bénéficier...
+ps1_3;1;Uniquement à ceux qui cotisent
+ps1_3;2;Uniquement à ceux qui ne peuvent pas ou n'ont pas les moyens de s'en sortir seuls
+ps1_3;3;À tous sans distinction de catégories sociales et de statut professionnel
+ps1_3;4;Davantage à ceux qui cotisent, avec un niveau minimal de protection pour les autres
+ps1_3;5;(NSP)
+ps1_4;;PS1_4. À votre avis les allocations chômage devraient-elles bénéficier...
+ps1_4;1;Uniquement à ceux qui cotisent
+ps1_4;2;Uniquement à ceux qui ne peuvent pas ou n'ont pas les moyens de s'en sortir seuls
+ps1_4;3;À tous sans distinction de catégories sociales et de statut professionnel
+ps1_4;4;Davantage à ceux qui cotisent, avec un niveau minimal de protection pour les autres
+ps1_4;5;(NSP)
+ps2;;PS2. Actuellement, les entreprises cotisent pour la protection sociale. Avec laquelle des trois propositions suivantes, êtes-vous le plus d'accord ? À l'avenir...
+ps2;1;Il est souhaitable que les entreprises cotisent davantage pour la protection sociale
+ps2;2;Il est souhaitable que les entreprises cotisent moins pour la protection sociale
+ps2;3;Les entreprises ne doivent ni plus, ni moins cotiser qu'actuellement
+ps2;4;(NSP)
+ps3;;PS3. La France consacre environ le tiers du revenu national au financement de la protection sociale. Considérez-vous que c'est.
+ps3;1;Excessif
+ps3;2;Normal
+ps3;3;Insuffisant
+ps3;4;(NSP)
+ps13_1;;PS13_1. Accepteriez-vous une baisse de l'assurance maladie en échange d'une baisse de vos impôts ou de vos cotisations ?
+ps13_1;1;Oui, tout à fait
+ps13_1;2;Oui, plutôt
+ps13_1;3;Non, plutôt pas
+ps13_1;4;Non, pas du tout
+ps13_1;5;(Non concerné.e)
+ps13_1;6;(NSP)
+ps13_2;;PS13_2. Accepteriez-vous une baisse des retraites en échange d'une baisse de vos impôts ou de vos cotisations ?
+ps13_2;1;Oui, tout à fait
+ps13_2;2;Oui, plutôt
+ps13_2;3;Non, plutôt pas
+ps13_2;4;Non, pas du tout
+ps13_2;5;(Non concerné.e)
+ps13_2;6;(NSP)
+ps13_3;;PS13_3. Accepteriez-vous une baisse des allocations familiales en échange d'une baisse de vos impôts ou de vos cotisations ?
+ps13_3;1;Oui, tout à fait
+ps13_3;2;Oui, plutôt
+ps13_3;3;Non, plutôt pas
+ps13_3;4;Non, pas du tout
+ps13_3;5;(Non concerné.e)
+ps13_3;6;(NSP)
+ps13_4;;PS13_4. Accepteriez-vous une baisse des allocations chômage en échange d'une baisse de vos impôts ou de vos cotisations ?
+ps13_4;1;Oui, tout à fait
+ps13_4;2;Oui, plutôt
+ps13_4;3;Non, plutôt pas
+ps13_4;4;Non, pas du tout
+ps13_4;5;(Non concerné.e)
+ps13_4;6;(NSP)
+ps13_5;;PS13_5. Accepteriez-vous une baisse des aides aux personnes handicapées en échange d'une baisse de vos impôts ou de vos cotisations ?
+ps13_5;1;Oui, tout à fait
+ps13_5;2;Oui, plutôt
+ps13_5;3;Non, plutôt pas
+ps13_5;4;Non, pas du tout
+ps13_5;5;(Non concerné.e)
+ps13_5;6;(NSP)
+ps13_6;;PS13_6. Accepteriez-vous une baisse des aides aux personnes âgées dépendantes en échange d'une baisse de vos impôts ou de vos cotisations ?
+ps13_6;1;Oui, tout à fait
+ps13_6;2;Oui, plutôt
+ps13_6;3;Non, plutôt pas
+ps13_6;4;Non, pas du tout
+ps13_6;5;(Non concerné.e)
+ps13_6;6;(NSP)
+ps13_7;;PS13_7. Accepteriez-vous une baisse des allocations logement en échange d'une baisse de vos impôts ou de vos cotisations ?
+ps13_7;1;Oui, tout à fait
+ps13_7;2;Oui, plutôt
+ps13_7;3;Non, plutôt pas
+ps13_7;4;Non, pas du tout
+ps13_7;5;(Non concerné.e)
+ps13_7;6;(NSP)
+ps15_1;;PS15_1. « Notre système de sécurité sociale... fournit un niveau de protection suffisant »
+ps15_1;1;Totalement d'accord
+ps15_1;2;Plutôt d'accord
+ps15_1;3;Plutôt pas d'accord
+ps15_1;4;Pas d'accord du tout
+ps15_1;5;(NSP)
+ps15_2;;PS15_2. « Notre système de sécurité sociale... peut servir de modèle à d'autres pays »
+ps15_2;1;Totalement d'accord
+ps15_2;2;Plutôt d'accord
+ps15_2;3;Plutôt pas d'accord
+ps15_2;4;Pas d'accord du tout
+ps15_2;5;(NSP)
+ps15_3;;PS15_3. « Notre système de sécurité sociale... coûte trop cher à la société »
+ps15_3;1;Totalement d'accord
+ps15_3;2;Plutôt d'accord
+ps15_3;3;Plutôt pas d'accord
+ps15_3;4;Pas d'accord du tout
+ps15_3;5;(NSP)
+ps18;;PS18. En matière de politique sociale, quel type d'actions vous semble le plus nécessaire aujourd'hui ?
+ps18;1;Une augmentation des prestations (allocations logement, allocations familiales, minima sociaux,...)
+ps18;2;Le développement de services (crèches, dispositifs de formation, équipements pour personnes âgées,...)
+ps18;3;Un meilleur accompagnement vers les droits (agents accompagnateurs, aide à l'utilisation du numérique, .)
+ps18;4;(NSP)
+sa1;;SA1. Comment est votre état de santé général ?
+sa1;1;Très bon
+sa1;2;Bon
+sa1;3;Moyen
+sa1;4;Mauvais
+sa1;5;Très mauvais
+sa1;6;(NSP)
+sa3;;SA3. Êtes-vous limité.e depuis au moins 6 mois à cause d'un problème de santé, dans les activités que les gens font habituellement ?
+sa3;1;Oui
+sa3;2;Non
+sa3;3;(NSP)
+sa4;;SA4. Avez-vous une affection de longue durée, appelée aussi ALD, pour laquelle vos soins sont pris en charge à 100 % par l'Assurance maladie ou la Sécurité sociale ?
+sa4;1;Oui
+sa4;2;Non
+sa4;3;(NSP)
+sa5;;SA5. Selon vous, au cours des dernières années, l'état de santé des Français s'est.
+sa5;1;Beaucoup amélioré
+sa5;2;Un peu amélioré
+sa5;3;Un peu détérioré
+sa5;4;Beaucoup détérioré
+sa5;5;Est resté identique
+sa5;6;(NSP)
+sa6_ab_1;;SA6_AB_1. « En France, tout le monde peut être soigné quel que soit son revenu »
+sa6_ab_1;1;Plutôt d'accord
+sa6_ab_1;2;Plutôt pas d'accord
+sa6_ab_1;3;(NSP)
+sa6_ab_2;;SA6_AB_2. « En France, on a la même qualité de soins quel que soit son revenu »
+sa6_ab_2;1;Plutôt d'accord
+sa6_ab_2;2;Plutôt pas d'accord
+sa6_ab_2;3;(NSP)
+sa6_ab_3;;SA6_AB_3. « En France, tout le monde peut être soigné quel que soit le lieu où il habite »
+sa6_ab_3;1;Plutôt d'accord
+sa6_ab_3;2;Plutôt pas d'accord
+sa6_ab_3;3;(NSP)
+sa6_ab_4;;SA6_AB_4. « En France, on a la même qualité de soins quel que soit le lieu où l'on habite »
+sa6_ab_4;1;Plutôt d'accord
+sa6_ab_4;2;Plutôt pas d'accord
+sa6_ab_4;3;(NSP)
+sa6_ab_5;;SA6_AB_5. « En France, les délais d'attente pour se faire soigner ne dépendent pas du revenu »
+sa6_ab_5;1;Plutôt d'accord
+sa6_ab_5;2;Plutôt pas d'accord
+sa6_ab_5;3;(NSP)
+sa6_ab_6;;SA6_AB_6. « En France, les délais d'attente pour se faire soigner ne dépendent pas du lieu où l'on habite »
+sa6_ab_6;1;Plutôt d'accord
+sa6_ab_6;2;Plutôt pas d'accord
+sa6_ab_6;3;(NSP)
+sa6_cd_1;;SA6_CD_1. « En France, tout le monde peut être soigné quel que soit son revenu »
+sa6_cd_1;1;Plutôt d'accord
+sa6_cd_1;2;Plutôt pas d'accord
+sa6_cd_1;3;(NSP)
+sa6_cd_2;;SA6_CD_2. « En France, on a la même qualité de soins quel que soit son revenu »
+sa6_cd_2;1;Plutôt d'accord
+sa6_cd_2;2;Plutôt pas d'accord
+sa6_cd_2;3;(NSP)
+sa6_cd_3;;SA6_CD_3. « En France, tout le monde peut être soigné quel que soit le lieu où il habite »
+sa6_cd_3;1;Plutôt d'accord
+sa6_cd_3;2;Plutôt pas d'accord
+sa6_cd_3;3;(NSP)
+sa6_cd_4;;SA6_CD_4. « En France, on a la même qualité de soins quel que soit le lieu où l'on habite »
+sa6_cd_4;1;Plutôt d'accord
+sa6_cd_4;2;Plutôt pas d'accord
+sa6_cd_4;3;(NSP)
+sa6_cd_5;;SA6_CD_5. « En France, on a les mêmes délais d'attente pour se faire soigner quel que soit son revenu »
+sa6_cd_5;1;Plutôt d'accord
+sa6_cd_5;2;Plutôt pas d'accord
+sa6_cd_5;3;(NSP)
+sa6_cd_6;;SA6_CD_6. « En France, on a les mêmes délais d'attente pour se faire soigner quel que soit le lieu où l'on habite »
+sa6_cd_6;1;Plutôt d'accord
+sa6_cd_6;2;Plutôt pas d'accord
+sa6_cd_6;3;(NSP)
+me4;;ME4. Êtes-vous inquiets à l'idée de ne pas pouvoir être bien soigné en cas de gros problème de santé ?
+me4;1;Oui, très inquiet.e
+me4;2;Oui, assez inquiet.e
+me4;3;Non, pas très inquiet.e
+me4;4;Non, pas inquiet.e du tout
+me4;5;(NSP)
+sa7_1;;SA7_1. En général, êtes-vous satisfait de la qualité des soins offerts par les . hôpitaux publics (hors services d'urgence et maternités) ?
+sa7_1;1;Très satisfait.e
+sa7_1;2;Plutôt satisfait.e
+sa7_1;3;Ni satisfait.e ni insatisfait.e
+sa7_1;4;Plutôt insatisfait.e
+sa7_1;5;Très insatisfait.e
+sa7_1;6;(NSP)
+sa7_1;7;(Je ne suis jamais allé.e/ je ne connais pas)
+sa7_2;;SA7_2. En général, êtes-vous satisfait de la qualité des soins offerts par les . urgences hospitalières ?
+sa7_2;1;Très satisfait.e
+sa7_2;2;Plutôt satisfait.e
+sa7_2;3;Ni satisfait.e ni insatisfait.e
+sa7_2;4;Plutôt insatisfait.e
+sa7_2;5;Très insatisfait.e
+sa7_2;6;(NSP)
+sa7_2;7;(Je ne suis jamais allé.e/ je ne connais pas)
+sa7_3;;SA7_3. En général, êtes-vous satisfait de la qualité des soins offerts par les . cliniques privées ?
+sa7_3;1;Très satisfait.e
+sa7_3;2;Plutôt satisfait.e
+sa7_3;3;Ni satisfait.e ni insatisfait.e
+sa7_3;4;Plutôt insatisfait.e
+sa7_3;5;Très insatisfait.e
+sa7_3;6;(NSP)
+sa7_3;7;(Je ne suis jamais allé.e/ je ne connais pas)
+sa7_4;;SA7_4. En général, êtes-vous satisfait de la qualité des soins offerts par les . dentistes, orthodontistes ?
+sa7_4;1;Très satisfait.e
+sa7_4;2;Plutôt satisfait.e
+sa7_4;3;Ni satisfait.e ni insatisfait.e
+sa7_4;4;Plutôt insatisfait.e
+sa7_4;5;Très insatisfait.e
+sa7_4;6;(NSP)
+sa7_4;7;(Je ne suis jamais allé.e/ je ne connais pas)
+sa7_5;;SA7_5. En général, êtes-vous satisfait de la qualité des soins offerts par les . médecins généralistes (hors hôpital) ?
+sa7_5;1;Très satisfait.e
+sa7_5;2;Plutôt satisfait.e
+sa7_5;3;Ni satisfait.e ni insatisfait.e
+sa7_5;4;Plutôt insatisfait.e
+sa7_5;5;Très insatisfait.e
+sa7_5;6;(NSP)
+sa7_5;7;(Je ne suis jamais allé.e/ je ne connais pas)
+sa7_6;;SA7_6. En général, êtes-vous satisfait de la qualité des soins offerts par les . médecins spécialistes (hors hôpital) ?
+sa7_6;1;Très satisfait.e
+sa7_6;2;Plutôt satisfait.e
+sa7_6;3;Ni satisfait.e ni insatisfait.e
+sa7_6;4;Plutôt insatisfait.e
+sa7_6;5;Très insatisfait.e
+sa7_6;6;(NSP)
+sa7_6;7;(Je ne suis jamais allé.e/ je ne connais pas)
+sa7_7;;SA7_7. En général, êtes-vous satisfait de la qualité des soins offerts par les . infirmiers/infirmières (hors hôpital) ?
+sa7_7;1;Très satisfait.e
+sa7_7;2;Plutôt satisfait.e
+sa7_7;3;Ni satisfait.e ni insatisfait.e
+sa7_7;4;Plutôt insatisfait.e
+sa7_7;5;Très insatisfait.e
+sa7_7;6;(NSP)
+sa7_7;7;(Je ne suis jamais allé.e/ je ne connais pas)
+sa7_8;;SA7_8. En général, êtes-vous satisfait de la qualité des soins offerts par les . maternités ?
+sa7_8;1;Très satisfait.e
+sa7_8;2;Plutôt satisfait.e
+sa7_8;3;Ni satisfait.e ni insatisfait.e
+sa7_8;4;Plutôt insatisfait.e
+sa7_8;5;Très insatisfait.e
+sa7_8;6;(NSP)
+sa7_8;7;(Je ne suis jamais allé.e/ je ne connais pas)
+sa8_1;;SA8_1. Pour réduire le déficit de la branche maladie de la Sécurité sociale, seriez-vous plutôt favorable ou opposé.e à. augmenter les cotisations ?
+sa8_1;1;Plutôt favorable
+sa8_1;2;Plutôt opposé.e
+sa8_1;3;(NSP)
+sa8_2;;SA8_2. Pour réduire le déficit de la branche maladie de la Sécurité sociale, seriez-vous plutôt favorable ou opposé.e à. limiter le remboursement de la Sécurité sociale pour certaines prestations  ?
+sa8_2;1;Plutôt favorable
+sa8_2;2;Plutôt opposé.e
+sa8_2;3;(NSP)
+sa8_3;;SA8_3. Pour réduire le déficit de la branche maladie de la Sécurité sociale, seriez-vous plutôt favorable ou opposé.e à. réduire la prise en charge des longues maladies par la sécurité sociale ?
+sa8_3;1;Plutôt favorable
+sa8_3;2;Plutôt opposé.e
+sa8_3;3;(NSP)
+sa8_5;;SA8_5. Pour réduire le déficit de la branche maladie de la Sécurité sociale, seriez-vous plutôt favorable ou opposé.e à. modifier les habitudes des médecins pour qu'ils prescrivent moins de médicaments et d'examens ?
+sa8_5;1;Plutôt favorable
+sa8_5;2;Plutôt opposé.e
+sa8_5;3;(NSP)
+sa8_6;;SA8_6. Pour réduire le déficit de la branche maladie de la Sécurité sociale, seriez-vous plutôt favorable ou opposé.e à. limiter les tarifs des professionnels de santé ?
+sa8_6;1;Plutôt favorable
+sa8_6;2;Plutôt opposé.e
+sa8_6;3;(NSP)
+sa8_7;;SA8_7. Pour réduire le déficit de la branche maladie de la Sécurité sociale, seriez-vous plutôt favorable ou opposé.e à. taxer davantage les fabricants de médicaments ?
+sa8_7;1;Plutôt favorable
+sa8_7;2;Plutôt opposé.e
+sa8_7;3;(NSP)
+sa8_9;;SA8_9. Pour réduire le déficit de la branche maladie de la Sécurité sociale, seriez-vous plutôt favorable ou opposé.e à. permettre aux infirmiers / pharmaciens de faire certaines tâches à la place des médecins ?
+sa8_9;1;Plutôt favorable
+sa8_9;2;Plutôt opposé.e
+sa8_9;3;(NSP)
+sa9_1;;SA9_1. À votre avis, pensez-vous qu'il y a à proximité de chez vous des... médecins généralistes ?
+sa9_1;1;Trop
+sa9_1;2;Suffisamment
+sa9_1;3;Pas assez
+sa9_1;4;(NSP)
+sa9_2;;SA9_2. À votre avis, pensez-vous qu'il y a à proximité de chez vous des. médecins spécialistes ?
+sa9_2;1;Trop
+sa9_2;2;Suffisamment
+sa9_2;3;Pas assez
+sa9_2;4;(NSP)
+sa9_3;;SA9_3. À votre avis, pensez-vous qu'il y a à proximité de chez vous des... infirmiers / infirmières ?
+sa9_3;1;Trop
+sa9_3;2;Suffisamment
+sa9_3;3;Pas assez
+sa9_3;4;(NSP)
+sa9_4;;SA9_4. À votre avis, pensez-vous qu'il y a à proximité de chez vous des... kinésithérapeutes ?
+sa9_4;1;Trop
+sa9_4;2;Suffisamment
+sa9_4;3;Pas assez
+sa9_4;4;(NSP)
+sa9_5;;SA9_5. À votre avis, pensez-vous qu'il y a à proximité de chez vous des. dentistes ?
+sa9_5;1;Trop
+sa9_5;2;Suffisamment
+sa9_5;3;Pas assez
+sa9_5;4;(NSP)
+sa9_6;;SA9_6. À votre avis, pensez-vous qu'il y a à proximité de chez vous des. pharmaciens ?
+sa9_6;1;Trop
+sa9_6;2;Suffisamment
+sa9_6;3;Pas assez
+sa9_6;4;(NSP)
+sa22_1;;SA22_1. Avez-vous, au cours de ces dernières années, fait appel à un hôpital public (hors services urgences et maternités) pour vous ou pour vos proches ?
+sa22_1;1;Oui pour moi
+sa22_1;2;Oui mais uniquement pour mes proches ou ma famille
+sa22_1;3;Non
+sa22_1;4;(NSP)
+sa22_2;;SA22_2. Avez-vous, au cours de ces dernières années, fait appel aux urgences hospitalières pour vous ou pour vos proches ?
+sa22_2;1;Oui pour moi
+sa22_2;2;Oui mais uniquement pour mes proches ou ma famille
+sa22_2;3;Non
+sa22_2;4;(NSP)
+sa22_3;;SA22_3. Avez-vous, au cours de ces dernières années, fait appel à une clinique privée pour vous ou pour vos proches ?
+sa22_3;1;Oui pour moi
+sa22_3;2;Oui mais uniquement pour mes proches ou ma famille
+sa22_3;3;Non
+sa22_3;4;(NSP)
+sa22_4;;SA22_4. Avez-vous, au cours de ces dernières années, fait appel à un dentiste / orthodontiste pour vous ou pour vos proches ?
+sa22_4;1;Oui pour moi
+sa22_4;2;Oui mais uniquement pour mes proches ou ma famille
+sa22_4;3;Non
+sa22_4;4;(NSP)
+sa22_5;;SA22_5. Avez-vous, au cours de ces dernières années, fait appel à un médecin généraliste pour vous ou pour vos proches ?
+sa22_5;1;Oui pour moi
+sa22_5;2;Oui mais uniquement pour mes proches ou ma famille
+sa22_5;3;Non
+sa22_5;4;(NSP)
+sa22_6;;SA22_6. Avez-vous, au cours de ces dernières années, fait appel à un médecin spécialiste (hors hôpital) pour vous ou pour vos proches ?
+sa22_6;1;Oui pour moi
+sa22_6;2;Oui mais uniquement pour mes proches ou ma famille
+sa22_6;3;Non
+sa22_6;4;(NSP)
+sa22_7;;SA22_7. Avez-vous, au cours de ces dernières années, fait appel à un infirmier / une infirmière (hors hôpital)  pour vous ou pour vos proches ?
+sa22_7;1;Oui pour moi
+sa22_7;2;Oui mais uniquement pour mes proches ou ma famille
+sa22_7;3;Non
+sa22_7;4;(NSP)
+sa22_8;;SA22_8. Avez-vous, au cours de ces dernières années, fait appel à une maternité pour vous ou pour vos proches ?
+sa22_8;1;Oui pour moi
+sa22_8;2;Oui mais uniquement pour mes proches ou ma famille
+sa22_8;3;Non
+sa22_8;4;(NSP)
+sa26_1;;SA26_1. De quand date votre dernière visite chez le médecin généraliste (hors hôpital) ?
+sa26_1;1;Moins de 6 mois
+sa26_1;2;Entre 6 mois et 1 an
+sa26_1;3;Plus de 1 an
+sa26_1;4;(NSP)
+sa26_2;;SA26_2. De quand date votre dernière visite chez un médecin spécialiste (hors hôpital) ?
+sa26_2;1;Moins de 6 mois
+sa26_2;2;Entre 6 mois et 1 an
+sa26_2;3;Plus de 1 an
+sa26_2;4;(NSP)
+cs1;;CS1. Selon vous, la cohésion sociale en France est-elle actuellement.
+cs1;1;Très forte
+cs1;2;Assez forte
+cs1;3;Pas très forte
+cs1;4;Pas du tout forte
+cs1;5;(NSP)
+cs24;;CS24. Selon vous, comment la solidarité entre les générations a-t-elle évolué au cours des dix dernières années ?
+cs24;1;Elle a augmenté
+cs24;2;Elle a diminué
+cs24;3;Elle n'a ni augmenté ni diminué
+cs24;4;(NSP)
+cs4;;CS4. Auquel de ces lieux avez-vous personnellement le sentiment d'appartenir avant tout ?
+cs4;1;À votre commune, à votre quartier
+cs4;2;À votre département
+cs4;3;À votre région
+cs4;4;À la France
+cs4;5;À un autre pays que la France
+cs4;6;À l'Europe
+cs4;7;Au monde
+cs4;8;(NSP)
+cs5_ab;;CS5_AB. Avez-vous le sentiment d'être intégré.e dans la société française ?
+cs5_ab;1;Très bien intégré.e
+cs5_ab;2;Assez bien intégré.e
+cs5_ab;3;Pas bien intégré.e
+cs5_ab;4;Pas intégré.e du tout
+cs5_ab;5;(NSP)
+cs5_cd;;CS5_CD. Avez-vous le sentiment d'être intégré.e dans la société ?
+cs5_cd;1;Très bien intégré.e
+cs5_cd;2;Assez bien intégré.e
+cs5_cd;3;Pas bien intégré.e
+cs5_cd;4;Pas intégré.e du tout
+cs5_cd;5;(NSP)
+cs17;;CS17. Selon vous, les pouvoirs publics devraient-ils ou non renforcer leur action pour soutenir l'intégration des personnes étrangères dans notre société ?
+cs17;1;Oui
+cs17;2;Non
+cs17;3;(NSP)
+cs18;;CS18. Estimez-vous que les pouvoirs publics font trop, font ce qu'ils doivent ou ne font pas assez pour les plus démunis ?
+cs18;1;Les pouvoirs publics font trop
+cs18;2;Les pouvoirs publics font ce qu'ils doivent
+cs18;3;Les pouvoirs publics ne font pas assez pour les plus démunis
+cs18;4;(NSP)
+cs19_1;;CS19_1. «  Beaucoup de personnes ne bénéficient pas des droits ou allocations auxquels elles peuvent prétendre  »
+cs19_1;1;Tout à fait d'accord
+cs19_1;2;Plutôt d'accord
+cs19_1;3;Plutôt pas d'accord
+cs19_1;4;Pas du tout d'accord
+cs19_1;5;(NSP)
+cs19_2;;CS19_2. «  Beaucoup de personnes perçoivent des allocations alors qu'elles n'y ont pas droit »
+cs19_2;1;Tout à fait d'accord
+cs19_2;2;Plutôt d'accord
+cs19_2;3;Plutôt pas d'accord
+cs19_2;4;Pas du tout d'accord
+cs19_2;5;(NSP)
+cs20;;CS20. Pour quelle raison principale pensez-vous que certaines personnes ne bénéficient pas d'allocations, droits, aides ou tarifs sociaux auxquels elles peuvent prétendre ?
+cs20;1;Par manque d'information sur les aides, ou sur les organismes à qui s'adresser
+cs20;2;Parce que les démarches à faire sont trop complexes et trop longues
+cs20;3;Parce qu'elles préfèrent s'en sortir par elles-mêmes
+cs20;4;Parce qu'elles refusent de dépendre de l'aide sociale et d'être considérées comme des assistées
+cs20;5;Pour ne pas avoir à rendre des comptes, à faire l'objet de contrôle
+cs20;6;Pour ne pas subir des conséquences négatives (perte d'autres droits, impôts, problèmes administratifs, etc.)
+cs20;7;Parce que ces aides n'apportent pas grand-chose financièrement
+cs20;8;Autre
+cs20;9;(NSP)
+cs13;;CS13. Pour vous, les pouvoirs publics doivent-ils en priorité.
+cs13;1;Veiller à ce que chacun puisse être libre de ses croyances et de ses pratiques religieuses
+cs13;2;Veiller à ce que les croyances et les pratiques religieuses ne soient pas visibles dans les espaces publics
+cs13;3;(NSP)
+cs14;;CS14. Quelle opinion se rapproche le plus de la vôtre ?
+cs14;1;La diversité des cultures et des origines est une richesse pour notre pays
+cs14;2;La diversité des cultures et des origines rend difficile la vie en commun dans notre pays
+cs14;3;(NSP)
+cs9;;CS9. Au cours des 12 derniers mois, avez-vous été témoin de discriminations liées au fait d'être une femme ?
+cs9;1;Oui
+cs9;2;Non
+cs9;3;(NSP)
+cs21_1;;CS21_1. Vous sentez-vous particulièrement proche... de ceux qui sont de la même génération que vous ?
+cs21_1;1;Oui
+cs21_1;2;Non
+cs21_1;3;(NSP)
+cs21_2;;CS21_2. Vous sentez-vous particulièrement proche... de ceux qui partagent la même situation socio-économique que vous ?
+cs21_2;1;Oui
+cs21_2;2;Non
+cs21_2;3;(NSP)
+cs21_3;;CS21_3. Vous sentez-vous particulièrement proche... de ceux qui partagent les mêmes convictions politiques que vous ?
+cs21_3;1;Oui
+cs21_3;2;Non
+cs21_3;3;(NSP)
+cs21_4;;CS21_4. Vous sentez-vous particulièrement proche... de ceux qui habitent dans le même quartier/village que vous ?
+cs21_4;1;Oui
+cs21_4;2;Non
+cs21_4;3;(NSP)
+cs21_5;;CS21_5. Vous sentez-vous particulièrement proche... de ceux qui ont la même religion que vous ?
+cs21_5;1;Oui
+cs21_5;2;Non
+cs21_5;3;(NSP)
+cs21_6;;CS21_6. Vous sentez-vous particulièrement proche... de ceux qui ont les mêmes origines que vous ?
+cs21_6;1;Oui
+cs21_6;2;Non
+cs21_6;3;(NSP)
+cs21_7;;CS21_7. Vous sentez-vous particulièrement proche... des autres femmes.hommes ?
+cs21_7;1;Oui
+cs21_7;2;Non
+cs21_7;3;(NSP)
+cs22;;CS22. Selon vous, entre quels types de groupes les tensions seront-elles les plus fortes à l'avenir ?
+cs22;1;Entre les différentes générations
+cs22;2;Entre les différentes catégories socio-économiques
+cs22;3;Entre les différents partis ou tendances politiques
+cs22;4;Entre les différents territoires
+cs22;5;Entre les différentes confessions religieuses
+cs22;6;Entre les personnes d'origines différentes
+cs22;7;(NSP)
+cs23;;CS23. Pensez-vous que la France devrait accueillir moins d'un migrant sur huit, à peu près ce chiffre ou davantage ?
+cs23;1;Moins
+cs23;2;À peu près ce chiffre
+cs23;3;Davantage
+cs23;4;Aucun migrant
+cs23;5;(Autre critère de répartition)
+cs23;6;(NSP)
+sdassynd_1;;SDASSYND_1. Vous personnellement, êtes-vous membre d'une organisation syndicale ?
+sdassynd_1;1;Oui
+sdassynd_1;2;Non
+sdassynd_1;3;(NSP)
+sdassynd_2;;SDASSYND_2. Vous personnellement, êtes-vous membre d'une association ?
+sdassynd_2;1;Oui
+sdassynd_2;2;Non
+sdassynd_2;3;(NSP)
+sdrel;;SDREL. Vis-à-vis de la religion, avez-vous.
+sdrel;1;Une pratique religieuse régulière
+sdrel;2;Une pratique occasionnelle ou le sentiment d'appartenir à une religion
+sdrel;3;Ni pratique ni sentiment d'appartenance
+sdrel;4;(NSP ou souhaite ne pas répondre)
+sdproxim_1;;SDPROXIM_1. Dans votre famille ou en dehors de votre famille, connaissez-vous quelqu'un au chômage, indemnisé.e ?
+sdproxim_1;1;Non
+sdproxim_1;2;Oui, dans votre famille
+sdproxim_1;3;Oui, hors famille
+sdproxim_1;4;Oui, vous-même
+sdproxim_1;5;Oui, dans votre famille et hors famille
+sdproxim_1;6;Oui, vous-même et dans votre famille
+sdproxim_1;7;Oui, vous-même et hors famille
+sdproxim_1;8;Oui, vous-même, dans votre famille et hors famille
+sdproxim_1;9;(NSP)
+sdproxim_2;;SDPROXIM_2. Dans votre famille ou en dehors de votre famille, connaissez-vous quelqu'un au chômage, non indemnisé.e ?
+sdproxim_2;1;Non
+sdproxim_2;2;Oui, dans votre famille
+sdproxim_2;3;Oui, hors famille
+sdproxim_2;4;Oui, vous-même
+sdproxim_2;5;Oui, dans votre famille et hors famille
+sdproxim_2;6;Oui, vous-même et dans votre famille
+sdproxim_2;7;Oui, vous-même et hors famille
+sdproxim_2;8;Oui, vous-même, dans votre famille et hors famille
+sdproxim_2;9;(NSP)
+sdproxim_3;;SDPROXIM_3. Dans votre famille ou en dehors de votre famille, connaissez-vous quelqu'un qui est SDF ?
+sdproxim_3;1;Non
+sdproxim_3;2;Oui, dans votre famille
+sdproxim_3;3;Oui, hors famille
+sdproxim_3;4;Oui, vous-même
+sdproxim_3;5;Oui, dans votre famille et hors famille
+sdproxim_3;6;Oui, vous-même et dans votre famille
+sdproxim_3;7;Oui, vous-même et hors famille
+sdproxim_3;8;Oui, vous-même, dans votre famille et hors famille
+sdproxim_3;9;(NSP)
+sdproxim_4;;SDPROXIM_4. Dans votre famille ou en dehors de votre famille, connaissez-vous quelqu'un élevant seul.e ses enfants avec un revenu inférieur au SMIC ?
+sdproxim_4;1;Non
+sdproxim_4;2;Oui, dans votre famille
+sdproxim_4;3;Oui, hors famille
+sdproxim_4;4;Oui, vous-même
+sdproxim_4;5;Oui, dans votre famille et hors famille
+sdproxim_4;6;Oui, vous-même et dans votre famille
+sdproxim_4;7;Oui, vous-même et hors famille
+sdproxim_4;8;Oui, vous-même, dans votre famille et hors famille
+sdproxim_4;9;(NSP)
+sdproxim_5;;SDPROXIM_5. Dans votre famille ou en dehors de votre famille, connaissez-vous quelqu'un pensionné.e (invalide / handicapé.e) sans pouvoir travailler ?
+sdproxim_5;1;Non
+sdproxim_5;2;Oui, dans votre famille
+sdproxim_5;3;Oui, hors famille
+sdproxim_5;4;Oui, vous-même
+sdproxim_5;5;Oui, dans votre famille et hors famille
+sdproxim_5;6;Oui, vous-même et dans votre famille
+sdproxim_5;7;Oui, vous-même et hors famille
+sdproxim_5;8;Oui, vous-même, dans votre famille et hors famille
+sdproxim_5;9;(NSP)
+sdproxim_6;;SDPROXIM_6. Dans votre famille ou en dehors de votre famille, connaissez-vous quelqu'un occupant un emploi précaire ?
+sdproxim_6;1;Non
+sdproxim_6;2;Oui, dans votre famille
+sdproxim_6;3;Oui, hors famille
+sdproxim_6;4;Oui, vous-même
+sdproxim_6;5;Oui, dans votre famille et hors famille
+sdproxim_6;6;Oui, vous-même et dans votre famille
+sdproxim_6;7;Oui, vous-même et hors famille
+sdproxim_6;8;Oui, vous-même, dans votre famille et hors famille
+sdproxim_6;9;(NSP)
+sdproxim_7;;SDPROXIM_7. Dans votre famille ou en dehors de votre famille, connaissez-vous quelqu'un au RSA ?
+sdproxim_7;1;Non
+sdproxim_7;2;Oui, dans votre famille
+sdproxim_7;3;Oui, hors famille
+sdproxim_7;4;Oui, vous-même
+sdproxim_7;5;Oui, dans votre famille et hors famille
+sdproxim_7;6;Oui, vous-même et dans votre famille
+sdproxim_7;7;Oui, vous-même et hors famille
+sdproxim_7;8;Oui, vous-même, dans votre famille et hors famille
+sdproxim_7;9;(NSP)
+sdproxim_8;;SDPROXIM_8. Dans votre famille ou en dehors de votre famille, connaissez-vous une personne handicapée de moins de 60 ans ?
+sdproxim_8;1;Non
+sdproxim_8;2;Oui, dans votre famille
+sdproxim_8;3;Oui, hors famille
+sdproxim_8;4;Oui, vous-même
+sdproxim_8;5;Oui, dans votre famille et hors famille
+sdproxim_8;6;Oui, vous-même et dans votre famille
+sdproxim_8;7;Oui, vous-même et hors famille
+sdproxim_8;8;Oui, vous-même, dans votre famille et hors famille
+sdproxim_8;9;(NSP)
+sdproxim_9;;SDPROXIM_9. Dans votre famille ou en dehors de votre famille, connaissez-vous une personne âgée dépendante ?
+sdproxim_9;1;Non
+sdproxim_9;2;Oui, dans votre famille
+sdproxim_9;3;Oui, hors famille
+sdproxim_9;4;Oui, vous-même
+sdproxim_9;5;Oui, dans votre famille et hors famille
+sdproxim_9;6;Oui, vous-même et dans votre famille
+sdproxim_9;7;Oui, vous-même et hors famille
+sdproxim_9;8;Oui, vous-même, dans votre famille et hors famille
+sdproxim_9;9;(NSP)
+sdrichom_ab;;SDRICHOM_AB.Y a-t-il un risque de chômage dans les mois à venir pour vous-même ou l'un de vos proches ?
+sdrichom_ab;1;Oui
+sdrichom_ab;2;Non
+sdrichom_ab;3;(NSP)
+sdrichom_cd_1;;SDRICHOM_1_CD. Y a-t-il un risque de chômage dans les mois à venir pour vous-même ?
+sdrichom_cd_1;1;Oui
+sdrichom_cd_1;2;Non
+sdrichom_cd_1;3;(NSP)
+sdrichom_cd_2;;SDRICHOM_2_CD. Y a-t-il un risque de chômage dans les mois à venir pour l'un de vos proches ?
+sdrichom_cd_2;1;Oui
+sdrichom_cd_2;2;Non
+sdrichom_cd_2;3;(NSP)
+sdres_1;;SDRES_1. Au cours des douze derniers mois, votre ménage a-t-il perçu des ressources provenant de salaires, traitements et primes ?
+sdres_1;1;Oui
+sdres_1;2;Non
+sdres_1;3;(NSP)
+sdres_2;;SDRES_2. Au cours des douze derniers mois, votre ménage a-t-il perçu des ressources provenant de revenus d'une activité professionnelle indépendante ?
+sdres_2;1;Oui
+sdres_2;2;Non
+sdres_2;3;(NSP)
+sdres_3;;SDRES_3. Au cours des douze derniers mois, votre ménage a-t-il perçu des ressources provenant du RSA (Revenu de solidarité active) ?
+sdres_3;1;Oui
+sdres_3;2;Non
+sdres_3;3;(NSP)
+sdres_4;;SDRES_4. Au cours des douze derniers mois, votre ménage a-t-il perçu des ressources provenant des allocations de chômage ?
+sdres_4;1;Oui
+sdres_4;2;Non
+sdres_4;3;(NSP)
+sdres_5;;SDRES_5. Au cours des douze derniers mois, votre ménage a-t-il perçu des ressources provenant de préretraite, retraites ?
+sdres_5;1;Oui
+sdres_5;2;Non
+sdres_5;3;(NSP)
+sdres_6;;SDRES_6. Au cours des douze derniers mois, votre ménage a-t-il perçu des ressources provenant de revenus d'actifs financiers ?
+sdres_6;1;Oui
+sdres_6;2;Non
+sdres_6;3;(NSP)
+sdres_7;;SDRES_7. Au cours des douze derniers mois, votre ménage a-t-il perçu des ressources provenant de revenus de locations ?
+sdres_7;1;Oui
+sdres_7;2;Non
+sdres_7;3;(NSP)
+sdres_8;;SDRES_8. Au cours des douze derniers mois, votre ménage a-t-il perçu des ressources provenant de prestations familiales ?
+sdres_8;1;Oui
+sdres_8;2;Non
+sdres_8;3;(NSP)
+sdres_9;;SDRES_9. Au cours des douze derniers mois, votre ménage a-t-il perçu des ressources provenant des allocations de logement ?
+sdres_9;1;Oui
+sdres_9;2;Non
+sdres_9;3;(NSP)
+sdres_10;;SDRES_10. Au cours des douze derniers mois, votre ménage a-t-il perçu des ressources provenant de prestations liées au handicap, à l'invalidité ou à la dépendance ?
+sdres_10;1;Oui
+sdres_10;2;Non
+sdres_10;3;(NSP)
+sdres_11;;SDRES_11. Au cours des douze derniers mois, votre ménage a-t-il perçu des ressources provenant de bourses d'études ?
+sdres_11;1;Oui
+sdres_11;2;Non
+sdres_11;3;(NSP)
+sdres_12;;SDRES_12. Au cours des douze derniers mois, votre ménage a-t-il perçu des ressources provenant de pensions alimentaires ou argent reçu tous les mois de la part de proches ?
+sdres_12;1;Oui
+sdres_12;2;Non
+sdres_12;3;(NSP)
+sdrevcl;;SDREVCL. Revenus mensuels nets avant impôts du foyer
+sdrevtr;;SDREVTR. Revenus mensuels nets avant impôts du foyer (en tranches)
+sdrevtr;1;Moins de 1000 euros par mois
+sdrevtr;2;De 1000 à moins de 1400 euros par mois
+sdrevtr;3;De 1400 à moins de 1900 euros par mois
+sdrevtr;4;De 1900 à moins de 2400 euros par mois
+sdrevtr;5;De 2400 à moins de 3800 euros par mois
+sdrevtr;6;De 3800 à moins de 5300 euros par mois
+sdrevtr;7;Plus de 5300 euros par mois
+sdrevtr;8;(NSP/refus de réponse)
+me5;;ME5. Globalement, diriez-vous que les revenus de votre foyer sont plutôt variables ou plutôt stables d'un mois sur l'autre ?
+me5;1;Plutôt stables
+me5;2;Plutôt variables
+me5;3;(NSP)
+me6;;ME6. Dans les mois qui viennent, pensez-vous que les revenus de votre foyer vont.
+me6;1;Plutôt augmenter
+me6;2;Plutôt diminuer
+me6;3;Rester stables
+me6;4;(NSP)
+sddipl;;SDDIPL. Niveau de diplôme
+sddipl;1;Vous n'avez pas de diplôme
+sddipl;2;Vous avez un certificat d'études primaires
+sddipl;3;Vous avez un ancien brevet, BEPC, ou brevet des collèges
+sddipl;4;Vous avez un certificat d'aptitude professionnelle (CAP), un brevet  d'enseignement professionnel (BEP)
+sddipl;5;Vous avez un bac d'enseignement général
+sddipl;6;Vous avez un bac d'enseignement technologique ou professionnel
+sddipl;7;Vous avez un bac + 2 ans ou niveau bac + 2 ans (DUT, BTS, DEUG, L2)
+sddipl;8;Vous avez un diplôme supérieur (2ème, 3ème cycle, grande école, L3, M1, M2)
+sddipl;9;(Autre situation)
+sddipl;10;(NSP)
+sdpol;;SDPOL. Sur une échelle de 0 à 10, où vous classeriez-vous politiquement ?
+sdpol;1;0 Très à gauche
+sdpol;2;1
+sdpol;3;2
+sdpol;4;3
+sdpol;5;4
+sdpol;6;5
+sdpol;7;6
+sdpol;8;7
+sdpol;9;8
+sdpol;10;9
+sdpol;11;10 Très à droite
+sdpol;12;(NSP)
+sdpoltr;;SDPOLTR. Sur une échelle de 0 à 10, où vous classeriez-vous politiquement ? (en 5 tranches)
+sdpoltr;1;0-2 extrême gauche
+sdpoltr;2;3-4 gauche modérée
+sdpoltr;3;5 centre
+sdpoltr;4;6-7 droite modérée
+sdpoltr;5;8-10 extrême droite
+sdpoltr;6;(NSP)
+sdnat;;SDNAT. Nationalité
+sdnat;1;Né.e français.e
+sdnat;2;Devenu.e français.e par acquisition (naturalisation, mariage, déclaration, option à votre majorité...)
+sdnat;3;Étranger.ère
+sdnat;4;(NSP)
+sdpnaistr;;SDPNAISTR. Quel est votre pays de naissance ?
+sdpnaistr;1;France
+sdpnaistr;2;Pays européen
+sdpnaistr;3;Pays non européen
+sdpnaistr;4;Autres
+sdpnaistr;5;(NSP)
+sdanfrtr;;SDANFR. Vous êtes né.e à l'étranger, en quelle année êtes-vous arrivé en France ?
+sdanfrtr;1;Avant 1970
+sdanfrtr;2;De 1970 à 1989
+sdanfrtr;3;Après 1989
+sdanfrtr;4;(NSP)
+sdnatp;;SDNATP. Quelle était la nationalité de votre père à sa naissance ?
+sdnatp;1;Nationalité française
+sdnatp;2;Nationalité étrangère
+sdnatp;3;(NSP)
+sdpnaisptr;;SDPNAISPTR. Quel est le pays de naissance de votre père ?
+sdpnaisptr;1;France
+sdpnaisptr;2;Pays européen
+sdpnaisptr;3;Pays non européen
+sdpnaisptr;4;Autres
+sdpnaisptr;5;(NSP)
+sdnatm;;SDNATM. Quelle était la nationalité de votre mère à sa naissance ?
+sdnatm;1;Nationalité française
+sdnatm;2;Nationalité étrangère
+sdnatm;3;(NSP)
+sdpnaismtr;;SDPNAISMTR. Quel est le pays de naissance de votre mère ?
+sdpnaismtr;1;France
+sdpnaismtr;2;Pays européen
+sdpnaismtr;3;Pays non européen
+sdpnaismtr;4;Autres
+sdpnaismtr;5;(NSP)
+sdrevcl_imput;;SDREVCL_IMPUT. Revenus mensuels nets du ménage imputé
+sdniviecl_imput;;SDNIVIECL_IMPUT. Niveau de vie mensuel du ménage imputé
+sdnivie;;SDNIVIE. Quintile de niveau de vie du ménage (imputé)
+sdnivie;1;1er quintile de niveau de vie
+sdnivie;2;2ème quintile de niveau de vie
+sdnivie;3;3ème quintile de niveau de vie
+sdnivie;4;4ème quintile de niveau de vie
+sdnivie;5;5ème quintile de niveau de vie
+sdageenftr_1;;SDAGEENFTR_1. Nombre d'enfants de 0 à 3 ans
+sdageenftr_2;;SDAGEENFTR_2. Nombre d'enfants de 4 à 6 ans
+sdageenftr_3;;SDAGEENFTR_3. Nombre d'enfants de 7 à 13 ans
+sdageenftr_4;;SDAGEENFTR_4. Nombre d'enfants de 14 à 17 ans
+sdageenftr_5;;SDAGEENFTR_5. Nombre d'enfants de 18 ans ou plus

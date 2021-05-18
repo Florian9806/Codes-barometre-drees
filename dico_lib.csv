@@ -1,0 +1,1281 @@
+variable;mod;libelle
+sdsexe;1;Homme
+sdsexe;2;Femme
+habitat;1;Rural
+habitat;2;Moins de 20 000 habitants
+habitat;3;De 20 000 à 99 999 habitants
+habitat;4;100 000 habitants et plus
+habitat;5;Agglomération parisienne
+region;1;Région parisienne
+region;2;Bassin Parisien Est
+region;3;Bassin Parisien Ouest
+region;4;Nord
+region;5;Est
+region;6;Ouest
+region;7;Sud Ouest
+region;8;Sud Est
+region;9;Méditerranée
+sdagetr;1;18 à 24 ans
+sdagetr;2;25 à 34 ans
+sdagetr;3;35 à 49 ans
+sdagetr;4;50 à 64 ans
+sdagetr;5;65 ans et +
+sdsitua;1;Vous travaillez à temps plein
+sdsitua;2;Vous travaillez à temps partiel
+sdsitua;3;Vous travaillez de façon intermittente
+sdsitua;4;Vous êtes à la recherche d'un emploi
+sdsitua;5;Vous êtes étudiant.e
+sdsitua;6;Vous êtes retraité.e ou préretraité.e
+sdsitua;7;Vous n'exercez aucune activité professionnelle
+sdsitua;8;Vous n'exercez aucune activité professionnelle ou êtes retraité.e (avant 2014)
+sdact;1;Salarié.e du secteur privé
+sdact;2;Salarié.e du secteur public
+sdact;3;Indépendant.e sans salarié.e
+sdact;4;Indépendant.e employeur.euse
+sdact;5;À la recherche d'un premier emploi
+sdact;6;Élève, étudiant.e, en formation, ou en stage non rémunéré
+sdact;7;Apprenti.e sous contrat ou stagiaire rémunéré.e
+sdact;8;Au foyer
+sdact;9;Autre inactif.ive
+sdstat;1;Salarié.e du secteur public
+sdstat;2;Salarié.e du secteur privé
+sdstat;3;Indépendant.e sans salarié.e
+sdstat;4;Employeur.euse
+sdstat;5;Chômeur.euse
+sdstat;6;Inactif.ive
+sdstat;7;Autre
+sdpcs7;1;Agriculteur.trice
+sdpcs7;2;Artisan.e ou commerçant.e
+sdpcs7;3;Profession libérale, cadre supérieur.e
+sdpcs7;4;Profession intermédiaire
+sdpcs7;5;Employé.e
+sdpcs7;6;Ouvrier.ère
+sdpcs7;7;Autre inactif.ive
+sdpcs7;8;(Sans réponse)
+sdpcs10;1;Agriculteur.trice
+sdpcs10;2;Artisan.e ou commerçant.e
+sdpcs10;3;Profession libérale, cadre supérieur.e
+sdpcs10;4;Profession intermédiaire
+sdpcs10;5;Employé.e
+sdpcs10;6;Ouvrier.ère
+sdpcs10;7;Chômeur.euse
+sdpcs10;8;Retraité.e
+sdpcs10;9;Au foyer
+sdpcs10;10;Autre inactif.ive
+sdpcs10;11;(Sans réponse)
+sdstatemp;1;CDI (ou fonctionnaire titulaire, y compris fonctionnaire stagiaire)
+sdstatemp;2;CDD
+sdstatemp;3;intérim
+sdstatemp;4;sans contrat
+sdstatemp;5;(NSP)
+sdsitfam;1;Vous vivez seul.e
+sdsitfam;2;Vous êtes un membre du couple
+sdsitfam;3;Vous êtes l'unique parent du foyer
+sdsitfam;4;Vous êtes un enfant de la famille
+sdsitfam;5;Vous êtes un.e ami.e ou un.e parent.e hébergé.e par la famille
+sdsitfam;6;Vous êtes un.e colocataire
+sdsitfam;7;Autres (personnel de maison, ...)
+sdpr;1;Votre conjoint.e
+sdpr;2;Votre père (ou de votre mère si votre père ne vit pas au foyer)
+sdpr;3;La personne de référence du ménage
+sdpr;4;(Vous-même)
+sdprsitua;1;Il.elle travaille à temps plein
+sdprsitua;2;Il.elle travaille à temps partiel
+sdprsitua;3;Il.elle travaille de façon intermittente
+sdprsitua;4;Il.elle est à la recherche d'un emploi, au chômage
+sdprsitua;5;Il.elle est étudiant.e
+sdprsitua;6;Il.elle est retraité.e ou préretraité.e
+sdprsitua;7;Il.elle n'exerce aucune activité professionnelle
+sdpract;1;Salarié.e du secteur privé
+sdpract;2;Salarié.e du secteur public
+sdpract;3;Indépendant.e sans salarié.e
+sdpract;4;Indépendant.e employeur.euse
+sdpract;5;À la recherche d'un premier emploi
+sdpract;6;Élève, étudiant.e, en formation, ou en stage non rémunéré
+sdpract;7;Apprenti.e sous contrat ou stagiaire rémunéré.e
+sdpract;8;Au foyer
+sdpract;9;Autre inactif.ive
+sdprstat;1;Salarié.e du secteur public
+sdprstat;2;Salarié.e du secteur privé
+sdprstat;3;Indépendant.e sans salarié.e
+sdprstat;4;Employeur.euse
+sdprstat;5;Chômeur.euse
+sdprstat;6;Inactif.ive
+sdprstat;7;Autre
+sdprpcs7;1;Agriculteur.trice
+sdprpcs7;2;Artisan.e ou commerçant.e
+sdprpcs7;3;Profession libérale, cadre supérieur.e
+sdprpcs7;4;Profession intermédiaire
+sdprpcs7;5;Employé.e
+sdprpcs7;6;Ouvrier.ère
+sdprpcs7;7;Autre inactif.ive
+sdprpcs7;8;(Sans réponse)
+sdprpcs10;1;Agriculteur.trice
+sdprpcs10;2;Artisan.e ou commerçant.e
+sdprpcs10;3;Profession libérale, cadre supérieur.e
+sdprpcs10;4;Profession intermédiaire
+sdprpcs10;5;Employé.e
+sdprpcs10;6;Ouvrier.ère
+sdprpcs10;7;Chômeur.euse
+sdprpcs10;8;Retraité.e
+sdprpcs10;9;Au foyer
+sdprpcs10;10;Autre inactif.ive
+sdnbpers;1;1 personne
+sdnbpers;2;2 personnes
+sdnbpers;3;3 personnes
+sdnbpers;4;4 personnes
+sdnbpers;5;5 personnes
+sdnbpers;6;6 personnes
+sdnbpers;7;7 personnes
+sdnbpers;8;8 personnes
+sdnbpers;9;9 personnes et plus
+sdnbpers;10;10 personnes et plus (depuis 2013)
+sdcouple;1;Oui
+sdcouple;2;Non
+sdmatri;1;Marié.e, pacsé.e ou en concubinage
+sdmatri;2;Veuf ou veuve
+sdmatri;3;Célibataire
+sdnbenf;1;Aucun enfant
+sdnbenf;2;1 enfant
+sdnbenf;3;2 enfants
+sdnbenf;4;3 enfants
+sdnbenf;5;4 enfants
+sdnbenf;6;5 enfants
+sdnbenf;7;6 enfants
+sdnbenf;8;7 enfants
+sdnbenf;9;8 enfants
+sdnbenf;10;9 enfants
+sdnbenf;11;10 enfants et plus
+sdnbenf;12;(NSP)
+sdnbadu;1;1 adulte
+sdnbadu;2;2 adultes
+sdnbadu;3;3 adultes
+sdnbadu;4;4 adultes
+sdnbadu;5;5 adultes
+sdnbadu;6;6 adultes
+sdnbadu;7;7 adultes
+sdnbadu;8;8 adultes
+sdnbadu;9;9 adultes
+sdnbadu;10;10 adultes et +
+sdsplit;1;Questionnaire A
+sdsplit;2;Questionnaire B
+sdsplit;3;Questionnaire C
+sdsplit;4;Questionnaire D
+sdmut;1;Oui
+sdmut;2;Non
+sdmut;3;(NSP)
+og1;1;Très bonne
+og1;2;Assez bonne
+og1;3;Assez mauvaise
+og1;4;Très mauvaise
+og1;5;(NSP)
+og2;1;Bien meilleure
+og2;2;Plutôt meilleure
+og2;3;A peu près identique
+og2;4;Plutôt moins bonne
+og2;5;Bien moins bonne
+og2;6;(NSP)
+og3_1;1;Très optimiste
+og3_1;2;Plutôt optimiste
+og3_1;3;Plutôt pessimiste
+og3_1;4;Très pessimiste
+og3_1;5;(NSP)
+og3_2;1;Très optimiste
+og3_2;2;Plutôt optimiste
+og3_2;3;Plutôt pessimiste
+og3_2;4;Très pessimiste
+og3_2;5;(NSP)
+og4_1;1;Beaucoup
+og4_1;2;Assez
+og4_1;3;Peu
+og4_1;4;Pas du tout
+og4_1;5;(NSP)
+og4_2;1;Beaucoup
+og4_2;2;Assez
+og4_2;3;Peu
+og4_2;4;Pas du tout
+og4_2;5;(NSP)
+og4_3;1;Beaucoup
+og4_3;2;Assez
+og4_3;3;Peu
+og4_3;4;Pas du tout
+og4_3;5;(NSP)
+og4_4;1;Beaucoup
+og4_4;2;Assez
+og4_4;3;Peu
+og4_4;4;Pas du tout
+og4_4;5;(NSP)
+og4_5;1;Beaucoup
+og4_5;2;Assez
+og4_5;3;Peu
+og4_5;4;Pas du tout
+og4_5;5;(NSP)
+og4_6;1;Beaucoup
+og4_6;2;Assez
+og4_6;3;Peu
+og4_6;4;Pas du tout
+og4_6;5;(NSP)
+og4_7;1;Beaucoup
+og4_7;2;Assez
+og4_7;3;Peu
+og4_7;4;Pas du tout
+og4_7;5;(NSP)
+og4_8;1;Beaucoup
+og4_8;2;Assez
+og4_8;3;Peu
+og4_8;4;Pas du tout
+og4_8;5;(NSP)
+og4_9;1;Beaucoup
+og4_9;2;Assez
+og4_9;3;Peu
+og4_9;4;Pas du tout
+og4_9;5;(NSP)
+og5_1;1;Beaucoup
+og5_1;2;Assez
+og5_1;3;Peu
+og5_1;4;Pas du tout
+og5_1;5;(NSP)
+og5_2;1;Beaucoup
+og5_2;2;Assez
+og5_2;3;Peu
+og5_2;4;Pas du tout
+og5_2;5;(NSP)
+og5_3;1;Beaucoup
+og5_3;2;Assez
+og5_3;3;Peu
+og5_3;4;Pas du tout
+og5_3;5;(NSP)
+og5_4;1;Beaucoup
+og5_4;2;Assez
+og5_4;3;Peu
+og5_4;4;Pas du tout
+og5_4;5;(NSP)
+og5_5;1;Beaucoup
+og5_5;2;Assez
+og5_5;3;Peu
+og5_5;4;Pas du tout
+og5_5;5;(NSP)
+og5_6;1;Beaucoup
+og5_6;2;Assez
+og5_6;3;Peu
+og5_6;4;Pas du tout
+og5_6;5;(NSP)
+og5_7;1;Beaucoup
+og5_7;2;Assez
+og5_7;3;Peu
+og5_7;4;Pas du tout
+og5_7;5;(NSP)
+og6;1;Il faut radicalement changer la société française
+og6;2;Il faut réformer la société française sur certains points tout en en conservant l'essentiel
+og6;3;Il faut conserver la société française en l'état
+og6;4;(NSP)
+og7;1;Trop
+og7;2;Ce qu'il faut
+og7;3;Pas assez
+og7;4;(NSP)
+og8_1;1;Tout à fait d'accord
+og8_1;2;Plutôt d'accord
+og8_1;3;Plutôt pas d'accord
+og8_1;4;Pas du tout d'accord
+og8_1;5;(NSP)
+og8_4;1;Tout à fait d'accord
+og8_4;2;Plutôt d'accord
+og8_4;3;Plutôt pas d'accord
+og8_4;4;Pas du tout d'accord
+og8_4;5;(NSP)
+og8_8;1;Tout à fait d'accord
+og8_8;2;Plutôt d'accord
+og8_8;3;Plutôt pas d'accord
+og8_8;4;Pas du tout d'accord
+og8_8;5;(NSP)
+og8_9;1;Tout à fait d'accord
+og8_9;2;Plutôt d'accord
+og8_9;3;Plutôt pas d'accord
+og8_9;4;Pas du tout d'accord
+og8_9;5;(NSP)
+og8_10;1;Tout à fait d'accord
+og8_10;2;Plutôt d'accord
+og8_10;3;Plutôt pas d'accord
+og8_10;4;Pas du tout d'accord
+og8_10;5;(NSP)
+in1;1;Plutôt juste
+in1;2;Plutôt injuste
+in1;3;(NSP)
+in2;1;Ont plutôt augmenté
+in2;2;Ont plutôt diminué
+in2;3;(Sont restées stables)
+in2;4;(NSP)
+in3;1;Vont plutôt augmenter
+in3;2;Vont plutôt diminuer
+in3;3;(Resteront stables)
+in3;4;(NSP)
+in4;1;Les inégalités de revenus
+in4;2;Les inégalités de logement
+in4;3;Les inégalités liées à l'héritage familial
+in4;4;Les inégalités par rapport au type d'emploi
+in4;5;Les inégalités dans les études scolaires
+in4;6;Les inégalités d'accès aux soins
+in4;7;Les inégalités par rapport au fait d'avoir un emploi
+in4;8;Les inégalités liées à l'origine ethnique
+in4;9;Les inégalités entre les femmes et les hommes
+in4;10;(NSP)
+in5;1;Les inégalités de revenus
+in5;2;Les inégalités de logement
+in5;3;Les inégalités liées à l'héritage familial
+in5;4;Les inégalités par rapport au type d'emploi
+in5;5;Les inégalités dans les études scolaires
+in5;6;Les inégalités d'accès aux soins
+in5;7;Les inégalités par rapport au fait d'avoir un emploi
+in5;8;Les inégalités liées à l'origine ethnique
+in5;9;Les inégalités entre les femmes et les hommes
+in5;10;(NSP)
+pe1;1;Ont diminué
+pe1;2;Ont augmenté
+pe1;3;(Sont restées stables)
+pe1;4;(NSP)
+pe2;1;Vont plutôt diminuer
+pe2;2;Vont plutôt augmenter
+pe2;3;(Resteront stables)
+pe2;4;(NSP)
+pe3;1;Oui, plutôt
+pe3;2;Non, plutôt pas
+pe3;3;Je me considère déjà comme pauvre
+pe3;4;(NSP)
+pe9;1;Il faut augmenter le RSA
+pe9;2;Il faut diminuer le RSA
+pe9;3;(Il faut laisser le RSA à ce niveau)
+pe9;4;(NSP)
+pe10;1;Oui
+pe10;2;Non
+pe10;3;(NSP)
+pe12;1;Il faut augmenter le SMIC
+pe12;2;Il faut diminuer le SMIC
+pe12;3;Il faut laisser le SMIC à ce niveau
+pe12;4;(NSP)
+lo1;1;Propriétaire
+lo1;2;Locataire d'un logement social (y compris HLM)
+lo1;3;Locataire hors logement social, c'est-à-dire dans le parc privé
+lo1;4;Logé gratuitement
+lo1;5;(NSP)
+lo1;6;Locataire (item pour historique)
+lo2;1;Oui
+lo2;2;Non
+lo2;3;(NSP)
+lo3;1;Sont trop élevés pour obtenir un logement social
+lo3;2;Ne sont pas trop élevés pour obtenir un logement social
+lo3;3;(NSP)
+lo4;1;Aux familles avec enfants à revenus modestes
+lo4;2;Aux personnes en grande difficulté
+lo4;3;Plus largement, à l’ensemble des catégories moyennes
+lo4;4;(NSP)
+lo9;1;Il faut les obliger à déménager pour permettre à ceux qui en ont vraiment besoin d'en bénéficier
+lo9;2;On peut leur permettre de rester pour privilégier la mixité sociale, tout en leur faisant payer des loyers plus élevés
+lo9;3;(NSP)
+re1;1;Bien meilleur
+re1;2;Plutôt meilleur
+re1;3;A peu près identique
+re1;4;Plutôt moins bon
+re1;5;Bien moins bon
+re1;6;(NSP)
+re2;1;Bien meilleur
+re2;2;Plutôt meilleur
+re2;3;A peu près identique
+re2;4;Plutôt moins bon
+re2;5;Bien moins bon
+re2;6;(NSP)
+re3;1;Aucune baisse de revenu
+re3;2;-10%
+re3;3;-20%
+re3;4;-30%
+re3;5;- 40 % ou plus
+re3;6;(NSP)
+re7;1;Oui, pour les deux parents
+re7;2;Oui, mais seulement pour les mères
+re7;3;Non
+re7;4;(NSP)
+re8;1;Oui, tout à fait
+re8;2;Oui, plutôt
+re8;3;Non, plutôt pas
+re8;4;Non, pas du tout
+re8;5;(NSP)
+re9bis;1;Les réformes déjà effectuées sont suffisantes
+re9bis;2;Des réformes supplémentaires sont nécessaires
+re9bis;3;(NSP)
+re9;1;Il faudrait allonger la durée de cotisation
+re9;2;Il faudrait reculer l'âge de la retraite
+re9;3;Il faudrait augmenter les cotisations pesant sur les salariés
+re9;4;Il faudrait diminuer les pensions versées aux retraités
+re9;5;(Il faudrait un autre type de réforme)
+re9;6;(NSP)
+re10;1;Il faut garder le système actuel fondé sur la répartition, en le réformant
+re10;2;Il faut ajouter au système actuel un complément d'assurance ou d'épargne individuelle
+re10;3;(Aucune de ces 2 propositions)
+re10;4;(NSP)
+re10;5;(NSP / Aucune de ces 2 propositions (avant 2014))
+re11;1;Il doit y avoir des régimes différents pour tenir compte des différences de statut professionnel
+re11;2;Il devrait y avoir un socle commun de retraite, tout en gardant certaines différences selon le statut professionnel
+re11;3;Il ne devrait y avoir qu'un seul régime de retraite, avec des caractéristiques identiques pour tous
+re11;4;(NSP)
+re12;1;Vous souhaitez partir à la retraite dès que vous pourrez bénéficier d'une retraite au taux plein
+re12;2;Vous souhaitez partir à la retraite plus tard, pour augmenter le montant de vos pensions
+re12;3;Vous souhaitez partir à la retraite plus tôt, quitte à recevoir un montant de pension plus faible
+re12;4;(Vous ne savez pas encore)
+re13;1;Aux veufs et veuves qui ont des ressources faibles ou moyennes
+re13;2;Aux veufs et veuves qui ont encore des enfants à charge
+re13;3;A tous les veufs et veuves pendant une période limitée suivant le décès du conjoint
+re13;4;A tous les veufs et veuves sans limitation de durée
+re13;5;(NSP)
+re14;1;Les personnes qui ont commencé à travailler plus jeunes doivent avoir la possibilité de partir à la retraite plus tôt
+re14;2;Il est normal que tout le monde parte à la retraite au même âge
+re14;3;(NSP)
+re15;1;Les cadres et les ouvriers doivent cotiser le même nombre d'années pour partir à la retraite
+re15;2;Les cadres doivent cotiser plus longtemps car ils ont une espérance de vie plus longue
+re15;3;(NSP)
+fa1_a;1;Soutenir la natalité
+fa1_a;2;Rapprocher les niveaux de vie des familles avec enfants et des personnes sans enfant
+fa1_a;3;Permettre aux familles de mieux se loger
+fa1_a;4;Permettre une meilleure conciliation entre vie familiale et vie professionnelle
+fa1_a;5;Rendre les jeunes de plus de 20 ans plus autonomes à l'égard de leur famille
+fa1_a;6;(NSP)
+fa1_b;1;Soutenir la natalité
+fa1_b;2;Compenser une partie des dépenses liées au fait d’avoir des enfants
+fa1_b;3;Permettre aux familles de mieux se loger
+fa1_b;4;Permettre une meilleure conciliation entre vie familiale et vie professionnelle
+fa1_b;5;Rendre les jeunes de plus de 20 ans plus autonomes à l'égard de leur famille
+fa1_b;6;(NSP)
+fa1_c;1;Soutenir la natalité
+fa1_c;2;Rapprocher les niveaux de vie des familles avec enfants et des personnes sans enfant
+fa1_c;3;Rapprocher les niveaux de vie entre les familles aisées et les familles modestes
+fa1_c;4;Permettre une meilleure conciliation entre vie familiale et vie professionnelle
+fa1_c;5;Rendre les jeunes de plus de 20 ans plus autonomes à l'égard de leur famille
+fa1_c;6;(NSP)
+fa1_d;1;Soutenir la natalité
+fa1_d;2;Compenser une partie des dépenses liées au fait d’avoir des enfants
+fa1_d;3;Rapprocher les niveaux de vie entre les familles aisées et les familles modestes
+fa1_d;4;Permettre une meilleure conciliation entre vie familiale et vie professionnelle
+fa1_d;5;Rendre les jeunes de plus de 20 ans plus autonomes à l'égard de leur famille
+fa1_d;6;(NSP)
+ha1;1;Oui, tout à fait
+ha1;2;Oui, plutôt
+ha1;3;Non, plutôt pas
+ha1;4;Non, pas du tout
+ha1;5;(NSP)
+ha2;1;à toutes les personnes se trouvant dans cette situation quel que soit leur niveau de revenu
+ha2;2;uniquement aux personnes disposant de faibles revenus
+ha2;3;(NSP)
+ha3;1;Il est normal qu’une personne handicapée ait un revenu minimum supérieur à une personne non handicapée
+ha3;2;Les minima sociaux devraient être les mêmes, que la personne soit handicapée ou non
+ha3;3;(NSP)
+ha4;1;S’est améliorée au cours des dernières années
+ha4;2;S’est détériorée au cours des dernières années
+ha4;3;Est restée la même au cours des dernières années
+ha4;4;(NSP)
+ha5_1;1;Tout à fait d'accord
+ha5_1;2;Plutôt d'accord
+ha5_1;3;Plutôt pas d'accord
+ha5_1;4;Pas du tout d'accord
+ha5_1;5;(NSP)
+ha5_2;1;Tout à fait d'accord
+ha5_2;2;Plutôt d'accord
+ha5_2;3;Plutôt pas d'accord
+ha5_2;4;Pas du tout d'accord
+ha5_2;5;(NSP)
+ha5_3;1;Tout à fait d'accord
+ha5_3;2;Plutôt d'accord
+ha5_3;3;Plutôt pas d'accord
+ha5_3;4;Pas du tout d'accord
+ha5_3;5;(NSP)
+ha5_4;1;Tout à fait d'accord
+ha5_4;2;Plutôt d'accord
+ha5_4;3;Plutôt pas d'accord
+ha5_4;4;Pas du tout d'accord
+ha5_4;5;(NSP)
+de1;1;L'État et les pouvoirs publics
+de1;2;Les enfants ou les familles des personnes âgées dépendantes
+de1;3;Les personnes âgées dépendantes elles-mêmes, en épargnant ou souscrivant une assurance privée
+de1;4;(NSP)
+de2;1;Obligatoire pour tous
+de2;2;Obligatoire, à partir d'un certain âge
+de2;3;Uniquement pour ceux qui le veulent
+de2;4;(NSP)
+de3;1;à toutes les personnes se trouvant dans cette situation, quel que soit leur niveau de revenu
+de3;2;uniquement aux personnes disposant de faibles revenus
+de3;3;(NSP)
+de4;1;Tout à fait prêt.e
+de4;2;Plutôt prêt.e
+de4;3;Plutôt pas prêt.e
+de4;4;Pas du tout prêt.e
+de4;5;(NSP)
+de5;1;Vous le placeriez dans une institution spécialisée
+de5;2;Vous l'accueilleriez chez vous
+de5;3;Vous consacreriez une partie de votre revenu à lui payer des aides de manière à ce qu'il reste à son domicile
+de5;4;Vous feriez en sorte de pouvoir vous en occuper à son domicile
+de5;5;(NSP)
+de6;1;Tout à fait envisageable
+de6;2;Plutôt envisageable
+de6;3;Plutôt pas envisageable
+de6;4;Pas envisageable du tout
+de6;5;(NSP)
+de7;1;Oui
+de7;2;Non
+de7;3;Non car j'ai moi-même besoin d'aide pour ces activités
+de7;4;(NSP)
+de8;1;Moins de 1h
+de8;2;Entre 1h et 3h
+de8;3;Entre 3h et 9h
+de8;4;Entre 9h et 18h
+de8;5;Plus de 18h
+de8;6;Je vis avec elle
+de8;7;(NSP)
+de9;1;Oui
+de9;2;Non
+de9;3;(NSP)
+de10;1;Permettre un meilleur aménagement du temps de travail
+de10;2;Fournir une aide financière
+de10;3;Permettre aux aidants d'être formés
+de10;4;Ouvrir des centres d’accueil de jour pour recevoir les personnes dépendantes dans la semaine
+de10;5;Autre
+de10;6;(NSP)
+ps1_1;1;Uniquement à ceux qui cotisent
+ps1_1;2;Uniquement à ceux qui ne peuvent pas ou n'ont pas les moyens de s'en sortir seuls
+ps1_1;3;À tous sans distinction de catégories sociales et de statut professionnel
+ps1_1;4;Davantage à ceux qui cotisent, avec un niveau minimal de protection pour les autres
+ps1_1;5;(NSP)
+ps1_2;1;Uniquement à ceux qui cotisent
+ps1_2;2;Uniquement à ceux qui ne peuvent pas ou n'ont pas les moyens de s'en sortir seuls
+ps1_2;3;À tous sans distinction de catégories sociales et de statut professionnel
+ps1_2;4;Davantage à ceux qui cotisent, avec un niveau minimal de protection pour les autres
+ps1_2;5;(NSP)
+ps1_3;1;Uniquement à ceux qui cotisent
+ps1_3;2;Uniquement à ceux qui ne peuvent pas ou n'ont pas les moyens de s'en sortir seuls
+ps1_3;3;À tous sans distinction de catégories sociales et de statut professionnel
+ps1_3;4;Davantage à ceux qui cotisent, avec un niveau minimal de protection pour les autres
+ps1_3;5;(NSP)
+ps1_4;1;Uniquement à ceux qui cotisent
+ps1_4;2;Uniquement à ceux qui ne peuvent pas ou n'ont pas les moyens de s'en sortir seuls
+ps1_4;3;À tous sans distinction de catégories sociales et de statut professionnel
+ps1_4;4;Davantage à ceux qui cotisent, avec un niveau minimal de protection pour les autres
+ps1_4;5;(NSP)
+ps2;1;Il est souhaitable que les entreprises cotisent davantage pour la protection sociale
+ps2;2;Il est souhaitable que les entreprises cotisent moins pour la protection sociale
+ps2;3;Les entreprises ne doivent ni plus, ni moins cotiser qu'actuellement
+ps2;4;(NSP)
+ps3;1;Excessif
+ps3;2;Normal
+ps3;3;Insuffisant
+ps3;4;(NSP)
+ps8;1;De l’État, des collectivités locales ou de la Sécurité sociale
+ps8;2;Des individus et des familles
+ps8;3;Des associations
+ps8;4;(NSP)
+ps11;1;Oui, tout à fait
+ps11;2;Oui, plutôt
+ps11;3;Non, plutôt pas
+ps11;4;Non, pas du tout
+ps11;5;(NSP)
+ps12;1;Oui, tout à fait
+ps12;2;Oui, plutôt
+ps12;3;Non, plutôt pas
+ps12;4;Non, pas du tout
+ps12;5;(NSP)
+ps13_1;1;Oui, tout à fait
+ps13_1;2;Oui, plutôt
+ps13_1;3;Non, plutôt pas
+ps13_1;4;Non, pas du tout
+ps13_1;5;(Non concerné.e)
+ps13_1;6;(NSP)
+ps13_2;1;Oui, tout à fait
+ps13_2;2;Oui, plutôt
+ps13_2;3;Non, plutôt pas
+ps13_2;4;Non, pas du tout
+ps13_2;5;(Non concerné.e)
+ps13_2;6;(NSP)
+ps13_3;1;Oui, tout à fait
+ps13_3;2;Oui, plutôt
+ps13_3;3;Non, plutôt pas
+ps13_3;4;Non, pas du tout
+ps13_3;5;(Non concerné.e)
+ps13_3;6;(NSP)
+ps13_4;1;Oui, tout à fait
+ps13_4;2;Oui, plutôt
+ps13_4;3;Non, plutôt pas
+ps13_4;4;Non, pas du tout
+ps13_4;5;(Non concerné.e)
+ps13_4;6;(NSP)
+ps13_5;1;Oui, tout à fait
+ps13_5;2;Oui, plutôt
+ps13_5;3;Non, plutôt pas
+ps13_5;4;Non, pas du tout
+ps13_5;5;(Non concerné.e)
+ps13_5;6;(NSP)
+ps13_6;1;Oui, tout à fait
+ps13_6;2;Oui, plutôt
+ps13_6;3;Non, plutôt pas
+ps13_6;4;Non, pas du tout
+ps13_6;5;(Non concerné.e)
+ps13_6;6;(NSP)
+ps13_7;1;Oui, tout à fait
+ps13_7;2;Oui, plutôt
+ps13_7;3;Non, plutôt pas
+ps13_7;4;Non, pas du tout
+ps13_7;5;(Non concerné.e)
+ps13_7;6;(NSP)
+ps15_1;1;Totalement d'accord
+ps15_1;2;Plutôt d'accord
+ps15_1;3;Plutôt pas d'accord
+ps15_1;4;Pas d'accord du tout
+ps15_1;5;(NSP)
+ps15_2;1;Totalement d'accord
+ps15_2;2;Plutôt d'accord
+ps15_2;3;Plutôt pas d'accord
+ps15_2;4;Pas d'accord du tout
+ps15_2;5;(NSP)
+ps15_3;1;Totalement d'accord
+ps15_3;2;Plutôt d'accord
+ps15_3;3;Plutôt pas d'accord
+ps15_3;4;Pas d'accord du tout
+ps15_3;5;(NSP)
+ps18;1;Une augmentation des prestations (allocations logement, allocations familiales, minima sociaux,...)
+ps18;2;Le développement de services (crèches, dispositifs de formation, équipements pour personnes âgées,...)
+ps18;3;Un meilleur accompagnement vers les droits (agents accompagnateurs, aide à l’utilisation du numérique, …)
+ps18;4;(NSP)
+ps16;1;Prendre des mesures pour réduire le déficit de la Sécurité Sociale
+ps16;2;Maintenir au niveau actuel les prestations sociales et les remboursements d'assurance maladie
+ps16;3;(NSP)
+sa1;1;Très bon
+sa1;2;Bon
+sa1;3;Moyen
+sa1;4;Mauvais
+sa1;5;Très mauvais
+sa1;6;(NSP)
+sa3;1;Oui
+sa3;2;Non
+sa3;3;(NSP)
+sa4;1;Oui
+sa4;2;Non
+sa4;3;(NSP)
+sa5;1;Beaucoup amélioré
+sa5;2;Un peu amélioré
+sa5;3;Un peu détérioré
+sa5;4;Beaucoup détérioré
+sa5;5;Est resté identique
+sa5;6;(NSP)
+sa24;1;Car certains de leurs comportements sont mauvais pour la santé
+sa24;2;En raison de l'environnement dans lequel ils vivent
+sa24;3;À cause de leurs conditions de travail
+sa24;4;Pour des raisons génétiques
+sa24;5;Parce qu'ils sont pauvres
+sa24;6;(NSP)
+sa7_1;1;Très satisfait.e
+sa7_1;2;Plutôt satisfait.e
+sa7_1;3;Ni satisfait.e ni insatisfait.e
+sa7_1;4;Plutôt insatisfait.e
+sa7_1;5;Très insatisfait.e
+sa7_1;6;(NSP)
+sa7_1;7;(Je ne suis jamais allé.e/ je ne connais pas)
+sa7_2;1;Très satisfait.e
+sa7_2;2;Plutôt satisfait.e
+sa7_2;3;Ni satisfait.e ni insatisfait.e
+sa7_2;4;Plutôt insatisfait.e
+sa7_2;5;Très insatisfait.e
+sa7_2;6;(NSP)
+sa7_2;7;(Je ne suis jamais allé.e/ je ne connais pas)
+sa7_3;1;Très satisfait.e
+sa7_3;2;Plutôt satisfait.e
+sa7_3;3;Ni satisfait.e ni insatisfait.e
+sa7_3;4;Plutôt insatisfait.e
+sa7_3;5;Très insatisfait.e
+sa7_3;6;(NSP)
+sa7_3;7;(Je ne suis jamais allé.e/ je ne connais pas)
+sa7_4;1;Très satisfait.e
+sa7_4;2;Plutôt satisfait.e
+sa7_4;3;Ni satisfait.e ni insatisfait.e
+sa7_4;4;Plutôt insatisfait.e
+sa7_4;5;Très insatisfait.e
+sa7_4;6;(NSP)
+sa7_4;7;(Je ne suis jamais allé.e/ je ne connais pas)
+sa7_5;1;Très satisfait.e
+sa7_5;2;Plutôt satisfait.e
+sa7_5;3;Ni satisfait.e ni insatisfait.e
+sa7_5;4;Plutôt insatisfait.e
+sa7_5;5;Très insatisfait.e
+sa7_5;6;(NSP)
+sa7_5;7;(Je ne suis jamais allé.e/ je ne connais pas)
+sa7_6;1;Très satisfait.e
+sa7_6;2;Plutôt satisfait.e
+sa7_6;3;Ni satisfait.e ni insatisfait.e
+sa7_6;4;Plutôt insatisfait.e
+sa7_6;5;Très insatisfait.e
+sa7_6;6;(NSP)
+sa7_6;7;(Je ne suis jamais allé.e/ je ne connais pas)
+sa7_7;1;Très satisfait.e
+sa7_7;2;Plutôt satisfait.e
+sa7_7;3;Ni satisfait.e ni insatisfait.e
+sa7_7;4;Plutôt insatisfait.e
+sa7_7;5;Très insatisfait.e
+sa7_7;6;(NSP)
+sa7_7;7;(Je ne suis jamais allé.e/ je ne connais pas)
+sa7_8;1;Très satisfait.e
+sa7_8;2;Plutôt satisfait.e
+sa7_8;3;Ni satisfait.e ni insatisfait.e
+sa7_8;4;Plutôt insatisfait.e
+sa7_8;5;Très insatisfait.e
+sa7_8;6;(NSP)
+sa7_8;7;(Je ne suis jamais allé.e/ je ne connais pas)
+me1_a;1;OUI, au moins une fois j'en ai eu besoin
+me1_a;2;NON, je n'en ai pas eu besoin
+me1_a;3;(NSP)
+me2_a;1;Oui, j’ai vu un médecin ou reçu un soin médical chaque fois que j’en ai eu besoin
+me2_a;2;Non, j’ai renoncé à voir un médecin ou à recevoir un soin médical au moins une fois
+me2_a;3;(NSP)
+me2_b;1;Oui, au moins en une occasion j’en avais besoin et j’y ai renoncé
+me2_b;2;Non, il n’est jamais arrivé que j’y renonce alors que j’en avais besoin
+me2_b;3;(NSP)
+me2_c;1;Vous n’êtes pas concerné car vous n’avez pas eu besoin d’examen ou de traitement médical
+me2_c;2;Oui, vous avez dû renoncer à un examen ou à un traitement médical dont vous aviez besoin
+me2_c;3;Non, vous n’avez pas dû renoncer à un examen ou à un traitement médical dont vous aviez besoin
+me2_c;4;(NSP)
+me1_d;1;Vous n’êtes pas concerné car vous n’avez pas eu besoin de voir un médecin pour des examens ou traitements médicaux
+me1_d;2;Oui, vous avez dû renoncer à voir un médecin pour des examens ou traitements médicaux dont vous aviez besoin
+me1_d;3;Non, vous n’avez pas dû renoncer à voir un médecin pour des examens ou traitements médicaux dont vous aviez besoin
+me1_d;4;(NSP)
+sa6_1;1;Plutôt d'accord
+sa6_1;2;Plutôt pas d'accord
+sa6_1;3;(NSP)
+sa6_2;1;Plutôt d'accord
+sa6_2;2;Plutôt pas d'accord
+sa6_2;3;(NSP)
+sa6_3;1;Plutôt d'accord
+sa6_3;2;Plutôt pas d'accord
+sa6_3;3;(NSP)
+sa6_4;1;Plutôt d'accord
+sa6_4;2;Plutôt pas d'accord
+sa6_4;3;(NSP)
+sa6_5;1;Plutôt d'accord
+sa6_5;2;Plutôt pas d'accord
+sa6_5;3;(NSP)
+sa6_6;1;Plutôt d'accord
+sa6_6;2;Plutôt pas d'accord
+sa6_6;3;(NSP)
+sa8_1;1;Plutôt favorable
+sa8_1;2;Plutôt opposé.e
+sa8_1;3;(NSP)
+sa8_2;1;Plutôt favorable
+sa8_2;2;Plutôt opposé.e
+sa8_2;3;(NSP)
+sa8_3;1;Plutôt favorable
+sa8_3;2;Plutôt opposé.e
+sa8_3;3;(NSP)
+sa8_5;1;Plutôt favorable
+sa8_5;2;Plutôt opposé.e
+sa8_5;3;(NSP)
+sa8_6;1;Plutôt favorable
+sa8_6;2;Plutôt opposé.e
+sa8_6;3;(NSP)
+sa8_7;1;Plutôt favorable
+sa8_7;2;Plutôt opposé.e
+sa8_7;3;(NSP)
+sa8_9;1;Plutôt favorable
+sa8_9;2;Plutôt opposé.e
+sa8_9;3;(NSP)
+sa9_1;1;Trop
+sa9_1;2;Suffisamment
+sa9_1;3;Pas assez
+sa9_1;4;(NSP)
+sa9_2;1;Trop
+sa9_2;2;Suffisamment
+sa9_2;3;Pas assez
+sa9_2;4;(NSP)
+sa9_3;1;Trop
+sa9_3;2;Suffisamment
+sa9_3;3;Pas assez
+sa9_3;4;(NSP)
+sa9_4;1;Trop
+sa9_4;2;Suffisamment
+sa9_4;3;Pas assez
+sa9_4;4;(NSP)
+sa9_5;1;Trop
+sa9_5;2;Suffisamment
+sa9_5;3;Pas assez
+sa9_5;4;(NSP)
+sa9_6;1;Trop
+sa9_6;2;Suffisamment
+sa9_6;3;Pas assez
+sa9_6;4;(NSP)
+sa11;1;Oui, tout à fait
+sa11;2;Oui, plutôt
+sa11;3;Non, plutôt pas
+sa11;4;Non, pas du tout
+sa11;5;(NSP)
+sa25;1;Oui, tout à fait
+sa25;2;Oui, plutôt
+sa25;3;Non, plutôt pas
+sa25;4;Non, pas du tout
+sa25;5;(NSP)
+sa13_1;1;Oui, tout à fait
+sa13_1;2;Oui, plutôt
+sa13_1;3;Non, plutôt pas
+sa13_1;4;Non, pas du tout
+sa13_1;5;(NSP)
+sa13_2;1;Oui, tout à fait
+sa13_2;2;Oui, plutôt
+sa13_2;3;Non, plutôt pas
+sa13_2;4;Non, pas du tout
+sa13_2;5;(NSP)
+sa13_3;1;Oui, tout à fait
+sa13_3;2;Oui, plutôt
+sa13_3;3;Non, plutôt pas
+sa13_3;4;Non, pas du tout
+sa13_3;5;(NSP)
+sa13_4;1;Oui, tout à fait
+sa13_4;2;Oui, plutôt
+sa13_4;3;Non, plutôt pas
+sa13_4;4;Non, pas du tout
+sa13_4;5;(NSP)
+sa13_5;1;Oui, tout à fait
+sa13_5;2;Oui, plutôt
+sa13_5;3;Non, plutôt pas
+sa13_5;4;Non, pas du tout
+sa13_5;5;(NSP)
+sa14;1;Consulter votre médecin
+sa14;2;En parler à votre famille, vos amis
+sa14;3;Vous renseigner sur des sites internet spécialisés ou des forums de discussion
+sa14;4;Consulter votre pharmacien, sans passer par le médecin
+sa14;5;Vous n'avez pas besoin de consulter quelqu'un pour vous soigner (automédication)
+sa14;6;(NSP)
+sa15_1;1;Oui, tout à fait
+sa15_1;2;Oui, plutôt
+sa15_1;3;Non, plutôt pas
+sa15_1;4;Non, pas du tout
+sa15_1;5;Je ne suis jamais allé.e à l’hôpital
+sa15_1;6;(NSP)
+sa15_2;1;Oui, tout à fait
+sa15_2;2;Oui, plutôt
+sa15_2;3;Non, plutôt pas
+sa15_2;4;Non, pas du tout
+sa15_2;5;Je ne suis jamais allé.e à l’hôpital
+sa15_2;6;(NSP)
+sa16_1;1;Plutôt d'accord
+sa16_1;2;Plutôt pas d'accord
+sa16_1;3;(NSP)
+sa16_2;1;Plutôt d'accord
+sa16_2;2;Plutôt pas d'accord
+sa16_2;3;(NSP)
+sa16_3;1;Plutôt d'accord
+sa16_3;2;Plutôt pas d'accord
+sa16_3;3;(NSP)
+sa17_ab;1;Beaucoup trop élevé
+sa17_ab;2;Un peu trop élevé
+sa17_ab;3;Un peu trop faible
+sa17_ab;4;Beaucoup trop faible
+sa17_ab;5;(NSP)
+sa17_cd;1;Beaucoup trop élevé
+sa17_cd;2;Un peu trop élevé
+sa17_cd;3;Vous convient
+sa17_cd;4;Un peu trop faible
+sa17_cd;5;Beaucoup trop faible
+sa17_cd;6;(NSP)
+sa18;1;Très élevés
+sa18;2;Plutôt élevés
+sa18;3;Plutôt faibles
+sa18;4;Ils seront totalement remboursés
+sa18;5;(NSP)
+sa26_ab;1;Très élevés
+sa26_ab;2;Plutôt élevés
+sa26_ab;3;Plutôt faibles
+sa26_ab;4;Ils seront totalement remboursés
+sa26_ab;5;(NSP)
+sa26_cd;1;Très élevés
+sa26_cd;2;Plutôt élevés
+sa26_cd;3;Plutôt faibles
+sa26_cd;4;Ils seront totalement remboursés
+sa26_cd;5;(NSP)
+sa19_1;1;Tout à fait d'accord
+sa19_1;2;Plutôt d'accord
+sa19_1;3;Plutôt pas d'accord
+sa19_1;4;Pas du tout d'accord
+sa19_1;5;(NSP)
+sa19_2;1;Tout à fait d'accord
+sa19_2;2;Plutôt d'accord
+sa19_2;3;Plutôt pas d'accord
+sa19_2;4;Pas du tout d'accord
+sa19_2;5;(NSP)
+sa19_3;1;Tout à fait d'accord
+sa19_3;2;Plutôt d'accord
+sa19_3;3;Plutôt pas d'accord
+sa19_3;4;Pas du tout d'accord
+sa19_3;5;(NSP)
+sa19_4;1;Tout à fait d'accord
+sa19_4;2;Plutôt d'accord
+sa19_4;3;Plutôt pas d'accord
+sa19_4;4;Pas du tout d'accord
+sa19_4;5;(NSP)
+sa19_5;1;Tout à fait d'accord
+sa19_5;2;Plutôt d'accord
+sa19_5;3;Plutôt pas d'accord
+sa19_5;4;Pas du tout d'accord
+sa19_5;5;(NSP)
+sa19_6;1;Tout à fait d'accord
+sa19_6;2;Plutôt d'accord
+sa19_6;3;Plutôt pas d'accord
+sa19_6;4;Pas du tout d'accord
+sa19_6;5;(NSP)
+sa19_7;1;Tout à fait d'accord
+sa19_7;2;Plutôt d'accord
+sa19_7;3;Plutôt pas d'accord
+sa19_7;4;Pas du tout d'accord
+sa19_7;5;(NSP)
+sa19_8;1;Tout à fait d'accord
+sa19_8;2;Plutôt d'accord
+sa19_8;3;Plutôt pas d'accord
+sa19_8;4;Pas du tout d'accord
+sa19_8;5;(NSP)
+sa23;1;Tout à fait justifiés
+sa23;2;Plutôt justifiés
+sa23;3;Plutôt pas justifiés
+sa23;4;Pas du tout justifiés
+sa23;5;(NSP)
+sa22_1;1;Oui pour moi
+sa22_1;2;Oui mais uniquement pour mes proches ou ma famille
+sa22_1;3;Non
+sa22_1;4;(NSP)
+sa22_2;1;Oui pour moi
+sa22_2;2;Oui mais uniquement pour mes proches ou ma famille
+sa22_2;3;Non
+sa22_2;4;(NSP)
+sa22_3;1;Oui pour moi
+sa22_3;2;Oui mais uniquement pour mes proches ou ma famille
+sa22_3;3;Non
+sa22_3;4;(NSP)
+sa22_4;1;Oui pour moi
+sa22_4;2;Oui mais uniquement pour mes proches ou ma famille
+sa22_4;3;Non
+sa22_4;4;(NSP)
+sa22_5;1;Oui pour moi
+sa22_5;2;Oui mais uniquement pour mes proches ou ma famille
+sa22_5;3;Non
+sa22_5;4;(NSP)
+sa22_6;1;Oui pour moi
+sa22_6;2;Oui mais uniquement pour mes proches ou ma famille
+sa22_6;3;Non
+sa22_6;4;(NSP)
+sa22_7;1;Oui pour moi
+sa22_7;2;Oui mais uniquement pour mes proches ou ma famille
+sa22_7;3;Non
+sa22_7;4;(NSP)
+sa22_8;1;Oui pour moi
+sa22_8;2;Oui mais uniquement pour mes proches ou ma famille
+sa22_8;3;Non
+sa22_8;4;(NSP)
+cs1;1;Très forte
+cs1;2;Assez forte
+cs1;3;Pas très forte
+cs1;4;Pas du tout forte
+cs1;5;(NSP)
+cs5;1;Très bien intégré.e
+cs5;2;Assez bien intégré.e
+cs5;3;Pas bien intégré.e
+cs5;4;Pas intégré.e du tout
+cs5;5;(NSP)
+cs6;1;D'avoir un travail qui vous convient
+cs6;2;D'être bien entouré par votre famille ou vos amis
+cs6;3;De partager une culture et des valeurs communes
+cs6;4;D'avoir un rôle de citoyen actif
+cs6;5;D'avoir un niveau de vie convenable
+cs6;6;D'être de nationalité française
+cs6;7;(NSP)
+cs17_ab;1;Oui
+cs17_ab;2;Non
+cs17_ab;3;(NSP)
+cs17_cd;1;Les pouvoirs publics font trop
+cs17_cd;2;Les pouvoirs publics font ce qu'ils doivent
+cs17_cd;3;Les pouvoirs publics ne font pas assez
+cs17_cd;4;(NSP)
+cs18;1;Les pouvoirs publics font trop
+cs18;2;Les pouvoirs publics font ce qu'ils doivent
+cs18;3;Les pouvoirs publics ne font pas assez pour les plus démunis
+cs18;4;(NSP)
+cs25_1;1;Au niveau de l’État, avec des règles communes pour tous
+cs25_1;2;À un niveau plus local, par les collectivités territoriales
+cs25_1;3;(NSP)
+cs25_2;1;Au niveau de l’État, avec des règles communes pour tous
+cs25_2;2;À un niveau plus local, par les collectivités territoriales
+cs25_2;3;(NSP)
+cs19_1;1;Tout à fait d'accord
+cs19_1;2;Plutôt d'accord
+cs19_1;3;Plutôt pas d'accord
+cs19_1;4;Pas du tout d'accord
+cs19_1;5;(NSP)
+cs19_2;1;Tout à fait d'accord
+cs19_2;2;Plutôt d'accord
+cs19_2;3;Plutôt pas d'accord
+cs19_2;4;Pas du tout d'accord
+cs19_2;5;(NSP)
+cs20;1;Par manque d'information sur les aides, ou sur les organismes à qui s'adresser
+cs20;2;Parce que les démarches à faire sont trop complexes et trop longues
+cs20;3;Parce qu'elles préfèrent s'en sortir par elles-mêmes
+cs20;4;Parce qu'elles refusent de dépendre de l'aide sociale et d'être considérées comme des assistées
+cs20;5;Pour ne pas avoir à rendre des comptes, à faire l'objet de contrôle
+cs20;6;Pour ne pas subir des conséquences négatives (perte d'autres droits, impôts, problèmes administratifs, etc.)
+cs20;7;Parce que ces aides n'apportent pas grand-chose financièrement
+cs20;8;Autre
+cs20;9;(NSP)
+cs13;1;Veiller à ce que chacun puisse être libre de ses croyances et de ses pratiques religieuses
+cs13;2;Veiller à ce que les croyances et les pratiques religieuses ne soient pas visibles dans les espaces publics
+cs13;3;(NSP)
+cs14;1;La diversité des cultures et des origines est une richesse pour notre pays
+cs14;2;La diversité des cultures et des origines rend difficile la vie en commun dans notre pays
+cs14;3;(NSP)
+cs9;1;Oui
+cs9;2;Non
+cs9;3;(NSP)
+cs16_1;1;Oui
+cs16_1;2;Non
+cs16_1;3;(NSP)
+cs16_2;1;Oui
+cs16_2;2;Non
+cs16_2;3;(NSP)
+cs16_3;1;Oui
+cs16_3;2;Non
+cs16_3;3;(NSP)
+cs16_4;1;Oui
+cs16_4;2;Non
+cs16_4;3;(NSP)
+cs16_5;1;Oui
+cs16_5;2;Non
+cs16_5;3;(NSP)
+cs21_1;1;Oui
+cs21_1;2;Non
+cs21_1;3;(NSP)
+cs21_2;1;Oui
+cs21_2;2;Non
+cs21_2;3;(NSP)
+cs21_3;1;Oui
+cs21_3;2;Non
+cs21_3;3;(NSP)
+cs21_4;1;Oui
+cs21_4;2;Non
+cs21_4;3;(NSP)
+cs21_5;1;Oui
+cs21_5;2;Non
+cs21_5;3;(NSP)
+cs21_6;1;Oui
+cs21_6;2;Non
+cs21_6;3;(NSP)
+cs21_7;1;Oui
+cs21_7;2;Non
+cs21_7;3;(NSP)
+cs22;1;Entre les différentes générations
+cs22;2;Entre les différentes catégories socio-économiques
+cs22;3;Entre les différents partis ou tendances politiques
+cs22;4;Entre les différents territoires
+cs22;5;Entre les différentes confessions religieuses
+cs22;6;Entre les personnes d’origines différentes
+cs22;7;(NSP)
+sdassynd_1;1;Oui
+sdassynd_1;2;Non
+sdassynd_1;3;(NSP)
+sdassynd_2;1;Oui
+sdassynd_2;2;Non
+sdassynd_2;3;(NSP)
+sdrel;1;Une pratique religieuse régulière
+sdrel;2;Une pratique occasionnelle ou le sentiment d'appartenir à une religion
+sdrel;3;Ni pratique ni sentiment d'appartenance
+sdrel;4;(NSP ou souhaite ne pas répondre)
+sdproxim_1;1;Non
+sdproxim_1;2;Oui, dans votre famille
+sdproxim_1;3;Oui, hors famille
+sdproxim_1;4;Oui, vous-même
+sdproxim_1;5;Oui, dans votre famille et hors famille
+sdproxim_1;6;Oui, vous-même et dans votre famille
+sdproxim_1;7;Oui, vous-même et hors famille
+sdproxim_1;8;Oui, vous-même, dans votre famille et hors famille
+sdproxim_1;9;(NSP)
+sdproxim_2;1;Non
+sdproxim_2;2;Oui, dans votre famille
+sdproxim_2;3;Oui, hors famille
+sdproxim_2;4;Oui, vous-même
+sdproxim_2;5;Oui, dans votre famille et hors famille
+sdproxim_2;6;Oui, vous-même et dans votre famille
+sdproxim_2;7;Oui, vous-même et hors famille
+sdproxim_2;8;Oui, vous-même, dans votre famille et hors famille
+sdproxim_2;9;(NSP)
+sdproxim_3;1;Non
+sdproxim_3;2;Oui, dans votre famille
+sdproxim_3;3;Oui, hors famille
+sdproxim_3;4;Oui, vous-même
+sdproxim_3;5;Oui, dans votre famille et hors famille
+sdproxim_3;6;Oui, vous-même et dans votre famille
+sdproxim_3;7;Oui, vous-même et hors famille
+sdproxim_3;8;Oui, vous-même, dans votre famille et hors famille
+sdproxim_3;9;(NSP)
+sdproxim_4;1;Non
+sdproxim_4;2;Oui, dans votre famille
+sdproxim_4;3;Oui, hors famille
+sdproxim_4;4;Oui, vous-même
+sdproxim_4;5;Oui, dans votre famille et hors famille
+sdproxim_4;6;Oui, vous-même et dans votre famille
+sdproxim_4;7;Oui, vous-même et hors famille
+sdproxim_4;8;Oui, vous-même, dans votre famille et hors famille
+sdproxim_4;9;(NSP)
+sdproxim_5;1;Non
+sdproxim_5;2;Oui, dans votre famille
+sdproxim_5;3;Oui, hors famille
+sdproxim_5;4;Oui, vous-même
+sdproxim_5;5;Oui, dans votre famille et hors famille
+sdproxim_5;6;Oui, vous-même et dans votre famille
+sdproxim_5;7;Oui, vous-même et hors famille
+sdproxim_5;8;Oui, vous-même, dans votre famille et hors famille
+sdproxim_5;9;(NSP)
+sdproxim_6;1;Non
+sdproxim_6;2;Oui, dans votre famille
+sdproxim_6;3;Oui, hors famille
+sdproxim_6;4;Oui, vous-même
+sdproxim_6;5;Oui, dans votre famille et hors famille
+sdproxim_6;6;Oui, vous-même et dans votre famille
+sdproxim_6;7;Oui, vous-même et hors famille
+sdproxim_6;8;Oui, vous-même, dans votre famille et hors famille
+sdproxim_6;9;(NSP)
+sdproxim_7;1;Non
+sdproxim_7;2;Oui, dans votre famille
+sdproxim_7;3;Oui, hors famille
+sdproxim_7;4;Oui, vous-même
+sdproxim_7;5;Oui, dans votre famille et hors famille
+sdproxim_7;6;Oui, vous-même et dans votre famille
+sdproxim_7;7;Oui, vous-même et hors famille
+sdproxim_7;8;Oui, vous-même, dans votre famille et hors famille
+sdproxim_7;9;(NSP)
+sdproxim_8;1;Non
+sdproxim_8;2;Oui, dans votre famille
+sdproxim_8;3;Oui, hors famille
+sdproxim_8;4;Oui, vous-même
+sdproxim_8;5;Oui, dans votre famille et hors famille
+sdproxim_8;6;Oui, vous-même et dans votre famille
+sdproxim_8;7;Oui, vous-même et hors famille
+sdproxim_8;8;Oui, vous-même, dans votre famille et hors famille
+sdproxim_8;9;(NSP)
+sdproxim_9;1;Non
+sdproxim_9;2;Oui, dans votre famille
+sdproxim_9;3;Oui, hors famille
+sdproxim_9;4;Oui, vous-même
+sdproxim_9;5;Oui, dans votre famille et hors famille
+sdproxim_9;6;Oui, vous-même et dans votre famille
+sdproxim_9;7;Oui, vous-même et hors famille
+sdproxim_9;8;Oui, vous-même, dans votre famille et hors famille
+sdproxim_9;9;(NSP)
+sdrichom;1;Oui
+sdrichom;2;Non
+sdrichom;3;(NSP)
+sdres_1;1;Oui
+sdres_1;2;Non
+sdres_1;3;(NSP)
+sdres_2;1;Oui
+sdres_2;2;Non
+sdres_2;3;(NSP)
+sdres_3;1;Oui
+sdres_3;2;Non
+sdres_3;3;(NSP)
+sdres_4;1;Oui
+sdres_4;2;Non
+sdres_4;3;(NSP)
+sdres_5;1;Oui
+sdres_5;2;Non
+sdres_5;3;(NSP)
+sdres_6;1;Oui
+sdres_6;2;Non
+sdres_6;3;(NSP)
+sdres_7;1;Oui
+sdres_7;2;Non
+sdres_7;3;(NSP)
+sdres_8;1;Oui
+sdres_8;2;Non
+sdres_8;3;(NSP)
+sdres_9;1;Oui
+sdres_9;2;Non
+sdres_9;3;(NSP)
+sdres_10;1;Oui
+sdres_10;2;Non
+sdres_10;3;(NSP)
+sdres_11;1;Oui
+sdres_11;2;Non
+sdres_11;3;(NSP)
+sdres_12;1;Oui
+sdres_12;2;Non
+sdres_12;3;(NSP)
+sdrevtr;1;Moins de 1000 euros par mois
+sdrevtr;2;De 1000 à moins de 1400 euros par mois
+sdrevtr;3;De 1400 à moins de 1900 euros par mois
+sdrevtr;4;De 1900 à moins de 2400 euros par mois
+sdrevtr;5;De 2400 à moins de 3800 euros par mois
+sdrevtr;6;De 3800 à moins de 5300 euros par mois
+sdrevtr;7;Plus de 5300 euros par mois
+sdrevtr;8;(NSP/refus de réponse)
+sdrevstab;1;Plutôt stables
+sdrevstab;2;Plutôt variables
+sdrevstab;3;(NSP)
+sdrevfut;1;Plutôt augmenter
+sdrevfut;2;Plutôt diminuer
+sdrevfut;3;Rester stables
+sdrevfut;4;(NSP)
+sddipl;1;Vous n'avez pas de diplôme
+sddipl;2;Vous avez un certificat d'études primaires
+sddipl;3;Vous avez un ancien brevet, BEPC, ou brevet des collèges
+sddipl;4;Vous avez un certificat d'aptitude professionnelle (CAP), un brevet  d'enseignement professionnel (BEP)
+sddipl;5;Vous avez un bac d'enseignement général
+sddipl;6;Vous avez un bac d'enseignement technologique ou professionnel
+sddipl;7;Vous avez un bac + 2 ans ou niveau bac + 2 ans (DUT, BTS, DEUG, L2)
+sddipl;8;Vous avez un diplôme supérieur (2ème, 3ème cycle, grande école, L3, M1, M2)
+sddipl;9;(Autre situation)
+sddipl;10;(NSP)
+sdpol_det;1;0 Très à gauche
+sdpol_det;2;1
+sdpol_det;3;2
+sdpol_det;4;3
+sdpol_det;5;4
+sdpol_det;6;5
+sdpol_det;7;6
+sdpol_det;8;7
+sdpol_det;9;8
+sdpol_det;10;9
+sdpol_det;11;10 Très à droite
+sdpol_det;12;(NSP)
+sdpoltr;1;0-2 extrême gauche
+sdpoltr;2;3-4 gauche modérée
+sdpoltr;3;5 centre
+sdpoltr;4;6-7 droite modérée
+sdpoltr;5;8-10 extrême droite
+sdpoltr;6;(NSP)
+sdnat;1;Né.e français.e
+sdnat;2;Devenu.e français.e par acquisition (naturalisation, mariage, déclaration, option à votre majorité...)
+sdnat;3;Étranger.ère
+sdnat;4;(NSP)
+sdpnaistr;1;France
+sdpnaistr;2;Pays européen
+sdpnaistr;3;Pays non européen
+sdpnaistr;4;Autres
+sdpnaistr;5;(NSP)
+sdanfrtr;1;Avant 1970
+sdanfrtr;2;De 1970 à 1989
+sdanfrtr;3;Après 1989
+sdanfrtr;4;(NSP)
+sdnatp;1;Nationalité française
+sdnatp;2;Nationalité étrangère
+sdnatp;3;(NSP)
+sdpnaisptr;1;France
+sdpnaisptr;2;Pays européen
+sdpnaisptr;3;Pays non européen
+sdpnaisptr;4;Autres
+sdpnaisptr;5;(NSP)
+sdnatm;1;Nationalité française
+sdnatm;2;Nationalité étrangère
+sdnatm;3;(NSP)
+sdpnaismtr;1;France
+sdpnaismtr;2;Pays européen
+sdpnaismtr;3;Pays non européen
+sdpnaismtr;4;Autres
+sdpnaismtr;5;(NSP)
+sdnivie ;1;1er quintile
+sdnivie ;2;2e quintile
+sdnivie ;3;3e quintile
+sdnivie ;4;4e quintile
+sdnivie ;5;5e quintile

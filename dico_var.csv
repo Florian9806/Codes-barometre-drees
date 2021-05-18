@@ -1,0 +1,283 @@
+varlab;lib
+ident;IDENT. Identifiant unique
+annee;ANNEE. Année
+poids;POIDS. Poids de redressement
+region;REGION. ZEAT
+sdsexe;SDSEXE. Sexe de l’enquêté.e
+habitat;HABITAT. Catégorie d’agglomération
+sdage;SDAGE. Âge 
+sdagetr;SDAGETR. Âge (en tranches)
+sdsitua;SDSITUA. Quelle est votre situation actuellement ?
+sdact;SDACT. Activité principale de l’interviewé.e (ou ancienne activité)
+sdstat;SDSTAT. Statut d’activité de l’interviewé.e
+sdpcs7;SDPCS7. Profession de l’interviewé.e (ou ancienne profession) en 7 catégories
+sdpcs10;SDPCS10. Profession actuelle de l’interviewé.e en 10 catégories
+sdstatemp;SDSTATEMP. Type de contrat (ou ancien type de contrat)
+sdsitfam;SDSITFAM. Quelle est votre situation familiale dans le foyer ?
+sdpr;SDPR. Désignation de la personne de référence
+sdprsitua;SDPRSITUA. Situation de la personne de référence
+sdpract;SDPRACT. Activité principale de la personne de référence (ou ancienne activité principale)
+sdprstat;SDPRSTAT. Statut d’activité de la personne de référence
+sdprpcs7;SDPRPCS7. Profession de la personne de référence (ou ancienne profession) en 7 catégories
+sdprpcs10;SDPRPCS10. Profession  actuelle de la personne de référence en 10 catégories
+sdnbpers;SDNBPERS. Nombre de personnes dans le foyer
+sdcouple;SDCOUPLE. Vivez-vous en couple ?
+sdmatri;SDMATRI. Statut marital
+sdnbenf;SDNBENF. Combien y-a-t-il d’enfants à charge dans votre foyer ?
+sduc;SDUC. Nombre d’unités de consommation du ménage
+sdsplit;SDSPLIT. Version du questionnaire
+sdmut;SDMUT. Êtes-vous couvert.e par une mutuelle ou une assurance complémentaire maladie ?
+og1;OG1. Vous personnellement, comment qualifieriez-vous votre situation actuelle ?
+og2;OG2. Par rapport à la situation de vos parents au même âge, diriez-vous que votre situation actuelle est…
+og3_1;OG3_1. Quand vous pensez à l’avenir, êtes-vous plutôt optimiste ou plutôt pessimiste... pour vous-même ?
+og3_2;OG3_2. Quand vous pensez à l’avenir, êtes-vous plutôt optimiste ou plutôt pessimiste... pour vos enfants ou les générations futures ?
+og4_1;OG4_1. Êtes-vous personnellement préoccupé(e) par… le logement ?
+og4_2;OG4_2. Êtes-vous personnellement préoccupé(e) par… les migrations des populations des pays pauvres vers les pays riches ?
+og4_3;OG4_3. Êtes-vous personnellement préoccupé(e) par… la pauvreté ?
+og4_4;OG4_4. Êtes-vous personnellement  préoccupé(e) par… l’insécurité dans votre quartier ou votre village ?
+og4_5;OG4_5. Êtes-vous personnellement préoccupé(e) par… la dette de la France ?
+og4_6;OG4_6. Êtes-vous personnellement  préoccupé(e) par… le chômage ?
+og4_7;OG4_7. Êtes-vous personnellement  préoccupé(e) par… les crises financières internationales ?
+og4_8;OG4_8. Êtes-vous personnellement préoccupé(e) par… la santé des Français ?
+og4_9;OG4_9. Êtes-vous personnellement  préoccupé(e) par… le niveau des salaires et du pouvoir d’achat ?
+og5_1;OG5_1. Êtes-vous personnellement préoccupé(e) par… les problèmes liés à l’environnement ?
+og5_2;OG5_2. Êtes-vous personnellement préoccupé(e) par… lles risques alimentaires ?
+og5_3;OG5_3. Êtes-vous personnellement préoccupé(e) par… le Sida ?
+og5_4;OG5_4. Êtes-vous personnellement préoccupé(e) par… l’avenir du système de retraite ?
+og5_5;OG5_5. Êtes-vous personnellement préoccupé(e) par… le cancer ?
+og5_6;OG5_6. Êtes-vous personnellement préoccupé(e) par…les risques d’épidémie ?
+og5_7;OG5_7. Êtes-vous personnellement préoccupé(e) par… les inégalités entre les femmes et les hommes ?
+og6;OG6. Quand vous pensez à la société française telle qu’elle existe aujourd’hui, avec laquelle des opinions suivantes êtes-vous le plus d’accord ?
+og7;OG7. Pensez-vous qu’il y a trop d’intervention de l’État en matière économique et sociale, juste ce qu’il faut ou pas assez ?
+og8_1;OG8_1. « Il y a trop de travailleurs immigrés »
+og8_4;OG8_4. «  Les femmes font de meilleures infirmières que les hommes »
+og8_8;OG8_8. «  Les mères savent mieux répondre aux besoins et attentes des enfants que les pères »
+og8_9;OG8_9. «  Dans l’idéal, les femmes devraient rester à la maison pour élever leurs enfants »
+og8_10;OG8_10. « La loi doit autoriser les médecins à mettre fin à la vie d’une personne atteinte d’une maladie incurable, si cette dernière en fait la demande »
+in1;IN1. La société française aujourd’hui, vous paraît-elle plutôt juste ou plutôt injuste ?
+in2;IN2. Globalement, depuis 5 ans, diriez-vous que les inégalités en France…
+in3;IN3. À l’avenir, pensez-vous que les inégalités en France…
+in4;IN4. Quel type d’inégalité vous semble la plus répandue aujourd’hui ?
+in5;IN5. Quel type d’inégalité vous semble la moins acceptable ?
+in11_1;IN11_1. Que gagnent en moyenne les gens qui ont la même profession que vous ?
+in11_2;IN11_2. Que devraient gagner en moyenne les gens qui ont la même profession que vous ?
+pe1;PE1. Selon vous, depuis 5 ans, la pauvreté et l’exclusion en France...
+pe2;PE2. À l’avenir, pensez-vous que la pauvreté et l’exclusion en France…
+pe3;PE3. Vous personnellement, pensez-vous qu’il y a un risque que vous deveniez pauvre dans les cinq prochaines années ?
+pe7;PE7. Selon vous pour vivre, quel est le montant dont doit disposer au minimum un individu par mois (en euros) ? 
+pe16;PE16. Selon vous, pour vivre, quel est le montant dont doit disposer au minimum un foyer comme le vôtre, par mois (en euros) ? 
+pe9;PE9. Avec laquelle de ces opinions sur le RSA êtes-vous le plus d’accord ?
+pe10;PE10. Dans ce cas, seriez-vous prêt à accepter une hausse de vos impôts ou de vos cotisations pour financer une augmentation du RSA ?
+pe12;PE12. Avec laquelle de ces opinions sur le SMIC êtes-vous le plus d’accord ?
+lo1;LO1. Concernant votre résidence principale, êtes-vous...
+lo2;LO2. Avez-vous un remboursement de prêt en cours pour votre résidence principale ?
+lo3;LO3. Aujourd’hui, les logements sociaux sont attribués aux ménages situés en dessous d’un certain niveau de revenus. Pensez-vous que les revenus de votre ménage :
+lo4;LO4. Selon vous les logements sociaux devraient-ils être attribués en priorité :
+lo9;LO9. Avec quelle proposition concernant les plafonds pour bénéficier d’un HLM êtes-vous le plus d’accord ?
+re1;RE1. À l’heure actuelle, comment évaluez-vous le niveau de vie moyen des retraités par rapport à celui de l’ensemble de la population ?
+re2;RE2. Lorsque vous serez à la retraite, comment pensez-vous que votre niveau de vie sera par rapport à celui de l’ensemble de la population ?
+re3;RE3. Compte tenu des problèmes de financement des systèmes de retraite, quelle baisse de revenu vous semble acceptable au moment du départ en retraite ?
+re4;RE4. Dans l’idéal, à quel âge souhaiteriez-vous ou auriez-vous aimé prendre votre retraite ?
+re5;RE5. À quel âge, d’après vous, pourrez-vous prendre votre retraite ?
+re16;RE16. À quel âge avez-vous pris votre retraite ?
+re6;RE6. À partir de quel âge estimez-vous qu’il n’est plus acceptable de faire travailler les gens ?
+re7;RE7. Pensez-vous que le fait d’avoir élevé des enfants doit conduire à des avantages au moment de la retraite ?
+re8;RE8. Pensez-vous que certains des avantages liés au fait d’avoir élevé des enfants doivent être réservés aux parents de famille nombreuse ?
+re9bis;RE9BIS. Pensez-vous que pour préserver le système de retraite par répartition tel qu’il existe…
+re9;RE9. Parmi les solutions suivantes pour préserver le système de retraite par répartition tel qu’il existe, laquelle a votre préférence ?
+re10;RE10. À l’avenir, que faudrait-il faire en priorité en matière de retraite ?
+re11;RE11. Avec laquelle des propositions suivantes concernant les différences de régimes de retraites selon le statut professionnel êtes-vous le plus d’accord ?
+re12;RE12. Laquelle des affirmations suivantes, concernant votre départ à la retraite, vous correspond le mieux ?
+re13;RE13. Selon vous, l’objectif principal d’une pension de réversion est d’apporter une aide…
+re14;RE14. Avec laquelle des propositions suivantes êtes-vous le plus d’accord ?
+re15;RE15. En moyenne, à 60 ans, les cadres peuvent espérer vivre encore 24 années contre 20 pour les ouvriers. Pensez-vous que...
+fa1_a;FA1_A. Selon vous, quel devrait être l’objectif prioritaire de la politique familiale ?
+fa1_b;FA1_B. Selon vous, quel devrait être l’objectif prioritaire de la politique familiale ?
+fa1_c;FA1_C. Selon vous, quel devrait être l’objectif prioritaire de la politique familiale ?
+fa1_d;FA1_D. Selon vous, quel devrait être l’objectif prioritaire de la politique familiale ?
+ha1;HA1. À votre avis, la société actuelle se donne-t-elle les moyens d’intégrer les personnes handicapées ?
+ha2;HA2. Selon vous, une aide financière pour compenser les surcoûts liés au handicap doit-elle être accordée...
+ha3;HA3. Avec laquelle des opinions sur l’allocation aux adultes handicapés êtes-vous le plus d’accord ?
+ha4;HA4. D’après ce que vous savez des lieux et équipements publics ou collectifs de votre quartier, l’accessibilité pour les personnes handicapées
+ha5_1;HA5_1. Êtes-vous d’accord avec le fait que les enfants en fauteuil roulant puissent être scolarisés avec les autres enfants, dans l’école de votre quartier ?
+ha5_2;HA5_2. Êtes-vous d’accord avec le fait que les enfants aveugles puissent être scolarisés avec les autres enfants, dans l’école de votre quartier ?
+ha5_3;HA5_3. Êtes-vous d’accord avec le fait que les enfants trisomiques puissent être scolarisés avec les autres enfants, dans l’école de votre quartier ?
+ha5_4;HA5_4. Êtes-vous d’accord avec le fait que les enfants enfants autistes puissent être scolarisés avec les autres enfants, dans l’école de votre quartier ?
+de1;DE1. Selon vous, qui doit principalement prendre en charge financièrement les personnes âgées dépendantes ?
+de2;DE2. Si on devait créer une cotisation spécifique pour être couvert au cas où l’on devienne dépendant, devrait-elle être... ?
+de3;DE3. Selon vous, une aide financière pour compenser les surcoûts liés à la dépendance des personnes âgées doit-elle être accordée...
+de4;DE4. Seriez-vous prêt.e à épargner davantage en prévision d’une éventuelle situation de dépendance vous concernant ?
+de5;DE5. Si l’un de vos parents proches devenait dépendant, que feriez-vous ?
+de6;DE6. Pour vous personnellement, à l’avenir, vivre dans un établissement pour personnes âgées, ce serait quelque chose de... ?
+de7;DE7. Vous personnellement, apportez-vous une aide régulière et bénévole à une personne âgée dépendante vivant chez vous, chez elle ou ailleurs (institution…) ?
+de8;DE8. Combien de temps passez-vous à l’aider chaque semaine, sans compter les moments de soutien moral?
+de9;DE9. Avez-vous le sentiment d’être suffisamment aidé.e et considéré.e en tant qu’aidant.e par les pouvoirs publics ?
+de10;DE10. Selon vous, que devraient faire en priorité les pouvoirs publics pour améliorer la situation des aidants ?
+ps1_1;PS1_1. À votre avis, l’assurance maladie devrait-elle bénéficier...
+ps1_2;PS1_2. À votre avis, les retraites devraient-elles bénéficier…
+ps1_3;PS1_3. À votre avis, les allocations familiales devraient-elles bénéficier...
+ps1_4;PS1_4. À votre avis les allocations chômage devraient-elles bénéficier...
+ps2;PS2. Actuellement, les entreprises cotisent pour la protection sociale. Avec laquelle des trois propositions suivantes, êtes-vous le plus d’accord ? À l’avenir...
+ps3;PS3. La France consacre environ le tiers du revenu national au financement de la protection sociale. Considérez-vous que c’est…
+ps8;PS8. Selon vous, en France, la solidarité devrait avant tout être l’affaire
+ps11;PS11. Pensez-vous que le système d’assurance maladie doit rester essentiellement public ?
+ps12;PS12. Et pensez-vous que le système de retraite doit rester essentiellement public ?
+ps13_1;PS13_1. Accepteriez-vous une baisse de l’assurance maladie en échange d’une baisse de vos impôts ou de vos cotisations ? 
+ps13_2;PS13_2. Accepteriez-vous une baisse des retraites en échange d’une baisse de vos impôts ou de vos cotisations ? 
+ps13_3;PS13_3. Accepteriez-vous une baisse des allocations familiales en échange d’une baisse de vos impôts ou de vos cotisations ?
+ps13_4;PS13_4. Accepteriez-vous une baisse des allocations chômage en échange d’une baisse de vos impôts ou de vos cotisations ?
+ps13_5;PS13_5. Accepteriez-vous une baisse des aides aux personnes handicapées en échange d’une baisse de vos impôts ou de vos cotisations ?
+ps13_6;PS13_6. Accepteriez-vous une baisse des aides aux personnes âgées dépendantes en échange d’une baisse de vos impôts ou de vos cotisations ?
+ps13_7;PS13_7. Accepteriez-vous une baisse des allocations logement en échange d’une baisse de vos impôts ou de vos cotisations ?
+ps15_1;PS15_1. « Notre système de sécurité sociale... fournit un niveau de protection suffisant »
+ps15_2;PS15_2. « Notre système de sécurité sociale... peut servir de modèle à d’autres pays »
+ps15_3;PS15_3. « Notre système de sécurité sociale... coûte trop cher à la société »
+ps18;PS18. En matière de politique sociale, quel type d’actions vous semble le plus nécessaire aujourd’hui ?
+ps16;PS16. Pour vous, quel est le plus important
+sa1;SA1. Comment est votre état de santé général ?
+sa3;SA3. Êtes-vous limité.e depuis au moins 6 mois à cause d’un problème de santé, dans les activités que les gens font habituellement ?
+sa4;SA4. Avez-vous une affection de longue durée (ALD) pour laquelle vos soins sont pris en charge à 100 % par l’Assurance maladie ou la Sécurité sociale ?
+sa5;SA5. Selon vous, au cours des dernières années, l’état de santé des Français s’est…
+sa6_1;SA6_1. « En France tout le monde peut être soigné quel que soit son revenu »
+sa6_2;SA6_2. « En France on a la même qualité de soins quel que soit son revenu »
+sa6_3;SA6_3. « En France tout le monde peut être soigné quel que soit le lieu où il habite »
+sa6_4;SA6_4. « En France on a la même qualité de soins quel que soit le lieu où l’on habite »
+sa6_5;SA6_5. « En France on a les mêmes délais d’attente pour se faire soigner quel que soit son revenu »
+sa6_6;SA6_6. « En France on a les mêmes délais d’attente pour se faire soigner quel que soit le lieu où l’on habite »
+sa24;SA24. Les problèmes de santé peuvent avoir plusieurs causes. Pensez-vous que si les gens souffrent de graves problèmes de santé, c’est principalement… ?
+sa7_1;SA7_1. En général, êtes-vous satisfait de la qualité des soins offerts par les … hôpitaux publics (hors services d’urgence et maternités) ?
+sa7_2;SA7_2. En général, êtes-vous satisfait de la qualité des soins offerts par les … urgences hospitalières ?
+sa7_3;SA7_3. En général, êtes-vous satisfait de la qualité des soins offerts par les … cliniques privées ?
+sa7_4;SA7_4. En général, êtes-vous satisfait de la qualité des soins offerts par les … dentistes, orthodontistes ?
+sa7_5;SA7_5. En général, êtes-vous satisfait de la qualité des soins offerts par les … médecins généralistes (hors hôpital) ?
+sa7_6;SA7_6. En général, êtes-vous satisfait de la qualité des soins offerts par les … médecins spécialistes (hors hôpital) ?
+sa7_7;SA7_7. En général, êtes-vous satisfait de la qualité des soins offerts par les … infirmiers/infirmières (hors hôpital) ?
+sa7_8;SA7_8. En général, êtes-vous satisfait de la qualité des soins offerts par les … maternités ?
+me1_a;ME1_A. Au cours des 12 derniers mois, avez-vous eu besoin de voir un médecin pour des examens ou des soins médicaux ?
+me2_a;ME2_A. Avez-vous vu un médecin ou reçu des soins médicaux chaque fois que vous en avez eu besoin ?
+me2_b;ME2_B. Au cours des 12 derniers mois, avez-vous renoncé à voir un médecin pour des examens ou des soins médicaux dont vous aviez besoin ?
+me2_c;ME2_C. Au cours des 12 derniers mois, avez-vous dû renoncer à un examen ou traitement médical dont vous aviez besoin ?
+me1_d;ME1_D. Au cours des 12 derniers mois, avez-vous dû renoncer à voir un médecin pour des examens ou traitements médicaux dont vous aviez besoin ?
+sa8_1;SA8_1. Pour réduire le déficit de la branche maladie de la Sécurité sociale, seriez-vous plutôt favorable ou opposé.e à… augmenter les cotisations ?
+sa8_2;SA8_2. Pour réduire le déficit de la branche maladie de la Sécurité sociale, seriez-vous plutôt favorable ou opposé.e à… limiter le remboursement de la Sécurité sociale pour certaines prestations  ?
+sa8_3;SA8_3. Pour réduire le déficit de la branche maladie de la Sécurité sociale, seriez-vous plutôt favorable ou opposé.e à… réduire la prise en charge des longues maladies par la sécurité sociale ?
+sa8_5;SA8_5. Pour réduire le déficit de la branche maladie de la Sécurité sociale, seriez-vous plutôt favorable ou opposé.e à… modifier les habitudes des médecins pour qu’ils prescrivent moins de médicaments et d’examens ?
+sa8_6;SA8_6. Pour réduire le déficit de la branche maladie de la Sécurité sociale, seriez-vous plutôt favorable ou opposé.e à… limiter les tarifs des professionnels de santé ?
+sa8_7;SA8_7. Pour réduire le déficit de la branche maladie de la Sécurité sociale, seriez-vous plutôt favorable ou opposé.e à… taxer davantage les fabricants de médicaments ?
+sa8_9;SA8_9. Pour réduire le déficit de la branche maladie de la Sécurité sociale, seriez-vous plutôt favorable ou opposé.e à… permettre aux infirmiers / pharmaciens de faire certaines tâches à la place des médecins ?
+sa9_1;SA9_1. À votre avis, pensez-vous qu’il y a à proximité de chez vous des... médecins généralistes ?
+sa9_2;SA9_2. À votre avis, pensez-vous qu’il y a à proximité de chez vous des… médecins spécialistes ?
+sa9_3;SA9_3. À votre avis, pensez-vous qu’il y a à proximité de chez vous des... infirmiers / infirmières ?
+sa9_4;SA9_4. À votre avis, pensez-vous qu’il y a à proximité de chez vous des... kinésithérapeutes ?
+sa9_5;SA9_5. À votre avis, pensez-vous qu’il y a à proximité de chez vous des… dentistes ?
+sa9_6;SA9_6. À votre avis, pensez-vous qu’il y a à proximité de chez vous des… pharmaciens ?
+sa11;SA11. Lorsque vous allez voir votre médecin généraliste, avez-vous le sentiment qu’il vous accorde suffisamment de temps ?
+sa25;SA25. Et avez-vous le sentiment qu’il vous accorde suffisamment de temps pour vous donner des conseils de prévention en vue d’éviter certains problèmes de santé ?
+sa13_1;SA13_1. En cas de crise sanitaire, on peut selon vous avoir confiance dans ce que disent … les médecins ?
+sa13_2;SA13_2. En cas de crise sanitaire, on peut selon vous avoir confiance dans ce que disent … les chercheurs ?
+sa13_3;SA13_3. En cas de crise sanitaire, on peut selon vous avoir confiance dans ce que disent … les journalistes à la télévision ou la radio ?
+sa13_4;SA13_4. En cas de crise sanitaire, on peut selon vous avoir confiance dans ce que disent … les hommes et femmes politiques ?
+sa13_5;SA13_5. En cas de crise sanitaire, on peut selon vous avoir confiance dans ce que disent … les sites internet et les blogs spécialisés ?
+sa14;SA14. La première chose que vous faites quand vous êtes malade ou inquiet pour votre santé c’est
+sa15_1;SA15_1. Estimez-vous que l’on vous donne suffisamment d’information sur votre état de santé lorsque vous êtes à l’hôpital ou en clinique ?
+sa15_2;SA15_2. Estimez-vous que l’on vous donne suffisamment d’information sur votre état de santé lorsque vous êtes chez votre médecin généraliste ?
+sa16_1;SA16_1. « Il n’y a pas de raison de limiter les dépenses car la santé n’a pas de prix »
+sa16_2;SA16_2. « Les dépenses de santé sont trop élevées car le système n’est pas bien géré »
+sa16_3;SA16_3. « Dans un pays développé, il est normal que l’on dépense de plus en plus pour la santé »
+sa17_ab;SA17_AB. À propos de vos dépenses de santé, considérez-vous que le reste à charge est… ?
+sa17_cd;SA17_CD. À propos de vos dépenses de santé, considérez-vous que le reste à charge est… ?
+sa18;SA18. Si vous étiez hospitalisé une semaine suite à un accident, pensez-vous que les frais que vous aurez à payer après remboursement seront
+sa26_ab;SA26_AB. Si vous aviez à vous faire faire une couronne dentaire ou à vous acheter des lunettes, pensez-vous que les frais que vous auriez à payer après remboursement seraient
+sa26_cd;SA26_CD. Si vous aviez à vous acheter des lunettes ou à vous faire faire une couronne dentaire, pensez-vous que les frais que vous auriez à payer après remboursement seraient
+sa19_1;SA19_1. « Les Français consomment trop de médicaments »
+sa19_2;SA19_2. « Je consomme trop de médicaments »
+sa19_3;SA19_3. « Les médecins en France prescrivent trop de médicaments »
+sa19_4;SA19_4. « Mon médecin me prescrit trop de médicaments »
+sa19_5;SA19_5. « Les soins dentaires devraient être remboursés davantage par la Sécurité sociale en augmentant les cotisations sociales »
+sa19_6;SA19_6. « L’achat des lunettes de vue et des lentilles devrait être remboursé davantage par la Sécurité sociale en augmentant les cotisations sociales »
+sa19_7;SA19_7. « Les consultations chez un médecin généraliste devraient être remboursées davantage par la Sécurité sociale en augmentant les cotisations sociales »
+sa19_8;SA19_8. « Votre assurance santé privée ou votre mutuelle vous donne accès à des remboursements satisfaisants compte tenu de son coût »
+sa23;SA23. Pensez-vous que les dépassements d’honoraires pratiqués par certains médecins sont…
+sa22_1;SA22_1. Avez-vous, au cours de ces dernières années, fait appel à un hôpital public (hors services urgences et maternités) pour vous ou pour vos proches ?
+sa22_2;SA22_2. Avez-vous, au cours de ces dernières années, fait appel aux urgences hospitalières pour vous ou pour vos proches ?
+sa22_3;SA22_3. Avez-vous, au cours de ces dernières années, fait appel à une clinique privée pour vous ou pour vos proches ?
+sa22_4;SA22_4. Avez-vous, au cours de ces dernières années, fait appel à un dentiste / orthodontiste pour vous ou pour vos proches ?
+sa22_5;SA22_5. Avez-vous, au cours de ces dernières années, fait appel à un médecin généraliste pour vous ou pour vos proches ?
+sa22_6;SA22_6. Avez-vous, au cours de ces dernières années, fait appel à un médecin spécialiste (hors hôpital) pour vous ou pour vos proches ?
+sa22_7;SA22_7. Avez-vous, au cours de ces dernières années, fait appel à un infirmier / une infirmière (hors hôpital)  pour vous ou pour vos proches ?
+sa22_8;SA22_8. Avez-vous, au cours de ces dernières années, fait appel à une maternité pour vous ou pour vos proches ?
+cs1;CS1. Selon vous, la cohésion sociale en France est-elle actuellement…
+cs5;CS5. Avez-vous le sentiment d’être intégré.e dans la société française ?
+cs6;CS6. Qu’est-ce qui vous semble le plus important pour être intégré dans la société française ? Est-ce principalement le fait
+cs17_ab;CS17_AB. Selon vous, les pouvoirs publics devraient-ils renforcer leur action pour soutenir l’intégration des personnes étrangères dans notre société ?
+cs17_cd;CS17_CD. Estimez-vous que les pouvoirs publics font trop, font ce qu’ils doivent ou ne font pas assez pour soutenir l’intégration des personnes étrangères dans notre société ?
+cs18;CS18. Estimez-vous que les pouvoirs publics font trop, font ce qu’ils doivent ou ne font pas assez pour les plus démunis ?
+cs25_1; CS25_1. « La garde des jeunes enfants et le soutien aux parents »
+cs25_2; CS25_2. « L’autonomie des personnes âgées »
+cs19_1;CS19_1. «  Beaucoup de personnes ne bénéficient pas des droits ou allocations auxquels elles peuvent prétendre  »
+cs19_2;CS19_2. «  Beaucoup de personnes perçoivent des allocations alors qu’elles n’y ont pas droit »
+cs20;CS20. Pour quelle raison principale pensez-vous que certaines personnes ne bénéficient pas d’allocations, droits, aides ou tarifs sociaux auxquels elles peuvent prétendre ?
+cs13;CS13. Pour vous, les pouvoirs publics doivent-ils en priorité…
+cs14;CS14. Quelle opinion se rapproche le plus de la vôtre ?
+cs9;CS9. Au cours des 12 derniers mois, avez-vous été témoin de discriminations liées au fait d’être une femme ?
+cs16_1;CS16_1. Au cours des 12 derniers mois, avez-vous été le.la témoin d’une discrimination liée à l’origine ethnique
+cs16_2;CS16_2. Au cours des 12 derniers mois, avez-vous été le.la témoin d’une discrimination liée à  l’orientation sexuelle
+cs16_3;CS16_3. Au cours des 12 derniers mois, avez-vous été le.la témoin d’une discrimination liée à l’âge
+cs16_4;CS16_4. Au cours des 12 derniers mois, avez-vous été le.la témoin d’une discrimination liée à  la religion
+cs16_5;CS16_5. Au cours des 12 derniers mois, avez-vous été le.la témoin d’une discrimination liée au handicap
+cs21_1;CS21_1. Vous sentez-vous particulièrement proche... de ceux qui sont de la même génération que vous ?
+cs21_2;CS21_2. Vous sentez-vous particulièrement proche... de ceux qui partagent la même situation socio-économique que vous ?
+cs21_3;CS21_3. Vous sentez-vous particulièrement proche... de ceux qui partagent les mêmes convictions politiques que vous ?
+cs21_4;CS21_4. Vous sentez-vous particulièrement proche... de ceux qui habitent dans le même quartier/village que vous ?
+cs21_5;CS21_5. Vous sentez-vous particulièrement proche... de ceux qui ont la même religion que vous ?
+cs21_6;CS21_6. Vous sentez-vous particulièrement proche... de ceux qui ont les mêmes origines que vous ?
+cs21_7;CS21_7. Vous sentez-vous particulièrement proche... des autres femmes.hommes ?
+cs22;CS22. Selon vous, entre quels types de groupes les tensions seront-elles les plus fortes à l’avenir ?
+sdassynd_1;SDASSYND_1. Vous personnellement, êtes-vous membre d’une organisation syndicale ?
+sdassynd_2;SDASSYND_2. Vous personnellement, êtes-vous membre d’une association ?
+sdrel;SDREL. Vis-à-vis de la religion, avez-vous…
+sdproxim_1;SDPROXIM_1. Dans votre famille ou en dehors de votre famille, connaissez-vous quelqu’un au chômage, indemnisé.e ?
+sdproxim_2;SDPROXIM_2. Dans votre famille ou en dehors de votre famille, connaissez-vous quelqu’un au chômage, non indemnisé.e ?
+sdproxim_3;SDPROXIM_3. Dans votre famille ou en dehors de votre famille, connaissez-vous quelqu’un qui est SDF ?
+sdproxim_4;SDPROXIM_4. Dans votre famille ou en dehors de votre famille, connaissez-vous quelqu’un élevant seul.e ses enfants avec un revenu inférieur au SMIC ?
+sdproxim_5;SDPROXIM_5. Dans votre famille ou en dehors de votre famille, connaissez-vous quelqu’un pensionné.e (invalide / handicapé.e) sans pouvoir travailler ?
+sdproxim_6;SDPROXIM_6. Dans votre famille ou en dehors de votre famille, connaissez-vous quelqu’un occupant un emploi précaire ?
+sdproxim_7;SDPROXIM_7. Dans votre famille ou en dehors de votre famille, connaissez-vous quelqu’un au RSA ?
+sdproxim_8;SDPROXIM_8. Dans votre famille ou en dehors de votre famille, connaissez-vous une personne handicapée de moins de 60 ans ?
+sdproxim_9;SDPROXIM_9. Dans votre famille ou en dehors de votre famille, connaissez-vous une personne âgée dépendante ?
+sdrichom;SDRICHOM. Y a-t-il un risque de chômage dans les mois à venir pour vous-même ou l’un de vos proches ?
+sdres_1;SDRES_1. Au cours des douze derniers mois, votre ménage a-t-il perçu des ressources provenant de salaires, traitements et primes ?
+sdres_2;SDRES_2. Au cours des douze derniers mois, votre ménage a-t-il perçu des ressources provenant de revenus d’une activité professionnelle indépendante ?
+sdres_3;SDRES_3. Au cours des douze derniers mois, votre ménage a-t-il perçu des ressources provenant du RSA (Revenu de solidarité active) ?
+sdres_4;SDRES_4. Au cours des douze derniers mois, votre ménage a-t-il perçu des ressources provenant des allocations de chômage ?
+sdres_5;SDRES_5. Au cours des douze derniers mois, votre ménage a-t-il perçu des ressources provenant de préretraite, retraites ?
+sdres_6;SDRES_6. Au cours des douze derniers mois, votre ménage a-t-il perçu des ressources provenant de revenus d’actifs financiers ?
+sdres_7;SDRES_7. Au cours des douze derniers mois, votre ménage a-t-il perçu des ressources provenant de revenus de locations ?
+sdres_8;SDRES_8. Au cours des douze derniers mois, votre ménage a-t-il perçu des ressources provenant de prestations familiales ?
+sdres_9;SDRES_9. Au cours des douze derniers mois, votre ménage a-t-il perçu des ressources provenant des allocations de logement ?
+sdres_10;SDRES_10. Au cours des douze derniers mois, votre ménage a-t-il perçu des ressources provenant de prestations liées au handicap, à l’invalidité ou à la dépendance ?
+sdres_11;SDRES_11. Au cours des douze derniers mois, votre ménage a-t-il perçu des ressources provenant de bourses d’études ?
+sdres_12;SDRES_12. Au cours des douze derniers mois, votre ménage a-t-il perçu des ressources provenant de pensions alimentaires ou argent reçu tous les mois de la part de proches ?
+sdrevcl;SDREVCL. Revenus mensuels nets avant impôts du foyer
+sdrevtr;SDREVTR. Revenus mensuels nets avant impôts du foyer (en tranches)
+sdrevstab;ME5. Globalement, diriez-vous que les revenus de votre foyer sont plutôt variables ou plutôt stables d’un mois sur l’autre ?
+sdrevfut;ME6. Dans les mois qui viennent, pensez-vous que les revenus de votre foyer vont…
+sddipl;SDDIPL. Niveau de diplôme
+sdpol_det;SDPOL. Sur une échelle de 0 à 10, où vous classeriez-vous politiquement ?
+sdnat;SDNAT. Nationalité
+sdpnaistr;SDPNAISTR. Quel est votre pays de naissance ?
+sdanfrtr;SDANFR. Vous êtes né.e à l’étranger, en quelle année êtes-vous arrivé en France ?
+sdnatp;SDNATP. Quelle était la nationalité de votre père à sa naissance ?
+sdpnaisptr;SDPNAISPTR. Quel est le pays de naissance de votre père ?
+sdnatm;SDNATM. Quelle était la nationalité de votre mère à sa naissance ?
+sdpnaismtr;SDPNAISMTR. Quel est le pays de naissance de votre mère ?
+sdnbadu;SDNBADU. Nombre d’adultes vivant au foyer
+sdpoltr;SDPOLTR. Sur une échelle de 0 à 10, où vous classeriez-vous politiquement ? (en 5 tranches)
+sdrevcl_imput ;SDREVCL_IMPUT. Revenu net mensuel
+sdniviecl_imput ;SDNIVIECL_IMPUT. Niveau de vie mensuel imputé
+sdnivie ;SDNIVIE. Quintiles de niveau de vie mensuel imputé
+sdageenftr_1;SDAGEENFTR_1. Nbre enfants 0-3 ans
+sdageenftr_2;SDAGEENFTR_2. Nbre enfants 4-6 ans
+sdageenftr_3;SDAGEENFTR_3. Nbre enfants 7-13 ans
+sdageenftr_4;SDAGEENFTR_4. Nbre enfants 14-17 ans
+sdageenftr_5;SDAGEENFTR_5. Nbre enfants  18 ans ou plus
