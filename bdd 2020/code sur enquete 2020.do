@@ -2,12 +2,23 @@ cd "C:/Users/Utilisateur/Documents/StageLiepp/données/bdd 2020"
 
 use Baromètre20, clear
 
+
+********************************************************************************
+* Package à installer si besoin
+********************************************************************************
+
 * ssc install catplot
 *ssc install palettes,  replace
 *ssc install colrspace, replace
 *ssc install grstyle, replace
 *net install grc1leg, from(http://www.stata.com/users/vwiggins)
 * ssc install tabplot, replace
+*findit svmat2
+/*insatllation de svmat2 / commande : "findit svmat2" / puis the clicking “dm79 from http://www.stata.com/stb/stb56&#8221 / and then “click here to install” */
+*ssc install estout
+*ssc install coefplot
+
+
 ********************************************************************************
 *modification des labels et des variables
 ********************************************************************************
@@ -30,13 +41,6 @@ label define diplome 1 "inférieur au bac" 2 "CAP BEP" 3 "bac pro ou général" 
 label value diplome diplome
 
 
-/* Modification a faire avant l'ACM: neutraliser les catégories trop petites, pour cela, suppression de la catégorie NSP pour variables PS1 et mixer la catégorie "nsp" et "non concerné" pour les variables PS13 */
-/*
-forvalues i = 1/4 {
-	replace ps1_`i'=. if ps1_`i'==5 
-	replace ps13_`i'=5 if ps13_`i'==6
-}
-*/
 
 * codage de la situation familiale en séparant couple avec et sans enfant et en retirant les catégories marginales
 
@@ -147,6 +151,41 @@ label define ps16 1 "Réduire le déficit" 2 "Maintenir les prestations" 3 "NSP"
 label value  ps16_ab ps16
 label value  ps16_cd ps16
 
+
+*****
+*codage sdres (origine des revenus)
+*****
+
+label variable sdres_1 "Salaires, traitements et primes"
+label variable sdres_2 "Revenu mixte"
+label variable sdres_3 "RSA"
+label variable sdres_4 "Allocations chômage"
+label variable sdres_5 "Retraite, pré-retraite"
+label variable sdres_6 "Revenus d'actifs financiers"
+label variable sdres_7 "Revenus de locations"
+label variable sdres_8 "Prestations familiales"
+label variable sdres_9 "Allocations de logement"
+label variable sdres_10 "Prestations handicap"
+label variable sdres_11 "Bourses d'études"
+label variable sdres_12 "Pensions alimentaires (...)"
+
+
+
+g pcs5 = pcs6_4
+replace pcs5=3 if pcs6_4==4
+replace pcs5=4 if pcs6_4==5
+replace pcs5=5 if pcs6_4==6
+label define pcs5 1 "Indépendant" 2 "CDI temps plein" 3 "Contrat précaire" 4 "Retraité" 5 "Autres inactifs"
+label value pcs5 pcs5
+
+
+g diplome4 = diplome
+replace diplome4=4 if diplome==5
+label define diplome4 1 "Inf bac" 2 "CAP BEP" 3 "Bac" 4 "Sup bac"
+label value diplome4 diplome4
+
+
+destring poids, generate(npoids) float dpcomma
 
 /* Graphique code: boucle pour sortir série de graph soc-dem */
 
@@ -316,8 +355,11 @@ foreach k in ps13_a_1 ps13_a_2 ps13_a_3 ps13_a_4 ps13_b_1 ps13_b_2 ps13_b_3 ps13
 	replace `k'_bin=3 if `k'==5 |`k'==6
 	label value `k'_bin PS13
 }
-
-
+/*
+foreach k in ps13_a_1 ps13_a_2 ps13_a_3 ps13_a_4 ps13_b_1 ps13_b_2 ps13_b_3 ps13_b_4 ps13_c_1 ps13_c_2 ps13_c_3 ps13_c_4 ps13_d_1 ps13_d_2 ps13_d_3 ps13_d_4 {
+	drop `k'_bin
+}
+*/
 
 foreach k in ps13_a_1 ps13_a_2 ps13_a_3 ps13_a_4 ps13_b_1 ps13_b_2 ps13_b_3 ps13_b_4 {
 	catplot ps16_ab if annee==2020 & `k'_bin!=3, over(`k'_bin, label(labsize(vsmall) labcolor(black) angle(45))) percent(`k'_bin) asyvars legend(pos(1) color(gs5)) blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title(`k') vertical stack name(G`k', replace) nodraw
@@ -332,7 +374,354 @@ grc1leg Gps13_a_3 Gps13_b_3 Gps13_c_3 Gps13_d_3, legendfrom(Gps13_a_3) row(1) co
 grc1leg Gps13_a_4 Gps13_b_4 Gps13_c_4 Gps13_d_4, legendfrom(Gps13_a_4) row(1) col(4)
 
 
+********************************************************************************
+*pseudo panel approfondi
+********************************************************************************
 
+*Recodage des variables ps13 en dummy
+
+
+forvalues i=1/4 {
+	g oui_ps13_a_`i' = (inrange(ps13_a_`i',1,2)) if annee==2020 & sdsplit==1 /* accepte baisse prestation/impots */
+	g non_ps13_b_`i' = (inrange(ps13_b_`i',3,4)) if annee==2020 & sdsplit==2
+	g non_ps13_a_`i' = (inrange(ps13_a_`i',3,4)) if annee==2020 & sdsplit==1
+	g non_ps13_c_`i' = (inrange(ps13_c_`i',3,4)) if annee==2020 & sdsplit==3
+	g non_ps13_d_`i' = (inrange(ps13_d_`i',3,4)) if annee==2020 & sdsplit==4
+}
+
+
+
+
+local lab_1 "AM"
+local lab_2 "Retraite"
+local lab_3 "Famille"
+local lab_4 "Chomage"
+forvalues i=1/4 {
+	catplot oui_ps13_a_`i', percent asyvars legend(pos(1) color(gs5) order(1 "Non" 2 "Oui")) ytitle(%, size(vsmall)) blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Soutien" "baisse des presta" `lab_`i'', size(vsmall)) vertical stack name(Goui_ps13_a_`i', replace) nodraw
+	catplot non_ps13_b_`i' , percent asyvars legend(pos(1) color(gs5) order(1 "Non" 2 "Oui"))  ytitle(%, size(vsmall)) blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Refus" "hausse d'impots" `lab_`i'', size(vsmall)) vertical stack name(Gnon_ps13_b_`i', replace) nodraw
+	catplot non_ps13_a_`i' , percent asyvars legend(pos(1) color(gs5) order(1 "Non" 2 "Oui"))  ytitle(%, size(vsmall)) blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Refus" "baisse de presta" `lab_`i'', size(vsmall)) vertical stack name(Gnon_ps13_a_`i', replace) nodraw
+	catplot non_ps13_c_`i' , percent asyvars legend(pos(1) color(gs5) order(1 "Non" 2 "Oui"))  ytitle(%, size(vsmall)) blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Refus" "baisse d'impots" `lab_`i'', size(vsmall)) vertical stack name(Gnon_ps13_c_`i', replace) nodraw
+	catplot non_ps13_d_`i' , percent asyvars legend(pos(1) color(gs5) order(1 "Non" 2 "Oui"))  ytitle(%, size(vsmall)) blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Refus" "hausse des presta" `lab_`i'', size(vsmall)) vertical stack name(Gnon_ps13_d_`i', replace) nodraw
+}
+
+grc1leg Goui_ps13_a_1 Gnon_ps13_b_1 Goui_ps13_a_2 Gnon_ps13_b_2 Goui_ps13_a_3 Gnon_ps13_b_3 Goui_ps13_a_4 Gnon_ps13_b_4, legendfrom(Goui_ps13_a_1) row(2) col(4) iscale(0.8) title(Statu quo 1)
+grc1leg Goui_ps13_a_1 Gnon_ps13_d_1 Goui_ps13_a_2 Gnon_ps13_d_2 Goui_ps13_a_3 Gnon_ps13_d_3 Goui_ps13_a_4 Gnon_ps13_d_4, legendfrom(Goui_ps13_a_1) row(2) col(4) iscale(0.6) title(Statu quo 2)
+
+grc1leg Goui_ps13_a_1 Gnon_ps13_b_1 Goui_ps13_a_2 Gnon_ps13_b_2 Goui_ps13_a_3 Gnon_ps13_b_3 Goui_ps13_a_4 Gnon_ps13_b_4 ///
+Goui_ps13_a_1 Gnon_ps13_d_1 Goui_ps13_a_2 Gnon_ps13_d_2 Goui_ps13_a_3 Gnon_ps13_d_3 Goui_ps13_a_4 Gnon_ps13_d_4 ///
+, legendfrom(Goui_ps13_a_1) row(2) col(8) iscale(0.65) title(Statu quo)
+
+
+grc1leg Gnon_ps13_a_1 Gnon_ps13_c_1 Gnon_ps13_a_2 Gnon_ps13_c_2 Gnon_ps13_a_3 Gnon_ps13_c_3 Gnon_ps13_a_4 Gnon_ps13_c_4, legendfrom(Gnon_ps13_a_1) row(2) col(4) iscale(0.8) title(Changement de formulation 1)
+grc1leg Gnon_ps13_b_1 Gnon_ps13_d_1 Gnon_ps13_b_2 Gnon_ps13_d_2 Gnon_ps13_b_3 Gnon_ps13_d_3 Gnon_ps13_b_4 Gnon_ps13_d_4, legendfrom(Gnon_ps13_b_1) row(2) col(4) iscale(0.8) title(Changement de formulation 2)
+
+*drop if annee!=2020 /* attention à ne pas sauvegarder les données après avoir fait tourner drop*/
+forvalues i=1/4 {
+	foreach k in oui_ps13_a_`i' non_ps13_b_`i' non_ps13_a_`i' non_ps13_c_`i' non_ps13_d_`i' {
+		bysort pcs5 sdsplit: egen M_`k'_pcs = mean(`k')
+		bysort sdagetr sdsplit: egen M_`k'_age = mean(`k')
+		bysort sdnivie sdsplit: egen M_`k'_revenu = mean(`k')
+		bysort sdsexe sdsplit: egen M_`k'_sexe = mean(`k')
+	}
+}
+
+
+graph dot (mean) M_oui_ps13_a_4_revenu M_non_ps13_b_4_revenu, over(sdnivie) vertical legend(order(1 "Accepte une baisse des allocations chômage" 2 "Refuse une hausse des impôts")) title(Par quintile de revenu)
+graph dot (mean) M_oui_ps13_a_4_age M_non_ps13_b_4_age, over(sdagetr) vertical legend(order(1 "Accepte une baisse des allocations chômage" 2 "Refuse une hausse des impôts")) title(Par tranche d'age')
+
+graph dot (mean) M_oui_ps13_a_1_pcs M_non_ps13_b_1_pcs M_oui_ps13_a_2_pcs M_non_ps13_b_2_pcs M_oui_ps13_a_3_pcs M_non_ps13_b_3_pcs M_oui_ps13_a_4_pcs M_non_ps13_b_4_pcs, over(pcs5) vertical legend(order(1 "Accepte baisse AM" 2 "refuse hausse impot AM" 3 "Accepte baisse Retraite" 4 " refuse hausse impots retraite" 5 "accepte baisse AF" 6 "Refuse hausse impots AF" 7 "Accepte baisse chômage" 8 "Refuse hausse impôts chom") size(small)) title(Par PCS)
+
+
+graph dot (mean) M_oui_ps13_a_1_age M_non_ps13_b_1_age M_oui_ps13_a_2_age M_non_ps13_b_2_age M_oui_ps13_a_3_age M_non_ps13_b_3_age M_oui_ps13_a_4_age M_non_ps13_b_4_age, over(sdagetr) vertical legend(order(1 "Accepte baisse AM" 2 "refuse hausse impot AM" 3 "Accepte baisse Retraite" 4 " refuse hausse impots retraite" 5 "accepte baisse AF" 6 "Refuse hausse impots AF" 7 "Accepte baisse chômage" 8 "Refuse hausse impôts chom") size(small)) title(Par PCS)
+
+
+*************************
+* Regression pseudo panel
+*************************
+
+* création de la var y = accepte une baisse d'impot oui tout à fait =1 non pas du tout =4
+local lab_1 "AM"
+local lab_2 "Retraite"
+local lab_3 "Famille"
+local lab_4 "Chomage"
+forvalues i=1/4{
+	g y_`lab_`i'' = 1 if ps13_a_`i'==1 | ps13_b_`i'==4 | ps13_c_`i'==1 | ps13_d_`i'==4
+	replace y_`lab_`i'' = 2 if ps13_a_`i'==2 | ps13_b_`i'==3 | ps13_c_`i'==2 | ps13_d_`i'==3
+	replace y_`lab_`i'' = 3 if ps13_a_`i'==3 | ps13_b_`i'==2 | ps13_c_`i'==3 | ps13_d_`i'==2
+	replace y_`lab_`i'' = 4 if ps13_a_`i'==4 | ps13_b_`i'==1 | ps13_c_`i'==4 | ps13_d_`i'==1
+}
+
+
+* regression
+
+reg y_AM i.sdsplit if annee==2020
+
+
+eststo clear
+eststo: qui reg y_AM ib2.pcs6_4 i.sdagetr i.sdsexe i.sdnivie i.sdsplit if annee==2020
+eststo: qui reg y_Retraite ib2.pcs6_4 i.sdagetr i.sdsexe i.sdnivie i.sdsplit if annee==2020
+eststo: qui reg y_Famille ib2.pcs6_4 i.sdagetr i.sdsexe i.sdnivie i.sdsplit if annee==2020
+eststo: qui reg y_Chomage ib2.pcs6_4 i.sdagetr i.sdsexe i.sdnivie i.sdsplit if annee==2020
+esttab using REG_PP_1.csv, label nonumbers mtitles("Assurance maladie" "Retraite" "Alloc familiales" "Alloc chomages") addnote("Source: Baromètre Drees BVA 2020") scalar(r2 pr2) replace
+pwcompare sdsplit, eff /*verifier si fonctionne*/
+
+eststo clear
+eststo: qui reg y_AM ib2.pcs5 i.sdagetr i.sdsexe i.sdnivie i.sdsplit#i.sdsexe i.sdsplit#i.sdnivie i.sdsplit if annee==2020
+eststo: qui reg y_Retraite ib2.pcs5 i.sdagetr i.sdsexe i.sdnivie i.sdsplit#i.sdsexe i.sdsplit#i.sdnivie i.sdsplit if annee==2020
+eststo: qui reg y_Famille ib2.pcs5 i.sdagetr i.sdsexe i.sdnivie i.sdsplit#i.sdsexe i.sdsplit#i.sdnivie i.sdsplit if annee==2020
+eststo: qui reg y_Chomage ib2.pcs5 i.sdagetr i.sdsexe i.sdnivie i.sdsplit#i.sdsexe i.sdsplit#i.sdnivie i.sdsplit if annee==2020
+esttab
+
+label define sdnivie 1 "Q1" 2 "Q2" 3 "Q3" 4 "Q4" 5 "Q5"
+label value sdnivie sdnivie
+eststo clear
+eststo: qui ologit y_AM ib2.pcs5 i.sdagetr i.sdsexe i.sdnivie i.sdsplit#i.sdsexe i.sdsplit#i.sdnivie i.sdsplit if annee==2020, or
+eststo: qui ologit y_Retraite ib2.pcs5 i.sdagetr i.sdsexe i.sdnivie i.sdsplit#i.sdsexe i.sdsplit#i.sdnivie i.sdsplit if annee==2020, or
+eststo: qui ologit y_Famille ib2.pcs5 i.sdagetr i.sdsexe i.sdnivie i.sdsplit#i.sdsexe i.sdsplit#i.sdnivie i.sdsplit if annee==2020, or
+eststo: qui ologit y_Chomage ib2.pcs5 i.sdagetr i.sdsexe i.sdnivie i.sdsplit#i.sdsexe i.sdsplit#i.sdnivie i.sdsplit if annee==2020, or
+esttab using ologit_1.csv, label nonumbers mtitles("Assurance maladie" "Retraite" "Alloc familiales" "Alloc chomages") eform addnote("Source: Baromètre Drees BVA 2020") scalar(r2_p ll converged)
+esttab using ologit_1.tex, label nonumbers mtitles("Assurance maladie" "Retraite" "Alloc familiales" "Alloc chomages") eform addnote("Source: Baromètre Drees BVA 2020") scalar(r2_p ll converged) f replace
+
+coefplot est1 est2 est3 est4, keep(1.sdnivie 2.sdnivie 3.sdnivie 4.sdnivie 5.sdnivie 2.sdsplit#*.sdnivie) baselevel xline(0) legend(size(small))
+
+eststo clear
+eststo: qui ologit y_AM ib2.pcs5 i.sdagetr i.sdsexe i.sdnivie i.sdsplit#ib2.pcs5 i.sdsplit if annee==2020, or
+eststo: qui ologit y_Retraite ib2.pcs5 i.sdagetr i.sdsexe i.sdnivie i.sdsplit#ib2.pcs5 i.sdsplit if annee==2020, or
+eststo: qui ologit y_Famille ib2.pcs5 i.sdagetr i.sdsexe i.sdnivie i.sdsplit#ib2.pcs5 i.sdsplit if annee==2020, or
+eststo: qui ologit y_Chomage ib2.pcs5 i.sdagetr i.sdsexe i.sdnivie i.sdsplit#ib2.pcs5 i.sdsplit if annee==2020, or
+esttab, label nonumbers mtitles("Assurance maladie" "Retraite" "Alloc familiales" "Alloc chomages") eform addnote("Source: Baromètre Drees BVA 2020") scalar(r2_p ll converged)
+esttab using ologit_2.csv, label nonumbers mtitles("Assurance maladie" "Retraite" "Alloc familiales" "Alloc chomages") eform addnote("Source: Baromètre Drees BVA 2020") scalar(r2_p ll converged)
+esttab using ologit_2.tex, label nonumbers mtitles("Assurance maladie" "Retraite" "Alloc familiales" "Alloc chomages") eform addnote("Source: Baromètre Drees BVA 2020") scalar(r2_p ll converged) f replace
+
+
+eststo clear
+eststo: qui ologit y_AM ib2.pcs5 i.sdagetr i.sdsexe i.sdnivie i.sdsplit#ib2.pcs5 i.sdsplit#i.sdnivie i.sdsplit#i.sdagetr i.sdsplit#i.sdsexe i.sdsplit if annee==2020
+predict pred_AM_1 pred_AM_2 pred_AM_3 pred_AM_4 if annee==2020, pr
+eststo: qui ologit y_Retraite ib2.pcs5 i.sdagetr i.sdsexe i.sdnivie i.sdsplit#ib2.pcs5 i.sdsplit#i.sdnivie i.sdsplit#i.sdagetr i.sdsplit#i.sdsexe i.sdsplit if annee==2020, or
+eststo: qui ologit y_Famille ib2.pcs5 i.sdagetr i.sdsexe i.sdnivie i.sdsplit#ib2.pcs5 i.sdsplit#i.sdnivie i.sdsplit#i.sdagetr i.sdsplit#i.sdsexe i.sdsplit if annee==2020, or
+eststo: qui ologit y_Chomage ib2.pcs5 i.sdagetr i.sdsexe i.sdnivie i.sdsplit#ib2.pcs5 i.sdsplit#i.sdnivie i.sdsplit#i.sdagetr i.sdsplit#i.sdsexe i.sdsplit if annee==2020, or
+
+
+esttab, label nonumbers mtitles("Assurance maladie" "Retraite" "Alloc familiales" "Alloc chomages") eform addnote("Source: Baromètre Drees BVA 2020") scalar(r2_p ll converged)
+
+eststo clear
+eststo: qui reg y_AM i.sdsplit#ib2.pcs5 i.sdsplit#i.sdnivie i.sdsplit#i.sdagetr i.sdsplit#i.sdsexe i.sdsplit if annee==2020
+eststo: qui reg y_AM  i.sdsplit#ib2.pcs5 i.sdsplit#i.sdnivie i.sdsplit#i.sdagetr i.sdsplit#i.sdsexe i.sdsplit if annee==2020, vce(robust)
+eststo: qui reg y_AM  i.sdsplit#ib2.pcs5 i.sdsplit#i.sdnivie i.sdsplit#i.sdagetr i.sdsplit#i.sdsexe i.sdsplit if annee==2020, vce(cluster sdsplit)
+esttab, scalar(r2_p ll converged)
+coefplot est2, keep(*sdnivie) xline(0) baselevel levels(99)
+coefplot est1, keep(*sdnivie) xline(0) baselevel levels(90)
+
+
+eststo clear
+eststo: qui ologit y_AM ib2.pcs5 i.sdagetr i.sdsexe i.sdnivie i.sdsplit if annee==2020, vce(cluster sdsplit)
+eststo: qui ologit y_AM ib2.pcs5 i.sdagetr i.sdsexe i.sdnivie i.sdsplit if annee==2020
+eststo: qui ologit y_AM ib2.pcs5 i.sdagetr i.sdsexe i.sdnivie i.sdsplit if annee==2020, vce(robust)
+esttab, scalar(r2_p ll converged)
+coefplot est2, keep(*sdnivie) xline(0) baselevel levels(99)
+coefplot est1, keep(*sdnivie) xline(0) baselevel levels(90)
+
+
+local lab_1 "AM"
+local lab_2 "Retraite"
+local lab_3 "Famille"
+local lab_4 "Chomage"
+forvalues i=1/4{
+	g y_`lab_`i''_B = 0 if y_`lab_`i''==1 | y_`lab_`i''==2
+	replace y_`lab_`i''_B = 1 if y_`lab_`i''==3 | y_`lab_`i''==4
+}
+
+********
+* Statu quo et quintile
+********
+grstyle init
+grstyle set mesh, compact
+
+program drop SQ_matrice
+
+/* 4 paramètre à entrer: 1=variable présente dans la regression logit, 2=branche (AM, Retraite, Famille ou Chomage) 
+3=1er type de questionnaire (=1/4), 4=2e type de questionnaire (=1/4)*/
+program SQ_matrice 
+	qui logit y_`2'_B ib2.pcs5 i.diplome4 i.sdagetr i.sdsexe i.sdnivie i.sdsplit#ib2.pcs5 i.diplome4#i.sdsplit i.sdsplit#i.sdnivie i.sdsplit#i.sdagetr i.sdsplit#i.sdsexe i.sdsplit if annee==2020
+	qui margins 1.`1'#`3'.sdsplit 1.`1'#`4'.sdsplit, pwcompare
+	mat SQ_`2'_`1'_1 = r(table_vs)
+	qui margins 2.`1'#`3'.sdsplit 2.`1'#`4'.sdsplit, pwcompare
+	mat SQ_`2'_`1'_2 = r(table_vs)
+	qui margins 3.`1'#`3'.sdsplit 3.`1'#`4'.sdsplit, pwcompare
+	mat SQ_`2'_`1'_3 = r(table_vs)
+	qui margins 4.`1'#`3'.sdsplit 4.`1'#`4'.sdsplit, pwcompare
+	mat SQ_`2'_`1'_4 = r(table_vs)
+	qui margins 5.`1'#`3'.sdsplit 5.`1'#`4'.sdsplit, pwcompare 
+	mat SQ_`2'_`1'_5 = r(table_vs)
+	mat SQ_`2'_`1' = SQ_`2'_`1'_1,SQ_`2'_`1'_2,SQ_`2'_`1'_3,SQ_`2'_`1'_4,SQ_`2'_`1'_5
+	matrix rownames SQ_`2'_`1' = coef_`2' se_`2' z_`2' pvalue_`2' cil_`2' ciu_`2' df_`2' crit_`2' eform_`2'
+	matrix SQ_`2'_`1' = -SQ_`2'_`1'
+	matrix SQ_`2'_`1'_t = SQ_`2'_`1''
+	svmat SQ_`2'_`1'_t, name(col)
+end
+
+/*pcs*/
+local lab_1 "AM"
+local lab_2 "Retraite"
+local lab_3 "Famille"
+local lab_4 "Chomage"
+forvalues i=1/4 {
+	SQ_matrice pcs5 `lab_`i'' 1 4
+	twoway (dot coef_`lab_`i'' ident, mcolor(red) lpattern(solid) cmissing(n)) (line cil_`lab_`i'' ident, lcolor(midblue%75) lpattern(dash) cmissing(n)) (line ciu_`lab_`i'' ident, lcolor(midblue%75) lpattern(dash) cmissing(n)) in 1/5, xlabel(200000001 "Indép" 200000002 "CDI" 200000003 "Précaire" 200000004 "Retraité" 200000005 "Autres Inact") title(Branche `lab_`i'') legend(order(1 "Proportion de soutien au satu quo" 2 "Intervalle de confiance")) name(`lab_`i'', replace) xtitle(PCS) nodraw
+	drop *_`lab_`i''
+}
+grc1leg AM Retraite Famille Chomage, legendfrom(AM) row(2) col(2) title(Soutien au statu quo par PCS)
+
+*graph export "C:\Users\Utilisateur\Documents\StageLiepp\résultats\2020\graph intéressant\statuquopcs.png", as(png) name("Graph") replace
+
+/*age*/
+local lab_1 "AM"
+local lab_2 "Retraite"
+local lab_3 "Famille"
+local lab_4 "Chomage"
+forvalues i=1/4 {
+	SQ_matrice sdagetr `lab_`i'' 1 2
+	twoway (dot coef_`lab_`i'' ident, mcolor(red) lpattern(solid) cmissing(n)) (line cil_`lab_`i'' ident, lcolor(midblue%75) lpattern(dash) cmissing(n)) (line ciu_`lab_`i'' ident, lcolor(midblue%75) lpattern(dash) cmissing(n)) in 1/5, xlabel(200000001 "18-25" 200000002 "25-35" 200000003 "35-45" 200000004 "45-65" 200000005 "65+") title(Branche `lab_`i'') legend(order(1 "Proportion de soutien au satu quo" 2 "Intervalle de confiance")) name(`lab_`i'', replace) xtitle(Tranche d'âge) nodraw
+	drop *_`lab_`i''
+}
+grc1leg AM Retraite Famille Chomage, legendfrom(AM) row(2) col(2) title(Soutien au statu quo par tranche d'âge)
+
+/*sexe*/
+local lab_1 "AM"
+local lab_2 "Retraite"
+local lab_3 "Famille"
+local lab_4 "Chomage"
+forvalues i=1/4 {
+	SQ_matrice sdsexe `lab_`i'' 1 2
+	twoway (dot coef_`lab_`i'' ident, mcolor(red) lpattern(solid) cmissing(n)) (line cil_`lab_`i'' ident, lcolor(midblue%75) lpattern(dash) cmissing(n)) (line ciu_`lab_`i'' ident, lcolor(midblue%75) lpattern(dash) cmissing(n)) in 1/2, xlabel(200000001 "Homme" 200000002 "Femme") title(Branche `lab_`i'') legend(order(1 "Proportion de soutien au satu quo" 2 "Intervalle de confiance")) name(`lab_`i'', replace) xtitle(sexe) nodraw
+	drop *_`lab_`i''
+}
+grc1leg AM Retraite Famille Chomage, legendfrom(AM) row(2) col(2) title(Soutien au statu quo par sexe)
+
+/*diplome*/
+local lab_1 "AM"
+local lab_2 "Retraite"
+local lab_3 "Famille"
+local lab_4 "Chomage"
+forvalues i=1/4 {
+	SQ_matrice diplome4 `lab_`i'' 4 2
+	twoway (dot coef_`lab_`i'' ident, mcolor(red) lpattern(solid) cmissing(n)) (line cil_`lab_`i'' ident, lcolor(midblue%75) lpattern(dash) cmissing(n)) (line ciu_`lab_`i'' ident, lcolor(midblue%75) lpattern(dash) cmissing(n)) in 1/4, xlabel(200000001 "inf bac" 200000002 "CAP BEP" 200000003 "Bac" 200000004 "Sup bac") title(Branche `lab_`i'') legend(order(1 "Proportion de soutien au satu quo" 2 "Intervalle de confiance")) name(`lab_`i'', replace) xtitle(diplome4) nodraw
+	drop *_`lab_`i''
+}
+grc1leg AM Retraite Famille Chomage, legendfrom(AM) row(2) col(2) title(Incohérence 2 par diplome (BD))
+
+
+
+
+
+/*
+twoway (dot coef_`lab_`i''_sdnivie ident, mcolor(red) lpattern(solid) cmissing(n)) (line cil_`lab_`i''_sdnivie ident, lcolor(midblue%75) lpattern(dash) cmissing(n)) (line ciu_`lab_`i''_sdnivie ident, lcolor(midblue%75) lpattern(dash) cmissing(n)) in 1/5, yscale(range(-0.9 -0.5)) xlabel(200000001 "Q1" 200000002 "Q2" 200000003 "Q3" 200000004 "Q4" 200000005 "Q5") title("Soutien au statu quo (AvB) par quintile de niveau de vie" "Assurance Maladie") legend(order(1 "Proportion de soutien au satu quo" 2 "Intervalle de confiance"))
+
+twoway (dot coef ident, mcolor(red) lpattern(solid) cmissing(n)) (line cil ident, lcolor(midblue%75) lpattern(dash) cmissing(n)) (line ciu ident, lcolor(midblue%75) lpattern(dash) cmissing(n)) in 1/5, yscale(range(-0.9 -0.5)) xlabel(200000001 "Q1" 200000002 "Q2" 200000003 "Q3" 200000004 "Q4" 200000005 "Q5") title("Soutien au statu quo (AvB) par quintile de niveau de vie" "Assurance Maladie") legend(order(1 "Proportion de soutien au satu quo" 2 "Intervalle de confiance"))
+*/
+
+g quintile="Q1" if ident==200000001
+replace quintile="Q2" if ident==200000002
+replace quintile="Q3" if ident==200000003
+replace quintile="Q4" if ident==200000004
+replace quintile="Q5" if ident==200000005
+
+
+
+
+program drop SQ_matrice2
+program SQ_matrice2 
+
+	
+	qui mean(y_`2'_B) if sdsplit==`3' & `1'==1 & annee==2020
+	mat A = 1-e(b)
+	qui mean(y_`2'_B) if sdsplit==`4' & `1'==1 & annee==2020
+	mat B = e(b)
+	qui logit y_`2'_B ib2.pcs5 i.diplome4 i.sdagetr i.sdsexe i.sdnivie i.sdsplit#ib2.pcs5 i.diplome4#i.sdsplit i.sdsplit#i.sdnivie i.sdsplit#i.sdagetr i.sdsplit#i.sdsexe i.sdsplit if annee==2020
+	qui margins 1.`1'#`3'.sdsplit 1.`1'#`4'.sdsplit, pwcompare
+	mat SQ_`2'_`1'_1 = A,-r(b_vs),B
+	mat list SQ_`2'_`1'_1
+	
+	qui mean(y_`2'_B) if sdsplit==`3' & `1'==2 & annee==2020
+	mat A = 1-e(b)
+	qui mean(y_`2'_B) if sdsplit==`4' & `1'==2 & annee==2020
+	mat B = e(b)
+	qui logit y_`2'_B ib2.pcs5 i.diplome4 i.sdagetr i.sdsexe i.sdnivie i.sdsplit#ib2.pcs5 i.diplome4#i.sdsplit i.sdsplit#i.sdnivie i.sdsplit#i.sdagetr i.sdsplit#i.sdsexe i.sdsplit if annee==2020
+	qui margins 2.`1'#`3'.sdsplit 2.`1'#`4'.sdsplit, pwcompare
+	mat SQ_`2'_`1'_2 = A,-r(b_vs),B
+	mat list SQ_`2'_`1'_2
+
+	qui mean(y_`2'_B) if sdsplit==`3' & `1'==3 & annee==2020
+	mat A = 1-e(b)
+	qui mean(y_`2'_B) if sdsplit==`4' & `1'==3 & annee==2020
+	mat B = e(b)	
+	qui logit y_`2'_B ib2.pcs5 i.diplome4 i.sdagetr i.sdsexe i.sdnivie i.sdsplit#ib2.pcs5 i.diplome4#i.sdsplit i.sdsplit#i.sdnivie i.sdsplit#i.sdagetr i.sdsplit#i.sdsexe i.sdsplit if annee==2020
+	qui margins 3.`1'#`3'.sdsplit 3.`1'#`4'.sdsplit, pwcompare
+	mat SQ_`2'_`1'_3 = A,-r(b_vs),B
+	mat list SQ_`2'_`1'_3
+	
+	qui mean(y_`2'_B) if sdsplit==`3' & `1'==4 & annee==2020
+	mat A = 1-e(b)
+	qui mean(y_`2'_B) if sdsplit==`4' & `1'==4 & annee==2020
+	mat B = e(b)
+	qui logit y_`2'_B ib2.pcs5 i.diplome4 i.sdagetr i.sdsexe i.sdnivie i.sdsplit#ib2.pcs5 i.diplome4#i.sdsplit i.sdsplit#i.sdnivie i.sdsplit#i.sdagetr i.sdsplit#i.sdsexe i.sdsplit if annee==2020
+	qui margins 4.`1'#`3'.sdsplit 4.`1'#`4'.sdsplit, pwcompare
+	mat SQ_`2'_`1'_4 = A,-r(b_vs),B
+	mat list SQ_`2'_`1'_4
+	
+	qui mean(y_`2'_B) if sdsplit==`3' & `1'==5 & annee==2020
+	mat A = 1-e(b)
+	qui mean(y_`2'_B) if sdsplit==`4' & `1'==5 & annee==2020
+	mat B = e(b)
+	qui logit y_`2'_B ib2.pcs5 i.diplome4 i.sdagetr i.sdsexe i.sdnivie i.sdsplit#ib2.pcs5 i.diplome4#i.sdsplit i.sdsplit#i.sdnivie i.sdsplit#i.sdagetr i.sdsplit#i.sdsexe i.sdsplit if annee==2020	
+	qui margins 5.`1'#`3'.sdsplit 5.`1'#`4'.sdsplit, pwcompare 
+	mat SQ_`2'_`1'_5 = A,-r(b_vs),B
+	mat list SQ_`2'_`1'_5
+
+	mat SQ_`2'_`1' = SQ_`2'_`1'_1\SQ_`2'_`1'_2\SQ_`2'_`1'_3\SQ_`2'_`1'_4\SQ_`2'_`1'_5
+	mat rownames SQ_`2'_`1' = 1 2 3 4 5
+	mat colnames SQ_`2'_`1' = Baisse StatuQuo Hausse
+	mat list SQ_`2'_`1'
+*	mat SQ_`2'_`1'= SQ_`2'_`1''
+	svmat SQ_`2'_`1', name(col)
+	
+end
+
+/*quintile*/
+
+SQ_matrice2 sdnivie AM 1 2
+graph bar Baisse StatuQuo Hausse, over(quintile) stack asyvars blabel(bar, position(center) format(%3.2f) color(white) size(vsmall)) legend(order(1 "Baisse de prestation" 2 "Statu quo" 3 "Hausse de prestation")) nodraw name(AM, replace) title(Assurance maladie)
+drop Baisse StatuQuo Hausse
+SQ_matrice2 sdnivie Retraite 1 2
+graph bar Baisse StatuQuo Hausse, over(quintile) stack asyvars blabel(bar, position(center) format(%3.2f) color(white) size(vsmall)) legend(order(1 "Baisse de prestation" 2 "Statu quo" 3 "Hausse de prestation")) nodraw name(Retraite, replace) title(Retraite)
+drop Baisse StatuQuo Hausse
+SQ_matrice2 sdnivie Famille 1 2
+graph bar Baisse StatuQuo Hausse, over(quintile) stack asyvars blabel(bar, position(center) format(%3.2f) color(white) size(vsmall)) legend(order(1 "Baisse de prestation" 2 "Statu quo" 3 "Hausse de prestation")) nodraw name(Famille, replace) title(Famille)
+drop Baisse StatuQuo Hausse
+SQ_matrice2 sdnivie Chomage 1 2
+graph bar Baisse StatuQuo Hausse, over(quintile) stack asyvars blabel(bar, position(center) format(%3.2f) color(white) size(vsmall)) legend(order(1 "Baisse de prestation" 2 "Statu quo" 3 "Hausse de prestation")) nodraw name(Chomage, replace) title(Chomage)
+grc1leg AM Retraite Famille Chomage, legendfrom(AM) row(2) col(2) title(Soutien et statu quo par branche et par niveau de revenu)
+drop Baisse StatuQuo Hausse
+
+/*pcs*/
+SQ_matrice2 pcs5 AM 1 2
+graph bar Baisse StatuQuo Hausse, over(quintile, relabel(1 "Indépendant" 2 "CDI" 3 "Précaire" 4 "Retraité" 5 "Autre inact")) stack asyvars blabel(bar, position(center) format(%3.2f) color(white) size(vsmall)) legend(order(1 "Baisse de prestation" 2 "Statu quo" 3 "Hausse de prestation")) nodraw name(AM, replace) title(Assurance maladie)
+drop Baisse StatuQuo Hausse
+SQ_matrice2 pcs5 Retraite 1 2
+graph bar Baisse StatuQuo Hausse, over(quintile, relabel(1 "Indépendant" 2 "CDI" 3 "Précaire" 4 "Retraité" 5 "Autre inact")) stack asyvars blabel(bar, position(center) format(%3.2f) color(white) size(vsmall)) legend(order(1 "Baisse de prestation" 2 "Statu quo" 3 "Hausse de prestation")) nodraw name(Retraite, replace) title(Retraite)
+drop Baisse StatuQuo Hausse
+SQ_matrice2 pcs5 Famille 1 2
+graph bar Baisse StatuQuo Hausse, over(quintile, relabel(1 "Indépendant" 2 "CDI" 3 "Précaire" 4 "Retraité" 5 "Autre inact")) stack asyvars blabel(bar, position(center) format(%3.2f) color(white) size(vsmall)) legend(order(1 "Baisse de prestation" 2 "Statu quo" 3 "Hausse de prestation")) nodraw name(Famille, replace) title(Famille)
+drop Baisse StatuQuo Hausse
+SQ_matrice2 pcs5 Chomage 1 2
+graph bar Baisse StatuQuo Hausse, over(quintile, relabel(1 "Indépendant" 2 "CDI" 3 "Précaire" 4 "Retraité" 5 "Autre inact")) stack asyvars blabel(bar, position(center) format(%3.2f) color(white) size(vsmall)) legend(order(1 "Baisse de prestation" 2 "Statu quo" 3 "Hausse de prestation")) nodraw name(Chomage, replace) title(Chomage)
+grc1leg AM Retraite Famille Chomage, legendfrom(AM) row(2) col(2) title(Soutien et statu quo par branche et par pcs)
+drop Baisse StatuQuo Hausse
+
+
+
+
+	
 
 * test du chi2, analyse de la significativité des variations
 * nb catégorie de chomage trop faible
@@ -362,5 +751,154 @@ ta ps13_a_1_bin sdagetr if annee==2020 & ps13_a_1_bin!=3, cchi2 chi2
 catplot ps13_a_2, over(annee, label(labsize(vsmall) labcolor(black) angle(45))) percent(annee) asyvars legend(pos(1) color(black)) blabel(dot, position(center) format(%3.1f) color(white) size(vsmall)) vertical stack
 
 catplot ps1_ab_3, over(annee, label(labsize(vsmall) labcolor(black) angle(45))) percent(annee) asyvars legend(pos(1) color(black)) blabel(dot, position(center) format(%3.1f) color(white) size(vsmall)) vertical stack
+
+
+********************************************************************************
+* ACM de l'espace sociale avec ps13 en supplémentaire
+********************************************************************************
+global PS13 "ps13_a_1_bin ps13_a_2_bin ps13_a_3_bin ps13_a_4_bin ps13_b_1_bin ps13_b_2_bin ps13_b_3_bin ps13_b_4_bin ps13_c_1_bin ps13_c_2_bin ps13_c_3_bin ps13_c_4_bin ps13_d_1_bin ps13_d_2_bin ps13_d_3_bin ps13_d_4_bin"
+
+
+foreach k in $PS13 {
+    replace `k' = 4 if annee==2020 & `k'==.
+}
+
+g enfant = (sitfam==3 | sitfam==4)
+label define enfant 0 "Sans enfant" 1 "Avec enfant(s)"
+label value enfant enfant
+
+label drop sdcouple
+label define sdcouple 1 "couple oui" 2 "couple non"
+label value sdcouple sdcouple
+
+mca pcs8 sdagetr sdcouple enfant diplome if annee>=2016 & sdagetr!=1, sup($PS13)
+mcaplot, overlay legend(off) xline(0) yline(0) scale(.8)
+mcaplot pcs8 sdagetr sdcouple enfant diplome, overlay legend(off) xline(0) yline(0) scale(.8)
+mcaplot ps13_a_1_bin ps13_b_1_bin ps13_c_1_bin ps13_d_1_bin, overlay xline(0) yline(0) mlabsize(vsmall)
+
+
+mcaprojection ps13_a_1_bin ps13_b_1_bin ps13_c_1_bin ps13_d_1_bin, mlabsize(vsmall) row(1)
+mcaprojection ps13_a_2_bin ps13_b_2_bin ps13_c_2_bin ps13_d_2_bin, mlabsize(vsmall) row(1)
+mcaprojection ps13_a_3_bin ps13_b_3_bin ps13_c_3_bin ps13_d_3_bin, mlabsize(vsmall) row(1)
+mcaprojection ps13_a_4_bin ps13_b_4_bin ps13_c_4_bin ps13_d_4_bin, mlabsize(vsmall) row(1)
+* aucune conclusion facile à tirer
+
+
+
+***********************
+*pb de code
+***********************
+mat drop mcamat
+drop dim1 dim2
+
+mat mcamat=e(A)
+
+mat list name
+svmat2 name, name(name)
+g idmca=name#varname
+mat list mcamat
+svmat2 mcamat, name(dim1 dim2)
+
+local nr : rownames mcamat
+scatter dim2 dim1, mlabsize(vsmall) mlabel(id)
+
+
+mat sup1 = mcamat["ps13_a_1_bin:Oui" "ps13_b_1_bin:Oui" ."ps13_c_1_bin:Oui". "ps13_d_1_bin:Oui". "ps13_a_1_bin:Non". "ps13_b_1_bin:Non". "ps13_c_1_bin:Non". "ps13_d_1_bin:Non", "dim1:coord".."dim2:coord"]
+mat sup2 = mcamat["ps13_a_2Oui"."ps13_b_2Oui"."ps13_c_2Oui"."ps13_d_2Oui"."ps13_a_2Non"."ps13_b_2Non"."ps13_c_2Non"."ps13_d_2Non",]
+mat sup3 = mcamat["ps13_a_3Oui"."ps13_b_3Oui"."ps13_c_3Oui"."ps13_d_3Oui"."ps13_a_3Non"."ps13_b_3Non"."ps13_c_3Non"."ps13_d_3Non",]
+mat sup4 = mcamat["ps13_a_4Oui"."ps13_b_4Oui"."ps13_c_4Oui"."ps13_d_4Oui"."ps13_a_4Non"."ps13_b_4Non"."ps13_c_4Non"."ps13_d_4Non",]
+
+scatter coordim2 coordim1 if varname=="ps13_a_1_bin"
+
+drop a1 a2
+predict a1 a2
+tw scatter a2 a1 if ps13_a_1==1, || scatter a2 a1 if ps13_a_1==2, || ///
+scatter a2 a1 if ps13_a_1==3, || scatter a2 a1 if ps13_a_1==4, || ///
+scatter a2 a1 if ps13_a_1==5 |  ps13_a_1==6, scale(.6) xline(0) yline(0)
+mcaplot ps13_a_1_bin ps13_b_1_bin ps13_c_1_bin ps13_d_1_bin , overlay legend(off) xline(0) yline(0) scale(.8)
+
+
+
+
+
+****************************************************************************
+* croisement soutien protection sociale avec origine de revenus
+****************************************************************************
+
+* chomage  sdres_4 et Rsa  sdres_3
+
+
+g chomrsa = 1 if sdres_3==1
+replace chomrsa=2 if sdres_4==1
+replace chomrsa=3 if sdres_3==1 & sdres_4==1
+replace chomrsa=4 if sdres_3==2 & sdres_4==2
+label define chomrsa 1 "RSA seulement" 2 "Chomage seulement" 3 "RSA et chomage" 4 "Aucun des deux"
+label value chomrsa chomrsa
+
+catplot ps1_ab_4 if annee>=2016 & sdres_4!=3, over(sdres_4, label(labsize(vsmall) labcolor(black))) percent(sdres_4) asyvars blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Type d'allocation chômage" "chez ceux qui touchent les allocations chomages") vertical
+
+catplot ps1_ab_4 if annee>=2016 & sdres_3!=3, over(sdres_3, label(labsize(vsmall) labcolor(black))) percent(sdres_3) asyvars blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Type d'allocation chômage" "chez ceux qui touchent les allocations chomages") vertical
+
+catplot ps2_ab if annee<2016, over(chomrsa, label(labsize(vsmall) labcolor(black))) percent(chomrsa) asyvars blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Type d'allocation chômage" "chez les allocataires RSA et chomage") vertical stack
+
+
+catplot ps16_ab if annee>=2016, over(chomrsa, label(labsize(vsmall) labcolor(black))) percent(chomrsa) asyvars blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Type d'allocation chômage" "chez les allocataires RSA et chomage") vertical stack
+* a faire -> dummy "bénéficie d'allocations"
+* a faire -> variable de soutien au rsa
+
+catplot ps13_a_4 if annee>=2016, over(chomrsa, label(labsize(vsmall) labcolor(black))) percent(chomrsa) asyvars blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Soutien à la baisse des allocations chomages" "chez les allocataires RSA et chomage") vertical stack
+
+*rsa:
+
+ta pe9_ab if annee!=2020
+ta pe9_ab if annee==2020
+ta pe9_cd
+catplot pe9_ab, over(annee) percent(annee) asyvars vertical stack
+catplot pe9_ab, over(pcs8) percent(pcs8) asyvars vertical
+catplot pe9_ab, over(pcs6_4) percent(pcs6_4) asyvars vertical
+* intéressant de voir que les catégories salariés de la pcs8 ne joue pas beaucoup tandis que celle de la pcs6_4 si
+catplot pe9_ab, over(chomrsa, label(labsize(vsmall) labcolor(black))) percent(chomrsa) asyvars blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Soutien au rsa" "chez les allocataires RSA et chomage") vertical
+
+
+
+
+ta pe10 /* filtre pe9=="augmenter le rsa" */
+catplot pe10, over(chomrsa, label(labsize(vsmall) labcolor(black))) percent(chomrsa) asyvars blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Augmentation des impots pour augmenter le RSA" "chez les allocataires RSA et chomage") vertical
+
+ta pe17_ab if annee!=2020
+ta pe17_ab if annee==2020
+ta pe17_cd
+
+catplot pe17_ab, over(chomrsa, label(labsize(vsmall) labcolor(black))) percent(chomrsa) asyvars blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Ouverture du RSA au jeune" "chez les allocataires RSA et chomage") vertical
+
+catplot pe17_ab, over(sdagetr, label(labsize(vsmall) labcolor(black))) percent(sdagetr) asyvars blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Ouverture du RSA au jeune" "Par tranche d'âge") vertical
+
+catplot pe17_ab if sdagetr!=1, over(pcs6_4, label(labsize(vsmall) labcolor(black))) percent(pcs6_4) asyvars blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Ouverture du RSA au jeune" "Par PCS chez les plus de 25 ans") vertical
+
+
+catplot pe13_ab, over(sdagetr, label(labsize(vsmall) labcolor(black))) percent(sdagetr) asyvars blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Soutien à la limitation des allocations chomages dans le temps") vertical
+catplot pe13_cd, over(sdagetr, label(labsize(vsmall) labcolor(black))) percent(sdagetr) asyvars blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Soutien à la prolongation des allocations chomages en cas de crise") vertical
+
+
+
+
+
+*Allocation familiale sdres_8
+
+catplot ps13_a_3 if annee>=2016 & sdres_8!=3, over(sdres_8, label(labsize(vsmall) labcolor(black))) percent(sdres_8) asyvars blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Soutien à la baisse des allocations familiales" "chez les allocataires") vertical stack
+
+catplot ps1_ab_3 if annee>=2016 & sdres_8!=3, over(sdres_8, label(labsize(vsmall) labcolor(black))) percent(sdres_8) asyvars blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Soutien à la baisse des allocations familiales" "chez les allocataires") vertical stack
+
+catplot fa13_ab, over(annee) percent(annee) asyvars vertical stack
+* pas d'évolution du à la crise sanitaire
+
+
+catplot fa13_cd if sdres_8!=3, over(sdres_8, label(labsize(vsmall) labcolor(black))) percent(sdres_8) asyvars blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Type d'allocations familiales" "chez les allocataires") vertical stack
+
+
+
+
+*revenus financiers et de locations sdres_6 sdres_7
+
 
 
