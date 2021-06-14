@@ -173,10 +173,80 @@ mcaplot ps1_1 ps1_2 ps1_3 ps1_4 , maxlength(10) normalize(principal) legend(off)
 
 gen contrib100=1 if ps1_1==1 & ps1_2==1 & ps1_3==1 & ps1_4==1
 replace contrib100=0 if contrib100==.
+bys annee: egen meancontrib100 = mean(contrib100)
+
+gen contribAM=(ps1_1==1)
+bys annee: egen meancontribam = mean(contribAM)
+
+gen contribretraite=(ps1_2==1)
+bys annee: egen meancontribretraite = mean(contribretraite)
+
+gen contribfamille=(ps1_3==1)
+bys annee: egen meancontribfamille = mean(contribfamille)
+
+gen contribchomage=(ps1_4==1)
+bys annee: egen meancontribchomage = mean(contribchomage)
+
+gen univ100=(ps1_1==3 & ps1_2==3 & ps1_3==3 & ps1_4==3)
+bys annee: egen meanuniv100 = mean(univ100)
+
+gen univAM=(ps1_1==3)
+bys annee: egen meanunivAM = mean(univAM)
+
+gen univretraite=(ps1_2==3)
+bys annee: egen meanunivretraite = mean(univretraite)
+
+gen univfamille=(ps1_3==3)
+bys annee: egen meanunivfamille = mean(univfamille)
+
+gen univchomage=(ps1_4==3)
+bys annee: egen meanunivchomage = mean(univchomage)
+
+gen minima100=(ps1_1==2 & ps1_2==2 & ps1_3==2 & ps1_4==2)
+bys annee: egen meanminima100 = mean(minima100)
+
+gen minimaAM=(ps1_1==2)
+bys annee: egen meanminimaAM = mean(minimaAM)
+
+gen minimaretraite=(ps1_2==2)
+bys annee: egen meanminimaretraite = mean(minimaretraite)
+
+gen minimafamille=(ps1_3==2)
+bys annee: egen meanminimafamille = mean(minimafamille)
+
+gen minimachomage=(ps1_4==2)
+bys annee: egen meanminimachomage = mean(minimachomage)
+
+gen AM=(ps1_1==4)
+bys annee: egen meanAM = mean(AM)
+
+gen retr=(ps1_1==4)
+bys annee: egen meanretr = mean(retr)
+
+gen fam=(ps1_1==4)
+bys annee: egen meanfam = mean(fam)
+
+gen chom=(ps1_1==4)
+bys annee: egen meanchom = mean(chom)
 
 
 
-graph bar (mean) contrib100, over(annee, label(labcolor("black") labsize(vsmall)))
+tw function mean(univ100), over(annee)
+grstyle init
+grstyle set mesh, compact
+*graph soutien à un système contributif
+tw (connected meancontribam annee) (connected meancontribretraite annee) (connected meancontribfamille annee) (connected meancontribchomage annee)  (connected meancontrib100 annee) if annee!=2016, xtitle("") title(Part de soutien à un système contributif par année et par branche) legend(order(1 "Assurance maladie" 2 "Retraite" 3 "Allocations familiales" 4 "Allocations chômages" 5 "Soutien à un système 100% contributif"))
+*graph à un système universel
+tw (connected meanunivAM annee) (connected meanunivretraite annee) (connected meanunivfamille annee) (connected meanunivchomage annee)  (connected meanuniv100 annee) if annee!=2016, xtitle("") title(Part de soutien à un système universelle par année et par branche) legend(order(1 "Assurance maladie" 2 "Retraite" 3 "Allocations familiales" 4 "Allocations chômages" 5 "Soutien à un système 100% universel"))
+*graph sur le système de l'assurance maladie
+tw (connected meanunivAM annee) (connected meancontribam annee) (connected meanminimaAM annee) (connected meanAM annee if annee>2016) if annee!=2016, xtitle("") title(Type de système soutenu pour l'assurance maladie) legend(order(1 "Système universel" 2 "Système contributif" 3 "Système de minima sociaux" 4 "Système contributif et universel"))
+*graph sur le type de système d'allocations chomage
+tw (connected meanunivchomage annee) (connected meancontribchomage annee) (connected meanminimachomage annee) (connected meanchom annee if annee>2016) if annee!=2016, xtitle("") title(Type de système soutenu pour l'assurance maladie) legend(order(1 "Système universel" 2 "Système contributif" 3 "Système de minima sociaux" 4 "Système contributif et universel"))
+
+
+
+
+
 
 graph dot (mean) contrib100, over(annee, label(labcolor("black") labsize(vsmall) angle(forty_five) ) ) by(sdagetr) vertical
 
@@ -192,10 +262,6 @@ graph dot (mean) contrib100, over(ps2, label(labcolor("black") labsize(vsmall) a
 
 /* - Evolution du taux de soutien à un système complètement contributif */
 
-gen contribAM=(ps1_1==1)
-gen contribretraite=(ps1_2==1)
-gen contribfamille=(ps1_3==1)
-gen contribchomage=(ps1_4==1)
 
 graph dot (mean) contribAM (mean) contribretraite (mean) contribfamille ///
 	(mean) contribchomage (mean) contrib100 if annee!=2016, ///
@@ -206,11 +272,6 @@ graph export "C:\Users\Utilisateur\Documents\StageLiepp\résultats\PROcontributi
 
 /* - Evolution du taux de soutien à un système complètement universel */
 
-gen univ100=(ps1_1==3 & ps1_2==3 & ps1_3==3 & ps1_4==3)
-gen univAM=(ps1_1==3)
-gen univretraite=(ps1_2==3)
-gen univfamille=(ps1_3==3)
-gen univchomage=(ps1_4==3)
 
 graph dot (mean) univAM (mean) univretraite (mean) univfamille (mean) ///
 	univchomage (mean) univ100 if annee!=2016, ///
@@ -221,18 +282,9 @@ graph dot (mean) univAM (mean) univretraite (mean) univfamille (mean) ///
 graph export "C:\Users\Utilisateur\Documents\StageLiepp\résultats\PROuniversalitélongitudinale.png", as(png) name("Graph")
 
 /*Taux de soutien à un système de minima sociaux uniquement*/
-gen minima100=(ps1_1==2 & ps1_2==2 & ps1_3==2 & ps1_4==2)
-gen minimaAM=(ps1_1==2)
-gen minimaretraite=(ps1_2==2)
-gen minimafamille=(ps1_3==2)
-gen minimachomage=(ps1_4==2)
 
 
 /* système mixte, contributif avec minima, réponse proposée uniquement depuis 2016*/
-gen AM=(ps1_1==4)
-gen retr=(ps1_1==4)
-gen fam=(ps1_1==4)
-gen chom=(ps1_1==4)
 
 
 graph dot (mean) univAM (mean) minimaAM (mean) contribAM (mean) AM if annee!=2016, ///
