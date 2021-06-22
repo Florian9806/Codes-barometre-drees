@@ -231,7 +231,6 @@ bys annee: egen meanchom = mean(chom)
 
 
 
-tw function mean(univ100), over(annee)
 grstyle init
 grstyle set mesh, compact
 *graph soutien à un système contributif
