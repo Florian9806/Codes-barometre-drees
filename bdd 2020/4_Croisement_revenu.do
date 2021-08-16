@@ -1,52 +1,46 @@
+cd "C:/Users/Utilisateur/Documents/StageLiepp/données/bdd 2020"
 
+do "code sur enquete 2020.do"
 
 
 ****************************************************************************
+********************** Très exploratoire****************************
 * croisement soutien protection sociale avec origine de revenus
 * + test du chi2 en fin de programme
 ****************************************************************************
 
-* chomage  sdres_4 et Rsa  sdres_3
+* [chomage -> sdres_4] [Rsa -> sdres_3]
 
+catplot ps1_ab_4 if annee>=2016 & sdres_4!=3, over(sdres_4, label(labsize(vsmall) labcolor(black))) percent(sdres_4) asyvars blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Type d'allocation chômage" "chez les bénéficiaires des allocations chomages") vertical
 
-g chomrsa = 1 if sdres_3==1
-replace chomrsa=2 if sdres_4==1
-replace chomrsa=3 if sdres_3==1 & sdres_4==1
-replace chomrsa=4 if sdres_3==2 & sdres_4==2
-label define chomrsa 1 "RSA seulement" 2 "Chomage seulement" 3 "RSA et chomage" 4 "Aucun des deux"
-label value chomrsa chomrsa
-
-catplot ps1_ab_4 if annee>=2016 & sdres_4!=3, over(sdres_4, label(labsize(vsmall) labcolor(black))) percent(sdres_4) asyvars blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Type d'allocation chômage" "chez ceux qui touchent les allocations chomages") vertical
-
-catplot ps1_ab_4 if annee>=2016 & sdres_3!=3, over(sdres_3, label(labsize(vsmall) labcolor(black))) percent(sdres_3) asyvars blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Type d'allocation chômage" "chez ceux qui touchent les allocations chomages") vertical
+catplot ps1_ab_4 if annee>=2016 & sdres_3!=3, over(sdres_3, label(labsize(vsmall) labcolor(black))) percent(sdres_3) asyvars blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Type d'allocation chômage" "chez les bénéficiaires des allocations chomages") vertical
 
 catplot ps2_ab if annee<2016, over(chomrsa, label(labsize(vsmall) labcolor(black))) percent(chomrsa) asyvars blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Type d'allocation chômage" "chez les allocataires RSA et chomage") vertical stack
 
-
 catplot ps16_ab if annee>=2016, over(chomrsa, label(labsize(vsmall) labcolor(black))) percent(chomrsa) asyvars blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Type d'allocation chômage" "chez les allocataires RSA et chomage") vertical stack
-* a faire -> dummy "bénéficie d'allocations"
-* a faire -> variable de soutien au rsa
 
 catplot ps13_a_4 if annee>=2016, over(chomrsa, label(labsize(vsmall) labcolor(black))) percent(chomrsa) asyvars blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Soutien à la baisse des allocations chomages" "chez les allocataires RSA et chomage") vertical stack
 
-*rsa:
+* rsa:
 
 ta pe9_ab if annee!=2020
 ta pe9_ab if annee==2020
-ta pe9_cd
+ta pe9_cd /* formulation pdt la crise covid */
 catplot pe9_ab, over(annee) percent(annee) asyvars vertical stack
 catplot pe9_ab, over(pcs8) percent(pcs8) asyvars vertical
 catplot pe9_ab, over(pcs6_4) percent(pcs6_4) asyvars vertical
-* intéressant de voir que les catégories salariés de la pcs8 ne joue pas beaucoup tandis que celle de la pcs6_4 si
+
+* intéressant de voir que les catégories salariés de la pcs8 ne jouent pas beaucoup tandis que celle de la pcs6_4 si
+
 catplot pe9_ab, over(chomrsa, label(labsize(vsmall) labcolor(black))) percent(chomrsa) asyvars blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Soutien au rsa" "chez les allocataires RSA et chomage") vertical
 
 
 
-
-ta pe10 /* filtre pe9=="augmenter le rsa" */
+/* question filtré pe9=="augmenter le rsa" , acceptez-vous une augmentation des impôts*/
+ta pe10 
 catplot pe10, over(chomrsa, label(labsize(vsmall) labcolor(black))) percent(chomrsa) asyvars blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Augmentation des impots pour augmenter le RSA" "chez les allocataires RSA et chomage") vertical
 
-ta pe17_ab if annee!=2020
+ta pe17_ab if annee!=2020 /*rsa jeune*/
 ta pe17_ab if annee==2020
 ta pe17_cd
 
@@ -71,7 +65,7 @@ catplot ps13_a_3 if annee>=2016 & sdres_8!=3, over(sdres_8, label(labsize(vsmall
 catplot ps1_ab_3 if annee>=2016 & sdres_8!=3, over(sdres_8, label(labsize(vsmall) labcolor(black))) percent(sdres_8) asyvars blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Soutien à la baisse des allocations familiales" "chez les allocataires") vertical stack
 
 catplot fa13_ab, over(annee) percent(annee) asyvars vertical stack
-* pas d'évolution du à la crise sanitaire
+* pas d'évolution dûe à la crise sanitaire
 
 
 catplot fa13_cd if sdres_8!=3, over(sdres_8, label(labsize(vsmall) labcolor(black))) percent(sdres_8) asyvars blabel(bar, position(center) format(%3.1f) color(white) size(vsmall)) b1title("Type d'allocations familiales" "chez les allocataires") vertical stack
@@ -79,13 +73,13 @@ catplot fa13_cd if sdres_8!=3, over(sdres_8, label(labsize(vsmall) labcolor(blac
 
 
 
-*revenus financiers et de locations sdres_6 sdres_7
+*revenus financiers et de locations (sdres_6 sdres_7)
 
 
 
 
 * test du chi2, analyse de la significativité des variations
-* nb catégorie de chomage trop faible
+* nb: catégorie chomeur trop faible donc retirée
 
 ta ps16_ab pcs6_4 if annee==2020 & ps16_ab!=3, cchi2 chi2
 ta ps16_cd pcs6_4 if annee==2020 & ps16_cd!=3, cchi2 chi2
@@ -108,10 +102,12 @@ ta ps13_a_1_bin pcs6_4 if annee==2019 & ps13_a_1_bin!=3 & pcs6_4!=4, cchi2 chi2
 ta ps13_b_2_bin pcs6_4 if annee==2020 & ps13_b_2_bin!=3 & pcs6_4!=4, cchi2 chi2
 ta ps13_a_1_bin sdagetr if annee==2020 & ps13_a_1_bin!=3, cchi2 chi2
 
+* difficile de lire ces tests car trop peu de données
 
+
+* graphes longitudinales (peu intéressant voir do-file 1)
 catplot ps13_a_2, over(annee, label(labsize(vsmall) labcolor(black) angle(45))) percent(annee) asyvars legend(pos(1) color(black)) blabel(dot, position(center) format(%3.1f) color(white) size(vsmall)) vertical stack
 
 catplot ps1_ab_3, over(annee, label(labsize(vsmall) labcolor(black) angle(45))) percent(annee) asyvars legend(pos(1) color(black)) blabel(dot, position(center) format(%3.1f) color(white) size(vsmall)) vertical stack
-
 
 

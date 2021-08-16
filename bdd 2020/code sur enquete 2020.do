@@ -2,6 +2,13 @@ cd "C:/Users/Utilisateur/Documents/StageLiepp/données/bdd 2020"
 
 use Baromètre20, clear
 
+do merge_ps13.do
+
+forvalues i=1/7{
+	rename ps13_`i' ps13_a_`i'
+}
+
+
 
 ********************************************************************************
 * Package à installer si besoin
@@ -45,8 +52,8 @@ label value diplome diplome
 * codage de la situation familiale en séparant couple avec et sans enfant et en retirant les catégories marginales
 
 gen sitfam=1 if sdsitfam==1
-replace sitfam=2 if sdsitfam==2 & sdnbenf==1 /*couple sans enfant*/
-replace sitfam=3 if sdsitfam==2 & sdnbenf>1 /*couple avec enfant*/
+replace sitfam=2 if sdsitfam==2 & sdnbenf==0 /*couple sans enfant*/
+replace sitfam=3 if sdsitfam==2 & sdnbenf>=1 /*couple avec enfant*/
 replace sitfam=4 if sdsitfam==3 /*parent monoparental*/
 replace sitfam=5 if sdsitfam==4 /*enfant du foyer*/
 label define sitfam 1 "Seul" 2 "Couple sans enfant" 3 "Couple avec enfant" 4 " Parent seul" 5 "Enfant du foyer"
@@ -256,25 +263,34 @@ foreach k in ps13_a_1 ps13_a_2 ps13_a_3 ps13_a_4 ps13_b_1 ps13_b_2 ps13_b_3 ps13
 }
 
 
+* chomage rsa
+g chomrsa = 1 if sdres_3==1
+replace chomrsa=2 if sdres_4==1
+replace chomrsa=3 if sdres_3==1 & sdres_4==1
+replace chomrsa=4 if sdres_3==2 & sdres_4==2
+label define chomrsa 1 "RSA seulement" 2 "Chomage seulement" 3 "RSA et chomage" 4 "Aucun des deux"
+label value chomrsa chomrsa
+
+
+label define sdnivie 1 "Q1" 2 "Q2" 3 "Q3" 4 "Q4" 5 "Q5"
+label value sdnivie sdnivie /* Inutile lorsqu'on utilise le revenu en var continu*/
+label variable sdnivie "Quintiles niveau de vie"
+
+g statut = sdstat
+replace statut=. if statut==7
+replace statut=7 if pcs8==7
+label define statut 1 "Salarié public" 2 "Salarié privé" 3 "Indépendant sans salarié" 4 "Employeur" 5 "Chomeur" 6 "Inactif" 7 "Retraité"
+label value statut statut
+
+
+grstyle init
+grstyle set mesh, compact
 
 
 
-	
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+label variable sdnivie "Quintile de niveau de vie"
+label variable sdnbenf "Nb enfant à charge"
 
 
 
