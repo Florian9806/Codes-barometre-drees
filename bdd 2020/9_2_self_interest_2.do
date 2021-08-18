@@ -57,11 +57,21 @@ g si = si_am + si_retr + si_fam2 + si_chom + si_handi + si_dep + si_logt
 
 g si_f= (bdd==3 & inrange(sdnbenf,2,10) ) /* famille avec 2 enfants ou plus*/
 g Y_bin = (inrange(Y,3,4))
+replace Y_bin=. if Y==.
 
-
+* corrections dûes au manque de données
 replace si=. if (bdd==3 | bdd==5) & inrange(annee, 2000, 2012)
 replace si=. if bdd==6 & inrange(annee, 2000, 2003)
 replace si=. if bdd==7 & inrange(annee, 2000, 2014)
+
+
+
+
+*******************************************************************************
+******************* Regressions **************************************
+*******************************************************************************
+
+
 
 eststo clear
 xtset ident
@@ -80,16 +90,9 @@ eststo clear
 forvalues i=1/7 {
 	eststo: ologit Y si c.sdagetr c.sdrevtr i.sdsexe i.statut c.diplome if bdd==`i' & sdrevtr!=8
 }
-esttab , label scalar(r2_p) star(* 0.1 ** 0.05 *** 0.01) eform
+esttab, label scalar(r2_p) star(* 0.1 ** 0.05 *** 0.01) eform
 esttab using logit_soutien.tex, nonumbers eform mtitles("AM" "Retraite" "Famille" "Chomage"  "Handicap" "Dépendance" " Logement") scalar(r2_p r2_a) compress longtable f star(* 0.1 ** 0.05 *** 0.01) label replace
-
-
-eststo clear
-forvalues i=1/7 {
-	eststo: ologit Y si c.sdagetr c.sdrevtr i.sdsexe i.statut c.diplome if bdd==`i' & sdrevtr!=8
-	}
 esttab , label scalar(r2_p) star(* 0.1 ** 0.05 *** 0.01)
-
 
 * or  du statut sur 5 branches (retiré AM car comme retraite et dépendance car comme handicap pour plus de lisibilité). 
 coefplot est2 est3 est4 est5 est7 , ///
@@ -133,30 +136,95 @@ coefplot est2 est3 est4 est5 est6 est7, ///
 	xline(1) title(Odds ratio d'être bénéficiaire par branche) 
 
 
+eststo clear
+eststo: ologit Y i.si i.sdagetr i.sdrevtr i.sdsexe i.statut if bdd==1 & sdrevtr!=8 & annee>=2013
+margins sdagetr, pr(outcome(1)) pr(outcome(2)) pr(outcome(3)) pr(outcome(4))
+marginsplot
+margins sdrevtr, pr(outcome(1)) pr(outcome(2)) pr(outcome(3)) pr(outcome(4))
+marginsplot
+margins sdsexe, pr(outcome(1)) pr(outcome(2)) pr(outcome(3)) pr(outcome(4))
+marginsplot
+
+*************************
+*
+*************************
+eststo clear
+forvalues i=1/4{
+qui: ologit Y_bin i.si i.sdagetr i.sdrevtr i.sdsexe i.statut if bdd==`i' & sdrevtr!=8 & annee>=2013
+eststo em`i'_age: margins sdagetr, pr(outcome(1)) post
+qui : ologit Y_bin i.si i.sdagetr i.sdrevtr i.sdsexe i.statut if bdd==`i' & sdrevtr!=8 & annee>=2013
+eststo em`i'_rev: margins sdrevtr, pr(outcome(1)) post
+qui: ologit Y_bin i.si i.sdagetr i.sdrevtr i.sdsexe i.statut if bdd==`i' & sdrevtr!=8 & annee>=2013
+eststo em`i'_sexe: margins sdsexe, pr(outcome(1)) post
+qui : ologit Y_bin i.si i.sdagetr i.sdrevtr i.sdsexe i.statut if bdd==`i' & sdrevtr!=8 & annee>=2013
+eststo em`i'_statut: margins statut, pr(outcome(1)) post
+}
+
+coefplot em*_sexe, recast(connected) vertical ///
+	title("Effet marginal du sexe" "Probabilité de refuser une baisse de prestations" , size(medium)) ///
+	legend(order(2 "Assurance maladie" 4 "Retraite" 6 "Famille" 8 "Allocations Chomage")) ///
+	xlabel(, labcolor(black))
+
+coefplot em*_age, recast(connected) vertical ///
+	title("Effet marginal de l'âge" "Probabilité de refuser une bausse de prestations", size(medium)) ///
+	legend(order(2 "Assurance maladie" 4 "Retraite" 6 "Famille" 8 "Allocations Chomage")) ///
+	xlabel(, labcolor(black))
+	
+coefplot em*_rev, recast(connected) ///
+	title("Effet marginal du revenu" "Probabilité de refuser une bausse de prestations", size(medium)) ///
+	vertical xlabel(,  labsize(tiny) labcolor(black) angle(45)) ///
+	legend(order(2 "Assurance maladie" 4 "Retraite" 6 "Famille" 8 "Allocations Chomage")) 
+	
+coefplot em*_statut,  recast(connected) vertical ///
+	title("Effet marginal du statut" "Probabilité de refuser une baisse de prestations", size(medium)) ///
+	legend(order(2 "Assurance maladie" 4 "Retraite" 6 "Famille" 8 "Allocations Chomage")) ///
+	xlabel(,  labsize(small) labcolor(black) angle(10)) sort
+
+
+
+*************
+/*
+eststo clear
+forvalues i=1/7 {
+	eststo: ologit Y i.si i.sdagetr i.sdrevtr i.sdsexe i.statut if bdd==`i' & sdrevtr!=8 & annee>=2013
+	margins, pr(outcome(1))
+	marginsplot
+}	
+	marginsplot, name(em_si_`i', replace)
+	margins, dydx(sdagetr)
+	marginsplot, name(em_age_`i', replace)
+	margins, dydx(sdrevtr)
+	marginsplot, name(em_rev_`i', replace)
+	margins, dydx(statut)
+	marginsplot, name(em_statut_`i', replace)
+	margins, dydx(sdsexe)
+	marginsplot, name(em_sdsexe_`i', replace)
+*/
+
 ********************************************************
 * Effets marginaux du revenu et de l'âge (AM / Famille) 
 * puis chomage statut
 ********************************************************
 eststo clear
-eststo: ologit Y_bin si c.sdagetr i.sdrevtr i.sdsexe i.statut c.diplome if bdd==1 & sdrevtr!=8
-margins, dydx(sdrevtr)
-est store em1
-eststo: ologit Y_bin si c.sdagetr i.sdrevtr i.sdsexe i.statut c.diplome if bdd==3 & sdrevtr!=8
-margins, dydx(sdrevtr)
-est store em2
+logit Y_bin si c.sdagetr i.sdrevtr i.sdsexe i.statut c.diplome if bdd==1 & sdrevtr!=8 & annee>=2013
+eststo em1 : margins, dydx(sdrevtr) post
+
+logit Y_bin si c.sdagetr i.sdrevtr i.sdsexe i.statut c.diplome if bdd==3 & sdrevtr!=8 & annee>=2013
+eststo em2 : margins, dydx(sdrevtr) post
+
 coefplot em1 em2, baselevels keep(*sdrevtr) recast(connected) vertical yline(0) xlabel(,  labsize(tiny) labcolor(black) angle(30)) ytitle(Effets marginaux) title("Effet du revenu sur le soutien à l'Assurance maladie" "et aux allocations familiales") legend(order(2 "Assurance maladie" 4 "Allocations familiales"))
 
 
 eststo clear
-eststo: ologit Y_bin si i.sdagetr c.sdrevtr i.sdsexe c.diplome if bdd==1 & sdrevtr!=8
-margins, dydx(sdagetr) 
-est store em1
-eststo: ologit Y_bin si i.sdagetr c.sdrevtr i.sdsexe c.diplome if bdd==3 & sdrevtr!=8
-margins, dydx(sdagetr)
-est store em2
-eststo: ologit Y_bin si i.sdagetr c.sdrevtr i.sdsexe c.diplome if bdd==4 & sdrevtr!=8
-margins, dydx(sdagetr)
-est store em3
+logit Y_bin si i.sdagetr c.sdrevtr i.sdsexe c.diplome if bdd==1 & sdrevtr!=8 & annee>=2013
+eststo em1: margins, dydx(sdagetr) post
+
+logit Y_bin si i.sdagetr c.sdrevtr i.sdsexe c.diplome if bdd==3 & sdrevtr!=8 & annee>=2013
+eststo em2 : margins, dydx(sdagetr) post
+
+logit Y_bin si i.sdagetr c.sdrevtr i.sdsexe c.diplome if bdd==4 & sdrevtr!=8 & annee>=2013
+eststo em3 : margins, dydx(sdagetr) post
+
 coefplot em1 em2 em3, baselevels keep(*sdagetr) recast(connected) vertical yline(0) xlabel(,  labcolor(black) angle(20)) ytitle(Effets marginaux) title("Effet de l'âge sur le soutien à l'Assurance maladie" "et aux allocations familiales et chômage") legend(order(2 "Assurance maladie" 4 "Allocations familiales" 6 "Allocations chômage"))
 
 
@@ -164,19 +232,27 @@ coefplot em1 em2 em3, baselevels keep(*sdagetr) recast(connected) vertical yline
 * sans contrôle par l'âge
 
 eststo clear
-eststo: ologit Y_bin i.statut c.diplome c.sdrevtr i.sdsexe if bdd==4 & sdrevtr!=8
-margins, dydx(statut) 
-est store em1
-coefplot em1, baselevels keep(*statut) recast(connected) vertical ylin(0) xlabel(, labcolor(black) angle(20)) ytitle(Effets marginaux) title("Effet du statut sur le soutien aux allocations chômage") sort
+logit Y_bin i.statut c.diplome c.sdrevtr c.sdagetr i.sdsexe if bdd==4 & sdrevtr!=8
+eststo em1 : margins, dydx(*statut) post
+coefplot em1, baselevels keep(*statut) recast(connected) vertical ylin(0) xlabel(, labcolor(black) angle(20)) ytitle(Effets marginaux) title("Effet du statut sur le soutien aux allocations chômage") sort name(g2, replace)
 
 
 g proxim_chom=(inrange(sdproxim_1, 2, 8) | inrange(sdproxim_2, 2,8))
 
 eststo clear
-eststo: ologit Y_bin proxim_chom i.statut c.diplome c.sdrevtr i.sdsexe if bdd==4 & sdrevtr!=8
-margins, dydx(proxim_chom *statut) 
-est store em1
-coefplot em1, baselevels keep(proxim_chom *statut) recast(connected) vertical ylin(0) xlabel(, labsize(vsmall) labcolor(black) angle(30)) ytitle(Effets marginaux) title("Conception élargi des personnes concernées" "par les allocations chômage") sort rename(proxim_chom="{bf: Connaissances au chômage} ")
+logit Y_bin proxim_chom i.statut c.diplome c.sdrevtr c.sdagetr i.sdsexe if bdd==4 & sdrevtr!=8
+eststo em1 : margins, dydx(proxim_chom *statut) post
+coefplot (em1, keep(proxim_chom) ) (em1, keep(*statut) recast(connected)), baselevels  vertical ylin(0) xlabel(, labsize(vsmall) labcolor(black) angle(30)) ytitle(Effets marginaux) title("Conception élargi des personnes concernées" "par les allocations chômage") sort rename(proxim_chom="{bf: Connaissances au chômage} ")
+
+g proxim_chom_2 = 0 if (sdproxim_1==1 | sdproxim_1==9) & (sdproxim_2==1 | sdproxim_2==9)
+replace proxim_chom_2 =1 if inrange(sdproxim_1,2,8)
+replace proxim_chom_2=2 if inrange(sdproxim_2, 2,8)
+
+eststo clear
+logit Y_bin i.proxim_chom_2 i.statut c.diplome c.sdrevtr c.sdagetr i.sdsexe if bdd==4 & sdrevtr!=8
+eststo em1 : margins, dydx(proxim_chom *statut) post
+coefplot (em1, keep(*statut) recast(connected)) (em1, keep(*proxim_chom_2) recast(connected)) , baselevels  vertical ylin(0) xlabel(, labsize(vsmall) labcolor(black) angle(30)) ytitle(Effets marginaux) title("Conception élargi des personnes concernées" "par les allocations chômage") rename(0.proxim_chom_2="Ne connait pas de chômeur" 1.proxim_chom_2="{bf: Connaissances au chômage indemnisé} " 2.proxim_chom_2="{bf: Connaissances au chômage non-indemnisé}")
+
 
 * Dépendance par age et sexe
 
@@ -193,18 +269,16 @@ label define agesexe 1 "Homme 18-35ans" 2 "Femme 18-35ans" 3 "Homme 35-65ans" 4 
 label value agesexe agesexe
 
 eststo clear
-eststo: ologit Y i.agesexe c.sdrevtr i.statut c.diplome if bdd==6 & sdrevtr!=8
-margins, dydx(agesexe)
-est store em1
+ologit Y i.agesexe c.sdrevtr i.statut c.diplome if bdd==6 & sdrevtr!=8
+eststo em1 : margins, dydx(agesexe) post
 coefplot em1, baselevels keep(*agesexe) recast(connected) vertical ylin(0) xlabel(, labsize(small) labcolor(black) angle(30)) ytitle(Effets marginaux) title() order(1.agesexe 3.agesexe 5.agesexe 2.agesexe 4.agesexe 6.agesexe sdsexe)
 
 
 eststo clear
-eststo: ologit Y i.sdagetr c.sdrevtr i.statut c.diplome if bdd==6 & sdrevtr!=8 & sdsexe==1
-margins, dydx(sdagetr)
-est store em1
-eststo: ologit Y i.sdagetr c.sdrevtr i.statut c.diplome if bdd==6 & sdrevtr!=8 & sdsexe==2
-margins, dydx(sdagetr)
+ologit Y i.sdagetr c.sdrevtr i.statut c.diplome if bdd==6 & sdrevtr!=8 & sdsexe==1
+eststo em1 : margins, dydx(sdagetr) post
+ologit Y i.sdagetr c.sdrevtr i.statut c.diplome if bdd==6 & sdrevtr!=8 & sdsexe==2
+eststo em2 : margins, dydx(sdagetr) post
 est store em2
 coefplot em1 em2, baselevels keep(*.sdagetr) recast(connected) vertical ylin(0) xlabel(, labsize(small) labcolor(black) angle(30)) ytitle(Effets marginaux) title("Effet de l'âge sur le soutien à la dépendance" "par sexe") legend(order(2 "Homme" 4 "Femme"))
 * pas de gros effets observé permettant d'induire les "bénéficiaires" des aide pour la dépendance (ou les futurs aides)
@@ -234,11 +308,95 @@ eststo: ologit Y si_f c.sdagetr c.sdrevtr i.sdsexe i.statut if bdd==3 & sdrevtr!
 coefplot est1 est2 est3 , eform keep(sdrevtr) xline(1) nolabel
 
 eststo clear
-forvalues i=2000/2002{
-	eststo: ologit Y_bin si_f c.sdagetr c.sdrevtr i.sdsexe i.statut if bdd==3 & sdrevtr!=8 & annee==`i'
-}
+
 forvalues i=2004/2020{
-	eststo: ologit Y_bin si_f c.sdagetr c.sdrevtr i.sdsexe i.statut if bdd==3 & sdrevtr!=8 & annee==`i'
+	eststo: ologit Y si_f c.sdagetr c.sdrevtr i.sdsexe i.statut if bdd==3 & sdrevtr!=8 & annee==`i'
 }
 coefplot est*, keep(sdrevtr) nolabel eform vertical legend(off)
+
+eststo clear
+forvalues i=2014/2020{
+	eststo: ologit Y si_f c.sdagetr c.sdnivie i.sdsexe i.statut if bdd==3 & sdrevtr!=8 & annee==`i'
+}
+coefplot est1, bylabel(2014) || est2 , bylabel(2015)|| est3 , bylabel(2016) || est4 , bylabel(2017) || est5 , bylabel(2018) || est6 , bylabel(2019)  || est7 , bylabel(2020)  ||,  keep(sdnivie) nolabel eform legend(off) vertical byopts(rows(1)) xlabel("")
+
+eststo clear
+forvalues i=1/7 {
+qui : ologit Y i.annee if annee>=2004 & sdrevtr==`i' & bdd==3 & sdnbenf>=2 & annee!=2020 & annee!=2017
+eststo mar`i' : margins, dydx(annee) post
+}
+coefplot mar*, recast(connected) vertical nolabel xlabel(,angle(20)) legend(order(2 "T1" 4 "T2" 6 "T3" 8 "T4" 10 "T5" 12 "T6" 14 "T7")) name(sup2enf, replace)
+
+eststo clear
+forvalues i=1/7 {
+ologit Y i.annee if annee>=2004 & sdrevtr==`i' & bdd==3 & sdnbenf<2 & annee!=2020 & annee!=2017
+eststo mar`i' : margins, dydx(annee) post
+}
+coefplot mar*, recast(connected) vertical nolabel xlabel(,angle(20)) legend(order(2 "T1" 4 "T2" 6 "T3" 8 "T4" 10 "T5" 12 "T6" 14 "T7")) name(inf2enf, replace)
+
+
+
+eststo clear
+qui : logit Y_bin i.annee if annee>=2004 & inrange(sdrevtr, 1, 3) & bdd==3 & sdnbenf>=2 & annee!=2020 & annee!=2017
+eststo mar1 : margins, dydx(annee) post
+
+qui : logit Y_bin i.annee if annee>=2004 & inrange(sdrevtr, 4, 5) & bdd==3 & sdnbenf>=2 & annee!=2020 & annee!=2017
+eststo mar2 : margins, dydx(annee) post
+
+qui : logit Y_bin i.annee if annee>=2004 & inrange(sdrevtr, 6, 7) & bdd==3 & sdnbenf>=2 & annee!=2020 & annee!=2017
+eststo mar3 : margins, dydx(annee) post
+
+coefplot mar*, recast(connected) vertical xlabel(,angle(20)) legend(order( 2 "Tranche 1 à 3" 4 "Tranche 4 et 5" 6 "Tranche 6 et 7")) name(sup2enf_2, replace)
+
+
+eststo clear
+qui : logit Y_bin i.annee if annee>=2004 & inrange(sdrevtr, 1, 3) & bdd==3 & sdnbenf<2 & annee!=2020 & annee!=2017
+eststo mar1_b : margins, dydx(annee) post
+
+qui : logit Y_bin i.annee if annee>=2004 & inrange(sdrevtr, 4, 5) & bdd==3 & sdnbenf<2 & annee!=2020 & annee!=2017
+eststo mar2_b : margins, dydx(annee) post
+
+qui : logit Y_bin i.annee if annee>=2004 & inrange(sdrevtr, 6, 7) & bdd==3 & sdnbenf<2 & annee!=2020 & annee!=2017
+eststo mar3_b : margins, dydx(annee) post
+
+coefplot mar*_b, recast(connected) vertical xlabel(,angle(20)) legend(order( 2 "Tranche 1 à 3" 4 "Tranche 4 et 5" 6 "Tranche 6 et 7")) name(inf2enf_2, replace)
+
+
+
+eststo clear
+eststo ora1 : ologit Y i.annee if annee>=2004 & inrange(sdrevtr, 1, 3) & bdd==3 & sdnbenf>=2 & annee!=2020 & annee!=2017
+
+eststo ora2 : qui : ologit Y i.annee if annee>=2004 & inrange(sdrevtr, 4, 5) & bdd==3 & sdnbenf>=2 & annee!=2020 & annee!=2017
+
+eststo ora3 : qui : ologit Y i.annee if annee>=2004 & inrange(sdrevtr, 6, 7) & bdd==3 & sdnbenf>=2 & annee!=2020 & annee!=2017
+
+coefplot ora*, recast(connected) vertical xlabel(,angle(20)) legend(order( 3 "Tranche 1 à 3" 6 "Tranche 4 et 5" 9 "Tranche 6 et 7")) name(ora, replace) eform level(95 90)  xlabel(1 "2004" 2 "2005" 3 "2006" 4 "2007" 5 "2008" 6 "2009" 7 "2010" 8 "2011" 9 "2012" 10 "2013" 11 "2014" 12 "2015" 13 "2016" 14 "2018" 15 "2019") yline(1) baselevels
+
+eststo orb1 : qui : ologit Y i.annee if annee>=2004 & inrange(sdrevtr, 1, 3) & bdd==3 & sdnbenf<2 & annee!=2020 & annee!=2017
+
+eststo orb2 : qui : ologit Y i.annee if annee>=2004 & inrange(sdrevtr, 4, 5) & bdd==3 & sdnbenf<2 & annee!=2020 & annee!=2017
+
+eststo orb3 : qui : ologit Y i.annee if annee>=2004 & inrange(sdrevtr, 6, 7) & bdd==3 & sdnbenf<2 & annee!=2020 & annee!=2017
+
+coefplot orb*, recast(connected) vertical xlabel(,angle(20)) legend(order( 3 "Tranche 1 à 3" 6 "Tranche 4 et 5" 9 "Tranche 6 et 7")) name(orb, replace) eform level(95 90)  xlabel(1 "2004" 2 "2005" 3 "2006" 4 "2007" 5 "2008" 6 "2009" 7 "2010" 8 "2011" 9 "2012" 10 "2013" 11 "2014" 12 "2015" 13 "2016" 14 "2018" 15 "2019") yline(1) baselevels
+
+
+
+g revtr2 = 1 if inrange(sdrevtr,1,3)
+replace revtr2 =2 if inrange(sdrevtr,4,5)
+replace revtr2=3 if inrange(sdrevtr,6,7)
+
+ologit Y  i.annee if annee>=2004 & bdd==3 & sdnbenf>=2 & annee!=2020 & annee!=2017
+coefplot , keep(1.revtr2#*) xlabel(1 "2004" 2 "2005" 3 "2006" 4 "2007" 5 "2008" 6 "2009" 7 "2010" 8 "2011" 9 "2012" 10 "2013" 11 "2014" 12 "2015" 13 "2016" 14 "2018" 15 "2019") recast(connected) name(g1, replace) eform level(95 90) baselevels vertical yscale(range(-0.5, 4.5)) ylabel(-0.5(1)4.5) yline(1)
+coefplot , keep(2.revtr2#*) xlabel(1 "2004" 2 "2005" 3 "2006" 4 "2007" 5 "2008" 6 "2009" 7 "2010" 8 "2011" 9 "2012" 10 "2013" 11 "2014" 12 "2015" 13 "2016" 14 "2018" 15 "2019") recast(connected) name(g2, replace) eform level(95 90) baselevels vertical yscale(range(-0.5, 4.5)) ylabel(-0.5(1)4.5) yline(1)
+coefplot , keep(3.revtr2#*) xlabel(1 "2004" 2 "2005" 3 "2006" 4 "2007" 5 "2008" 6 "2009" 7 "2010" 8 "2011" 9 "2012" 10 "2013" 11 "2014" 12 "2015" 13 "2016" 14 "2018" 15 "2019") recast(connected) name(g3, replace) eform level(95 90) baselevels vertical yscale(range(-0.5, 4.5)) ylabel(-0.5(1)4.5) yline(1)
+
+
+ologit Y  i.revtr2#i.annee if annee>=2004 & bdd==3 & sdnbenf>=2 & annee!=2020 & annee!=2017
+pwcompare *revtr2#2013.annee
+pwcompare *revtr2#2014.annee
+pwcompare *revtr2#2015.annee
+pwcompare *revtr2#2016.annee
+
+
 
