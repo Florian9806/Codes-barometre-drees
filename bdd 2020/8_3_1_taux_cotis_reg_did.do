@@ -345,7 +345,13 @@ coefplot (est1, keep(1.traité_agirc#0.traitement_agirc 1.traité_agirc#1.traite
 	1.traité_ret_ind#0.traitement_ret_ind2="Indépendant avant 2014" 1.traité_ret_ind#1.traitement_ret_ind2="Indépendant après 2016" ///
 	1.traité_agirc#0.traitement_agirc2="Cadre avant 2016" 1.traité_agirc#1.traitement_agirc2="Cadre après 2016") ///
 	mlabel mlabstyle(format(%9.3f)) mlabpos(11)
-	
+
+pwcompare traité_ret_fp#traitement_ret_fp  ///
+	traité_agirc#traitement_agirc	 ///
+	traité_ret_ind#traitement_ret_ind ///
+	traité_agirc#traitement_agirc2, pv
+* pas de résultats significatifs sur les 3 chocs de cotisations.
+
 
 eststo clear
 
@@ -357,13 +363,33 @@ eststo : ologit ps13_a_2 2014.annee#1.traité_ret_ind 2015.annee#1.traité_ret_i
 	1.traitement_agirc2#1.traité_agirc /// * même traité que la ligne dessus
 	i.sdrevtr i.sdagetr i.ps13_a_4 i.annee ///
 	if inrange(ps13_a_2, 1,4) & inrange(ps13_a_4, 1,4) & inrange(annee, 2004, 2019) , or
-esttab using did_retraite.tex, label mtitles("Assurance maladie" "Retraite" "Alloc familiales" "Alloc chomages") eform scalar(r2_p ll converged) compress longtable f  not star(* 0.1 ** 0.05 *** 0.01) keep(tc_*) replace
+esttab using did_retraite.tex, label eform scalar(r2_p) compress longtable f  not star(* 0.1 ** 0.05 *** 0.01) replace
 
-pwcompare traité_ret_fp#traitement_ret_fp  ///
-	traité_agirc#traitement_agirc	 ///
-	traité_ret_ind#traitement_ret_ind ///
-	traité_agirc#traitement_agirc2, pv
-* pas de résultats significatifs sur les 3 chocs de cotisations.
+
+eststo clear
+
+eststo : ologit ps13_a_2 ///
+	1.traité_agirc#1.traitement_agirc 1.traité_agirc ///
+	1.traitement_agirc2#1.traité_agirc /// * même traité que la ligne dessus
+	1.traitement_agirc 1.traitement_agirc2 ///
+	i.sdrevtr i.sdagetr i.ps13_a_4 c.annee ///
+	if inrange(ps13_a_2, 1,4) & inrange(ps13_a_4, 1,4) & inrange(annee, 2004, 2019) , or
+
+eststo : ologit ps13_a_2 ///
+	2012.annee 2012.annee#1.traité_ret_fp 2013.annee 2013.annee#1.traité_ret_fp ///
+	1.traité_ret_fp#1.traitement_ret_fp3 1.traité_ret_fp 1.traitement_ret_fp3 ///
+	i.sdrevtr i.sdagetr i.ps13_a_4 c.annee ///
+	if inrange(ps13_a_2, 1,4) & inrange(ps13_a_4, 1,4) & inrange(annee, 2004, 2019) , or
+
+eststo : ologit ps13_a_2 2014.annee 2014.annee#1.traité_ret_ind 2015.annee 2015.annee#1.traité_ret_ind ///
+	1.traité_ret_ind#1.traitement_ret_ind2 1.traité_ret_ind 1.traitement_ret_ind2 ///
+	i.sdrevtr i.sdagetr i.ps13_a_4 i.annee ///
+	if inrange(ps13_a_2, 1,4) & inrange(ps13_a_4, 1,4) & inrange(annee, 2004, 2019) , or
+	
+
+esttab using did_retraite_2.tex, label eform scalar(r2_p) compress longtable f keep(*traité* *traitement*) not star(* 0.1 ** 0.05 *** 0.01) replace
+
+
 
 
 
