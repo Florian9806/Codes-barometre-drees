@@ -11,6 +11,11 @@ bys annee: egen mde4_`i'=mean(de4_`i')
 
 
 forvalues i=1/5{
+bys annee: egen mde4_`i'_bis=mean(de4_`i') if sdagetr!=5
+}
+
+
+forvalues i=1/5{
 gen de5_`i' = (de5_ab==`i')
 replace de5_`i'=. if de5_ab==.
 bys annee: egen mde5_`i'=mean(de5_`i')
@@ -32,9 +37,15 @@ bys annee: egen mde7_`i'=mean(de7_`i')
 
 tw (connected mde4_1 annee) (connected mde4_2 annee) (connected mde4_3 annee) (connected mde4_4 annee) (connected mde4_5 annee), xtitle("") legend(order(1 "Tout à fait" 2 "plutôt" 3 "Plutôt pas" 4 "Pas du tout" 5 "NSP")) title("Seriez-vous prêt.e à épargner davantage" "en prévision d'une éventuelle situation de dépendance?", size(medium))
 
+
+
 g mde4_12=mde4_1 + mde4_2
 g mde4_34= mde4_3 + mde4_4
 tw (connected mde4_12 annee) (connected mde4_34 annee) (connected mde4_5 annee), xtitle("") legend(order(1 "Oui" 2 "Non" 3 "NSP")) title("Seriez-vous prêt.e à épargner davantage" "en prévision d'une éventuelle situation de dépendance?", size(medium))
+
+g mde4_12_bis=mde4_1_bis + mde4_2_bis
+g mde4_34_bis= mde4_3_bis + mde4_4_bis
+tw (connected mde4_12_bis annee) (connected mde4_34_bis annee) (connected mde4_5_bis annee), xtitle("") legend(order(1 "Oui" 2 "Non" 3 "NSP")) title("Seriez-vous prêt.e à épargner davantage" "en prévision d'une éventuelle situation de dépendance?", size(medium))
 
 
 tw (connected mde5_1 annee) (connected mde5_2 annee) (connected mde5_3 annee) (connected mde5_4 annee) (connected mde5_5 annee), xtitle("") legend(order(1 "Vous le placeriez dans une institution" 2 "Vous l'accueilleriez chez vous" 3 "Vous consacreriez une partie de votre revenu à lui payer des aides" 4 "Vous feriez en sorte de pouvoir vous en occuper" 5 "NSP") cols(1)) title("Si l'un de vos parents proches devenait dépendant, que feriez-vous ?", size(medium))

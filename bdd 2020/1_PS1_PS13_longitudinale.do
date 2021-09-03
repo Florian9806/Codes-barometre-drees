@@ -176,4 +176,21 @@ tw (line mean_oui_am annee) (line mean_oui_retr annee) (line mean_oui_fam annee)
 
 
 
+eststo clear
+
+ologit univretraite i.annee if inrange(ps1_ab_2,1,3)
+eststo : margins annee, predict(outcome(1)) post
+
+ologit contribretraite i.annee if inrange(ps1_ab_2,1,3)
+eststo : margins annee, predict(outcome(1)) post
+
+ologit non2_retr i.annee if inrange(ps13_a_2,1,4)
+eststo : margins annee, predict(outcome(1)) post
+
+ologit oui_retr i.annee if inrange(ps13_a_2,1,4)
+eststo : margins annee, predict(outcome(1)) post
+
+coefplot est1 est3 est4, recast(connected) vertical xlabel(1 "2000" 2 "2001" 3 "2002" 4 "2004" 5 "2005" 6 "2006" 7 "2007" 8 "2008" 9 "2009" 10 "2010" 11 "2011" 12 "2012" 13 "2013" 14 "2014" 15 "2015" 16 "2016" 17 "2017" 18 "2018" 19 "2019" 20 "2020", angle(30)) nolabel xline(9.5) legend(order(2 "Favorable à des prestations inclusives" 4 "Totalement opposé à une baisse des prestations retraites" 6 "Favorable à une baisse des prestations retraites") cols(1))
+
+
 

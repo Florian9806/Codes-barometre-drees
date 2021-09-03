@@ -1,0 +1,274 @@
+---
+title: "ACM hcfips"
+author: "Florian Baudoin"
+date: "02/07/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r }
+library(foreign)
+#install.packages("tidyverse")
+library(tidyverse)
+library(haven)
+library(FactoMineR)
+#install.packages("missMDA")
+library(missMDA)
+#install.packages("xtable")
+library(xtable)
+#install.packages("naniar")
+library(naniar)
+library(factoextra)
+options(ggrepel.max.overlaps = Inf)
+
+```
+
+
+
+```{r ACM, echo=FALSE}
+
+acm_data <- read_dta(file="c:/Users/Utilisateur/Documents/StageLiepp/données/bdd 2020/data_acmR.dta")
+
+subdata1 <- data.frame(acm_data[c("ps1_ab_4", "ps2_ab", "ps3_ab", "ps16_ab", "ps13_a_4", "sdstat", "pcs8", "diplome", "sdnivie", "sdagetr", "sdsexe", "sitfam")])
+subdata1 <- as_factor(subdata1, levels="both")
+
+res.acm = MCA(subdata1, quali.sup=c(6:12), method = "burt")
+
+NR <- estim_ncpMCA(subdata1[c(1:5)])
+NR
+
+complete_NR <- imputeMCA(subdata1, ncp=5)
+res.acm2 = MCA(subdata1, quali.sup=c(6:12), method = "indicator", tab.disj = complete_NR$tab.disj)
+
+summary(res.acm2, ncp=3)
+
+```
+
+
+
+
+
+
+```{r Graphique, echo=FALSE}
+
+plot.MCA(res.acm2, invisible=c("var","quali.sup"), cex=0.8, label="none")
+plot.MCA(res.acm2, invisible=c("ind"), cex=0.8, label="var")
+plot.MCA(res.acm2, invisible=c("ind"), cex=0.8, label="var", axes = c(3,4))
+plot.MCA(res.acm2, invisible=c("ind"), cex=0.8, label="var", axes = c(3,5))
+
+```
+
+
+
+```{r Inertie, echo=FALSE}
+
+barplot(res.acm2$eig[,2],main="Pourcentage d'inertie", names.arg=1:nrow(res.acm2$eig))
+
+
+
+```
+
+
+```{r Classification, echo=FALSE}
+
+res.acm3 = MCA(subdata1, quali.sup=c(6:12), method = "Burt", tab.disj = complete_NR$tab.disj, ncp=2, graph=F)
+
+res.cah <- HCPC(res.acm3, nb.clust=3)
+
+
+```
+```{r }
+
+classe1 <- res.cah$desc.var$category$`1`
+classe2 <- res.cah$desc.var$category$`2`
+classe3 <- res.cah$desc.var$category$`3`
+
+xtable(classe1, type="latex", file="C:/Users/Utilisateur/Documents/StageLiepp/résultats/mca et ca/classe1.tex")
+xtable(classe2, type="latex", file="C:/Users/Utilisateur/Documents/StageLiepp/résultats/mca et ca/classe2.tex")
+xtable(classe3, type="latex", file="C:/Users/Utilisateur/Documents/StageLiepp/résultats/mca et ca/classe3.tex")
+
+```
+
+
+```{r }
+
+summary(res.cah$data.clust$clust)
+plot(res.cah$data.clust$clust)
+
+```
+
+\section{Confirmatory Factor Analysis (CFA)}
+
+
+```{r }
+
+# install.packages("lavaan")
+library(lavaan)
+
+```
+
+fonctionne très mal, ne pas prendre en compte : pb de la méthode usuelle en variable latente est que les variables catégorielles non ordonnées ne sont pas implémentables en tant que tel, obligé de les prendre de manière ordonnées. cela a a voir avec l'indépendance conditionnelle aux variables latentes des variables observées 
+
+```{r }
+subdata2 <- data.frame(acm_data[c("ps1_ab_4", "ps2_ab", "ps3_ab", "ps16_ab", "ps13_a_4", "sdstat", "pcs8", "diplome", "sdnivie", "sdagetr", "sdsexe", "sitfam")])
+subdata2$contrib[subdata2$ps1_ab_4==1] <- 2
+subdata2$contrib[subdata2$ps1_ab_4!=1] <- 1
+subdata2$minima[subdata2$ps1_ab_4==2] <- 2
+subdata2$minima[subdata2$ps1_ab_4!=2] <- 1
+subdata2$univ[subdata2$ps1_ab_4==3] <- 2
+subdata2$univ[subdata2$ps1_ab_4!=3] <- 1
+subdata2$mixte[subdata2$ps1_ab_4==4] <- 2
+subdata2$mixte[subdata2$ps1_ab_4!=4] <- 1
+
+
+subdata2$oui_13[subdata2$ps13_a_4==2] <- 2
+subdata2$oui_13[subdata2$ps13_a_4!=2] <- 1
+subdata2$non_13[subdata2$ps13_a_4==3] <- 2
+subdata2$non_13[subdata2$ps13_a_4!=3] <- 1
+subdata2$nonpdt_13[subdata2$ps13_a_4==4] <- 2
+subdata2$nonpdt_13[subdata2$ps13_a_4!=4] <- 1
+subdata2$NSP_13[subdata2$ps13_a_4==5] <- 2
+subdata2$NSP_13[subdata2$ps13_a_4!=5] <- 1
+
+model_cfa1 = "
+B =~ contrib + oui_13
+C =~ minima + mixte + non_13
+"
+
+res_cfa1 = cfa(model_cfa1, data=subdata2, ordered=T)
+summary(res_cfa1, standardized=T, rsq=T, nd=2)
+
+
+
+```
+
+\section{MFA}
+
+```{r }
+
+
+data_mfa <- acm_data[c("ps1_ab_1", "ps1_ab_2", "ps1_ab_3",  "ps1_ab_4","ps13_a_1",  "ps13_a_2", "ps13_a_3", "ps13_a_4", "ps2_ab", "ps3_ab", "ps16_ab", "pcs8", "diplome", "sdstat", "sdagetr","sdsexe" )]
+
+
+data_mfa$ps13_a_1[data_mfa$ps13_a_1==1]<-2
+data_mfa$ps13_a_1 <- na_if(data_mfa$ps13_a_1, 5)
+data_mfa$ps13_a_1 <- na_if(data_mfa$ps13_a_1, 6)
+data_mfa$ps13_a_2[data_mfa$ps13_a_2==1]<-2
+data_mfa$ps13_a_2[data_mfa$ps13_a_2==6]<-5
+data_mfa$ps13_a_3[data_mfa$ps13_a_3==1]<-2
+data_mfa <- as_factor(data_mfa, levels="both")
+
+summary(data_mfa)
+
+
+```
+```{r  }
+data_mfa <- drop_na(data_mfa)
+res <- MFA(data_mfa, c(4,4,3,3,2), type=c("n", "n", "n", "n", "n"), num.group.sup = c(4,5), graph = F, ncp=5)
+plot(res,choix="axes", ncp=4, title="Graphe des axes partiels")
+plot(res,choix="axes", ncp=4, axes=c(3,4), title="Graphe des axes partiels")
+
+fviz_mfa_var(res, choice="group", col.var = "contrib",
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+             repel = TRUE)
+
+
+```
+
+
+
+```{r }
+res$quali.var$coord
+plot(res, choice="quali.var", invisible=c("ind", "sup"), habillage =1, cex=0.6, select="cos2", unselect=1)
+plot(res, invisible=c("ind","sup"), cex=0.4)
+plot(res, choice="group")
+fviz_mfa_var(res, choice="quali.var", repel=T)
+fviz_contrib(res, "group", axes=1)
+fviz_contrib(res, "group", axes=2)
+fviz_contrib(res, choice="quali.var", palette="jco", axes=1, top=20 )
+fviz_contrib(res, choice="quali.var", palette="jco", axes=2, top=20 )
+fviz_mfa_var(res, choice="quali.var", col.var = "contrib", col.var.sup = "invisible",
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+             repel = TRUE)
+
+
+
+```
+
+
+
+\section{Chômage v santé}
+
+But: regarder si les retraités bougent d'une analyse à l'autre. Autrement dit essayer de séparer le soutien à l'ensemble de la protection sociale et aux branches respectives.
+
+
+
+```{r }
+data_mfa <- acm_data[c("ps1_ab_1","ps13_a_1" , "sa8_1",  "ps1_ab_4", "ps13_a_4", "pe13_ab", "ps2_ab", "ps3_ab", "ps16_ab", "sdnivie", "pcs8", "diplome", "sdstat", "sdagetr","sdsexe", "sitfam")]
+
+
+data_mfa$ps13_a_1[data_mfa$ps13_a_1==1]<-2
+data_mfa$ps13_a_1 <- na_if(data_mfa$ps13_a_1, 5)
+data_mfa$ps13_a_1 <- na_if(data_mfa$ps13_a_1, 6)
+data_mfa$sa8_1 <- na_if(data_mfa$sa8_1, 3)
+
+data_mfa <- as_factor(data_mfa, levels="both")
+
+summary(data_mfa)
+```
+
+```{r}
+data_mfa <- drop_na(data_mfa)
+res <- MFA(data_mfa, c(3,3,3,4,3), type=c("n", "n", "n", "n", "n"), num.group.sup = c(4,5), graph = F, ncp=5)
+plot(res,choix="axes", ncp=2, title="Graphe des axes partiels")
+plot(res,choix="axes", ncp=4, axes=c(3,4), title="Graphe des axes partiels")
+
+fviz_mfa_var(res, choice="group", col.var = "contrib",
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+             repel = TRUE)
+fviz_mfa_var(res, choice="group", col.var = "contrib",
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), axes=c(3,4),
+             repel = TRUE)
+
+
+```
+
+```{r}
+
+res$quali.var$coord
+plot(res, choice="quali.var", invisible=c("ind", "sup"), habillage =1, cex=0.6, select="cos2", unselect=1)
+plot(res, invisible=c("ind","sup"), cex=0.4)
+plot(res, choice="group", habillage="none", label="none")
+fviz_mfa_var(res, choice="quali.var", repel=T)
+fviz_contrib(res, "group", axes=1)
+fviz_contrib(res, "group", axes=2)
+fviz_contrib(res, choice="quali.var", palette="jco", axes=1, top=20 )
+fviz_contrib(res, choice="quali.var", palette="jco", axes=2, top=20 )
+fviz_mfa_var(res, choice="quali.var", col.var = "contrib", col.var.sup = "invisible", gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), repel = TRUE)
+
+
+```
+
+Implémenter les résultats sur latex pour qu'ils soient lisibles
+```{r}
+library(knitr)
+res$group$correlation
+cor_pat_axes <- res$partial.axes$cor.between
+xtable(cor_pat_axes, type="latex")
+kable(cor_pat_axes)
+partieldesc <- res$quali.var.sup$coord.partiel
+xtable(partieldesc, type="latex")
+
+
+```
+
+

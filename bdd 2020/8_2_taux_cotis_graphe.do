@@ -93,3 +93,10 @@ tw (line tc_am annee if sdstat==1) (line tc_retr_tot2 annee if sdstat==1) (line 
 
 tw (line tc_am annee if inrange(sdstat, 3, 4)) (line tc_retr_tot2 annee if inrange(sdstat, 3, 4)) (line F_AE Annee) (scatter F_AF Annee), xtitle("") ytitle("") legend(order(1 "Assurance maladie" 2 "Retraite" 3 "Allocations familiales tranche 1" 4 "Allocations familiales tranche 2")) title(Taux de cotisations des indépendants)
 
+
+
+tw (connected tc_agirc annee if tc_agirc!=0) (connected tc_arrco1 annee if tc_arrco1!=0)  (connected tc_arrco2 annee if tc_arrco2!=0), ///
+	legend(order(1 "Taux agirc" 2 "Taux arrco tranche 1" 3 "Taux arrco tranche 2")) ///
+	title(Taux d'appel des cotisations retraites complémentaires privées) xtitle("")
+
+	

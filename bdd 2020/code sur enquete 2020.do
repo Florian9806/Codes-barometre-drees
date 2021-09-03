@@ -1,4 +1,3 @@
-cd "C:/Users/Utilisateur/Documents/StageLiepp/données/bdd 2020"
 
 use Baromètre20, clear
 

@@ -1,4 +1,3 @@
-cd "C:/Users/Utilisateur/Documents/StageLiepp/données/bdd 2020"
 
 
 
@@ -38,6 +37,7 @@ grstyle set mesh, compact
 
 g pss = (sdrevtr >= 5 & sdrevtr!=8)
 replace pss=0 if sdrevtr==5 & annee>2002
+replace pss=. if sdrevtr==. | sdrevtr==8
 
 /* Dummy approximation 1.5 smic et 3.5 smic */
 
@@ -122,33 +122,22 @@ des tranches de revenus */
 gen tc_retr_tot2 = tc_retr_ind+ tc_retr_pub + tc_retr_t1  + tc_retr_t2
 scatter tc_retr_tot2 annee
 
-/*
-*
-g tc_salar1 =
 
-*
-g tc_salar2
-
-*
-g tc_employ
-
-* taux:
-*tranche:
-g tc_csg
-
-*/
 
 ******************
 /* complémentaire : 20 - 21 -22*/
 *****************
 
-*g tc_compretr
+g tc_arrco1 = financement[1, 20] if sdstat==2 & pcs8!=2 & annee==2000
+g tc_arrco2 = financement[1, 21] if sdstat==2 & pcs8!=2 & pss==1 & annee==2000
+g tc_agirc = financement[1, 22] if sdstat==2 & pcs8==2 & annee==2000
+forvalues i = 1/20{
+	replace tc_arrco1 = financement[`i'+1, 20] if sdstat==2 & pcs8!=2 & annee==2000+`i'
+	replace tc_arrco2 = financement[`i'+1, 21] if sdstat==2 & pcs8!=2 & pss==1 & annee==2000+`i'
+	replace tc_agirc = financement[`i'+1, 22] if sdstat==2 & pcs8==2 & annee==2000+`i'
+}
 
-
-
-/* CSG activité et retraité  sachant que le taux activité s'applique aussi aux propriétaire d'actif financier
-4 taux (puisqu'il y a un taux nul) en fonction de seuil que je n'ai pas pour l'instant
-*/
+* choc arrco T2 2003-2004
 
 
 

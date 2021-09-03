@@ -1,4 +1,3 @@
-cd "C:/Users/Utilisateur/Documents/StageLiepp/données/bdd 2020"
 
 forvalues i=1/7{
 	rename ps13_a_`i' ps13_`i'

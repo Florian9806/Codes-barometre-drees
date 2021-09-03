@@ -1,4 +1,3 @@
-cd "C:/Users/Utilisateur/Documents/StageLiepp/données/bdd 2020"
 
 do "code sur enquete 2020.do"
 

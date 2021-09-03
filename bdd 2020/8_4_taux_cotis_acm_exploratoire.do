@@ -4,7 +4,7 @@ cd "C:/Users/Utilisateur/Documents/StageLiepp/données/bdd 2020"
 do 8_1_taux_cotis
 
 
-
+* Peu utilisé dans le rapport, exploratoire
 
 ********************************************************************************
 * CA pour les 4 branches (création des variables latentes)
